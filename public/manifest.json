@@ -1,0 +1,27 @@
+{
+    "name": "Vier Pfoten",
+    "short_name": "Vier Pfoten",
+    "theme_color": "#FAB0BF",
+    "background_color": "#FAB0BF",
+    "display": "fullscreen",
+    "orientation": "landscape",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "favicons/favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "favicons/logo-16.png",
+            "type": "image/png",
+            "sizes": "16x16"
+        },
+        {
+            "src": "favicons/logo-32.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        }
+    ]
+}
