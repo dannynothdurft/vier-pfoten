@@ -6,6 +6,9 @@
 */
 
 "use client";
+import Config from "@/config.json";
+import Lang from "@/lang/de.json"
+
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,22 +23,22 @@ const Navigation: FC<NavigationProps> = () => {
     <div className="vp-navigation">
       <Link href={"/"} title="Zur Startseite" className="logo-link">
         <Image
-          src={"/logos/logo_dog.svg"}
+          src={Config.logo}
           alt="Logo Dog"
           width={50}
           height={50}
         />
-        <span>Vier Pfoten</span>
+        <span>{Config.company}</span>
       </Link>
-      <input placeholder="Suche" />
+      <input placeholder={Lang.navigation.searchInput} />
       <div className="vp-nav-cta">
         <button className="vp-user-button">
           <LuDog size={30} />
         </button>
         <button className="btn">
-          <FaPlus /> Anzeige Schalten
+          <FaPlus /> {Lang.navigation.btnPlus}
         </button>
-        <button className="btn secondary">Alle Anzeigen</button>
+        <button className="btn secondary">{Lang.navigation.btnAll}</button>
       </div>
     </div>
   );

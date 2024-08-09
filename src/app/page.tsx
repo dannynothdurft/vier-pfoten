@@ -6,13 +6,14 @@
 */
 
 "use client";
+import Lang from "@/lang/de.json"
 import React from "react";
 
 export default function Home() {
   return (
     <>
       <section className="vp-home-header">
-        <h1>Vier Pfoten</h1>
+        <h1>{Lang.homepage.titel}</h1>
       </section>
     </>
   );

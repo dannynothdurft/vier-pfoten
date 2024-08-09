@@ -1,0 +1,13 @@
+{
+    "navigation": {
+        "searchInput": "Suche dein Tier",
+        "btnPlus": "Anzeige Schalten",
+        "btnAll": "Alle Anzeigen"
+    },
+    "homepage": {
+        "titel": "Vier Pfoten"
+    },
+    "footer": {
+        
+    }
+}
