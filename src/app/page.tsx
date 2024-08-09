@@ -10,8 +10,10 @@ import React from "react";
 
 export default function Home() {
   return (
-    <main>
-      <h1>Vier Pfoten</h1>
-    </main>
+    <>
+      <section className="vp-home-header">
+        <h1>Vier Pfoten</h1>
+      </section>
+    </>
   );
 }

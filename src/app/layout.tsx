@@ -8,6 +8,8 @@
 import "@/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 
+import MainLayout from "@/layouts/MainLayout";
+
 export const metadata: Metadata = {
   title: "Vier Pfoten",
   description: "Dein Marktplatz für dein nächsten Haustier",
@@ -44,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body>{children}</body>
+      <MainLayout>{children}</MainLayout>
     </html>
   );
 }

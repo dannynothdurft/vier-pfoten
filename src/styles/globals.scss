@@ -12,9 +12,48 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+
+  span {
+    font-size: 1.5em;
+  }
+}
+
+// Navigation
+.vp-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 10px 20px;
+
+  .vp-nav-cta {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+// Footer
+
+// Homepage
+.vp-home-header {
+  height: 500px;
+  background-image: url("/images/vier-pfoten-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
