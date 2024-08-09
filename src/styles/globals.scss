@@ -21,6 +21,41 @@ a {
   cursor: pointer;
 }
 
+button {
+  border: none;
+  background-color: unset;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: $color-primary;
+  border-radius: 4px;
+  padding-right: 12px;
+  padding-left: 12px;
+
+  &.secondary {
+    background-color: unset;
+    border: 2px solid $color-primary;
+    color: $color-secondary;
+
+    &:hover {
+      border-color: $color-secondary;
+      color: $color-bright;
+    }
+  }
+
+  &:hover {
+    background-color: $color-secondary;
+    @include box-shadow;
+  }
+}
+
 .logo-link {
   display: flex;
   align-items: center;
@@ -41,6 +76,16 @@ a {
   .vp-nav-cta {
     display: flex;
     gap: 15px;
+  }
+}
+
+.vp-user-button {
+  background-color: $color-primary;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $color-secondary;
+    @include box-shadow;
   }
 }
 

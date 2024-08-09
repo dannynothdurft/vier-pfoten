@@ -8,3 +8,11 @@
 // Colors
 $color-primary: rgba(250, 176, 191, 100);
 $color-secondary: rgba(214, 123, 140, 100);
+$color-bright: rgba(255, 255, 255, 100);
+
+// Mixin
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+}

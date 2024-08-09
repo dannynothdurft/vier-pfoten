@@ -10,6 +10,9 @@ import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { LuDog } from "react-icons/lu";
+import { FaPlus } from "react-icons/fa";
+
 interface NavigationProps {}
 
 const Navigation: FC<NavigationProps> = () => {
@@ -26,9 +29,13 @@ const Navigation: FC<NavigationProps> = () => {
       </Link>
       <input placeholder="Suche" />
       <div className="vp-nav-cta">
-        <button>User</button>
-        <button>Anzeige Aufgeben</button>
-        <button>Alle Anzeigen</button>
+        <button className="vp-user-button">
+          <LuDog size={30} />
+        </button>
+        <button className="btn">
+          <FaPlus /> Anzeige Schalten
+        </button>
+        <button className="btn secondary">Alle Anzeigen</button>
       </div>
     </div>
   );
