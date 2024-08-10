@@ -7,14 +7,14 @@
 
 "use client";
 import Config from "@/config.json";
-import Lang from "@/lang/de.json"
+import Lang from "@/lang/de.json";
 
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { LuDog } from "react-icons/lu";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaSearch } from "react-icons/fa";
 
 interface NavigationProps {}
 
@@ -22,15 +22,17 @@ const Navigation: FC<NavigationProps> = () => {
   return (
     <div className="vp-navigation">
       <Link href={"/"} title="Zur Startseite" className="logo-link">
-        <Image
-          src={Config.logo}
-          alt="Logo Dog"
-          width={50}
-          height={50}
-        />
+        <Image src={Config.logo} alt="Logo Dog" width={50} height={50} />
         <span>{Config.company}</span>
       </Link>
-      <input placeholder={Lang.navigation.searchInput} />
+      <div className="vp-search">
+        <FaSearch className="vp-search-icon" />
+        <input
+          placeholder={Lang.navigation.searchInput}
+          type="search"
+          className="vp-search-input-field"
+        ></input>
+      </div>
       <div className="vp-nav-cta">
         <button className="vp-user-button">
           <LuDog size={30} />

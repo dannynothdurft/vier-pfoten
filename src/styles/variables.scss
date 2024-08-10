@@ -5,10 +5,20 @@
     Description:
 */
 
-// Colors
+// Colors Fonts
+$color-dark: #0d0c22;
 $color-primary: rgba(250, 176, 191, 100);
 $color-secondary: rgba(214, 123, 140, 100);
 $color-bright: rgba(255, 255, 255, 100);
+$color-gray: #9e9ea7;
+
+// Colors backgrounds
+$color-bg-bright: #ffffff;
+$color-bg-gray: #f3f3f3;
+
+// Color borders
+$color-border-primary: rgba(234,76,137,0.4);
+$color-border-secondary: rgba(234, 76, 137 , 0.10);
 
 // Mixin
 @mixin box-shadow {
