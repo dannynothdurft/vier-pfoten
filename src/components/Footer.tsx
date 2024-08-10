@@ -19,6 +19,7 @@ const Footer: FC<FooterProps> = () => {
       <div>Rechtliches</div>
       <div>Support</div>
       <div>Social</div>
+      <div>Test aus dem IPad</div>
     </footer>
   );
 };
