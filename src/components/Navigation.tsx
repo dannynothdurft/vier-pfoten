@@ -34,13 +34,29 @@ const Navigation: FC<NavigationProps> = () => {
         ></input>
       </div>
       <div className="vp-nav-cta">
-        <button className="vp-user-button">
+        <button
+          className="vp-user-button"
+          onClick={() =>
+            alert(
+              "Hier ein Modal für den User, wenn nicht eingelogt kommt hier erstmal ein Modal für die Registrierung und das Login"
+            )
+          }
+        >
           <LuDog size={30} />
         </button>
-        <button className="btn">
+        <button
+          className="btn"
+          onClick={() =>
+            alert(
+              "Hier kommt ein Modal oder eine Seite um eine Anzeige zu inserieren"
+            )
+          }
+        >
           <FaPlus /> {Lang.navigation.btnPlus}
         </button>
-        <button className="btn secondary">{Lang.navigation.btnAll}</button>
+        <Link href={"/inserate"} className="btn secondary">
+          {Lang.navigation.btnAll}
+        </Link>
       </div>
     </div>
   );

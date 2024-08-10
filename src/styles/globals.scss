@@ -20,6 +20,12 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+
+  &.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+  }
 }
 
 button {
