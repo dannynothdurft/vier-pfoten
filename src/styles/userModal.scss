@@ -25,3 +25,23 @@
     gap: 25px;
   }
 }
+
+.vp-auth-ct {
+  background-color: $color-bg-gray;
+  padding: 50px;
+  min-height: calc(100vh - 228px);
+
+  .vp-auth-wrapper {
+    background-color: $color-bg-bright;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 650px;
+    padding: 25px;
+
+    h1 {
+      text-align: center;
+    }
+  }
+}
