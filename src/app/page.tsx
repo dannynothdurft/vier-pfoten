@@ -9,7 +9,10 @@
 import Lang from "@/lang/de.json";
 import React from "react";
 import Image from "next/image";
+
 import { FaStar } from "react-icons/fa";
+
+import Tile from "@/components/Tile";
 
 export default function Home() {
   return (
@@ -102,7 +105,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section>8 Inserate in einem Grid Template</section>
+      <section className="vp-advertisement-tiles">
+        <Tile title="Überschrift" />
+        <Tile title="Überschrift Überschrift" />
+        <Tile title="Überschrift Überschrift" />
+        <Tile title="Überschrift Überschrift Überschrift" />
+        <Tile title="Überschrift Überschrift Überschrift Überschrift" />
+        <Tile title="Überschrift Überschrift Überschrift Überschrift Überschrift" />
+        <Tile title="Überschrift Überschrift Überschrift Überschrift Überschrift" />
+        <Tile title="Überschrift" />
+      </section>
 
       <section className="vp-section">
         <div>

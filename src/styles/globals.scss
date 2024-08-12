@@ -24,10 +24,6 @@ h1 {
   font-style: italic;
 }
 
-p {
-  font-size: 1.2em;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -188,6 +184,16 @@ button {
   }
 }
 
+.vp-advertisement-tiles {
+  max-width: 1100px;
+  width: 100%;
+  margin: 80px auto 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 80px 20px;
+}
+
 .vp-section {
   min-height: 500px;
   display: flex;
@@ -208,5 +214,49 @@ button {
       gap: 10px;
       align-items: center;
     }
+  }
+}
+
+// Tile
+.vp-tile {
+  @include box-shadow;
+
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  padding: 115px 10px 30px;
+  cursor: pointer;
+
+  h3 {
+    color: $color-secondary;
+  }
+
+  .vp-tile-image-wrapper {
+    background-color: $color-bg-gray;
+    width: 95%;
+    position: absolute;
+    border-radius: 8px;
+    left: 50%;
+    top: -50px;
+    transform: translate(-50%);
+  }
+
+  .tile-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+
+  .tile-username {
+    position: absolute;
+    font-size: 0.85em;
+    bottom: 0;
+    border-top: 1px solid black;
+    width: 100%;
+    left: 0;
+    padding-left: 10px;
+    background-color: $color-bg-gray;
+    border-radius: 0 0 8px 8px;
+    color: $color-secondary;
   }
 }
