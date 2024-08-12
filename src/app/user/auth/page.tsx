@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 const Auth = () => {
   const currentUrl =
