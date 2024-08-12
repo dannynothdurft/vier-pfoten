@@ -7,18 +7,18 @@
 
 // Colors Fonts
 $color-dark: #0d0c22;
-$color-primary: rgba(250, 176, 191, 100);
-$color-secondary: rgba(214, 123, 140, 100);
+$color-primary: rgba(180, 233, 65, 100);
+$color-secondary: rgba(50, 105, 22, 100);
 $color-bright: rgba(255, 255, 255, 100);
-$color-gray: #9e9ea7;
+$color-gray: rgba(221, 219, 213, 100);
 
 // Colors backgrounds
-$color-bg-bright: #ffffff;
-$color-bg-gray: #f3f3f3;
+$color-bg-bright: rgba(255, 255, 255, 100);
+$color-bg-gray: rgba(244, 242, 239, 100);
 
 // Color borders
-$color-border-primary: rgba(234,76,137,0.4);
-$color-border-secondary: rgba(234, 76, 137 , 0.10);
+$color-border-primary: rgba(180, 233, 65, 0.4);
+$color-border-secondary: rgba(50, 105, 22, 0.1);
 
 // Mixin
 @mixin box-shadow {

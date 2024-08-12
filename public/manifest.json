@@ -1,8 +1,8 @@
 {
     "name": "Vier Pfoten",
     "short_name": "Vier Pfoten",
-    "theme_color": "#FAB0BF",
-    "background_color": "#FAB0BF",
+    "theme_color": "#b4e941",
+    "background_color": "#b4e941",
     "display": "fullscreen",
     "orientation": "landscape",
     "scope": "/",

@@ -5,9 +5,8 @@
         "btnAll": "Alle Anzeigen"
     },
     "homepage": {
-        "titel": "Vier Pfoten"
+        "titel": "Dein Marktplatz für Haustiere",
+        "content": "Finden oder vermitteln Sie Ihren tierischen Begleiter – einfach, schnell und unkompliziert."
     },
-    "footer": {
-        
-    }
+    "footer": {}
 }

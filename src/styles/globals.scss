@@ -7,13 +7,25 @@
 
 //imports
 @import "./variables.scss";
+@import "./fonts.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  font-family: "Poppins";
   color: $color-dark;
+}
+
+h1 {
+  font-size: 3em;
+  font-family: "Poppins";
+  font-style: italic;
+}
+
+p {
+  font-size: 1.2em;
 }
 
 a {
@@ -24,7 +36,7 @@ a {
   &.btn {
     display: flex;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;
   }
 }
 
@@ -61,6 +73,11 @@ button {
     background-color: $color-secondary;
     @include box-shadow;
   }
+
+  &.header {
+    padding: 18px 36px;
+    font-size: 1.5rem;
+  }
 }
 
 .logo-link {
@@ -93,7 +110,7 @@ button {
   position: relative;
   width: 500px;
 
-  .vp-search-icon{
+  .vp-search-icon {
     position: absolute;
     left: 1rem;
     fill: #9e9ea7;
@@ -111,20 +128,20 @@ button {
     border-radius: 8px;
     outline: none;
     background-color: $color-bg-gray;
-    transition: .3s ease;
+    transition: 0.3s ease;
 
     &::placeholder {
       color: $color-gray;
-     }
+    }
 
-     &:focus,
-     :hover {
+    &:focus,
+    :hover {
       outline: none;
       border-color: $color-border-primary;
       background-color: $color-bg-bright;
       box-shadow: 0 0 0 4px $color-border-secondary;
-     }
-   }
+    }
+  }
 }
 
 .vp-user-button {
@@ -147,6 +164,49 @@ button {
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 25px;
+}
+
+.vp-special-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;
+
+    span {
+      font-size: 0.4em;
+    }
+  }
+}
+
+.vp-section {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: $color-bg-gray;
+  flex: 1;
+
+  > div {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h3 {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
 }
