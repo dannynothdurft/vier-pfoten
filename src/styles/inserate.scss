@@ -1,0 +1,37 @@
+@import "./variables.scss";
+
+.vp-inserate-header {
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vp-inserate-wrapper {
+  max-width: 1200px;
+  display: flex;
+  margin: 25px auto;
+  gap: 25px;
+
+  .vp-filtered-ct {
+    width: 300px;
+    height: max-content;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: $color-bg-gray;
+  }
+
+  .vp-search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .vp-search-results {
+      margin: 80px auto 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 80px 20px;
+    }
+  }
+}

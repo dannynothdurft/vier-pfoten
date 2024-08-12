@@ -151,6 +151,24 @@ button {
 }
 
 // Footer
+footer {
+  display: flex;
+  justify-content: space-around;
+  min-height: 50px;
+  padding: 25px;
+  background-color: $color-dark;
+
+  h4,
+  a {
+    color: $color-bright;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 
 // Homepage
 .vp-home-header {
@@ -225,7 +243,6 @@ button {
   border-radius: 8px;
   position: relative;
   padding: 115px 10px 30px;
-  cursor: pointer;
 
   h3 {
     color: $color-secondary;

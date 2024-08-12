@@ -9,6 +9,7 @@
 "use client";
 import React, { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface TileProps {
   title: string;
@@ -16,7 +17,7 @@ interface TileProps {
 
 const Tile: FC<TileProps> = ({ title }) => {
   return (
-    <div className="vp-tile">
+    <Link href={"/inserate/jfalejfoiae"} className="vp-tile">
       <div className="vp-tile-image-wrapper">
         <Image
           src={"/images/tile-placeholder.png"}
@@ -36,7 +37,7 @@ const Tile: FC<TileProps> = ({ title }) => {
         veniam magni vitae tempora natus.
       </p>
       <p className="tile-username">Inseriert von</p>
-    </div>
+    </Link>
   );
 };
 
