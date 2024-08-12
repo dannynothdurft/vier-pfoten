@@ -12,31 +12,31 @@
         "marketplace": [
             {
                 "title": "FAQ",
-                "link": "/"
+                "link": "/faq"
             }
         ],
         "service": [
             {
                 "title": "Kontakt",
-                "link": "/"
+                "link": "/kontakt"
             }
         ],
         "company": [
             {
                 "title": "Über Uns",
-                "link": "/"
+                "link": "/about"
             },
             {
                 "title": "Impressum",
-                "link": "/"
+                "link": "/impressum"
             },
             {
                 "title": "Datenschutz",
-                "link": "/"
+                "link": "/datenschutz"
             },
             {
                 "title": "AGB",
-                "link": "/"
+                "link": "/agb"
             }
         ],
         "socialmedia": [

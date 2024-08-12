@@ -1,4 +1,11 @@
 {
     "company": "Vier Pfoten",
-    "logo": "/logos/logo_dog.svg"
+    "ceo": "Danny Nothdurft",
+    "logo": "/logos/logo_dog.svg",
+    "street": "Tribünenweg 32",
+    "zip": "22111",
+    "city": "Hamburg",
+    "tel": "0176 566 121 13",
+    "telCode": "+4917656612113",
+    "mail": "danny.nothdurft@icloud.com"
 }
