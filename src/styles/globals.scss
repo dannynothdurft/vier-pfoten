@@ -53,6 +53,7 @@ button {
   border-radius: 4px;
   padding-right: 12px;
   padding-left: 12px;
+  width: 200px;
 
   &.secondary {
     background-color: unset;
@@ -73,6 +74,7 @@ button {
   &.header {
     padding: 18px 36px;
     font-size: 1.5rem;
+    width: 300px;
   }
 }
 
@@ -92,6 +94,7 @@ button {
   justify-content: space-between;
   gap: 25px;
   padding: 10px 20px;
+  position: relative;
 
   .vp-nav-cta {
     display: flex;

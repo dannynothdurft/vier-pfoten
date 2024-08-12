@@ -9,16 +9,23 @@
 import Config from "@/config.json";
 import Lang from "@/lang/de.json";
 
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { LuDog } from "react-icons/lu";
 import { FaPlus, FaSearch } from "react-icons/fa";
 
+import UserModal from "./UserModal";
+
 interface NavigationProps {}
 
 const Navigation: FC<NavigationProps> = () => {
+  const [userModal, setUserModal] = useState(false);
+
+  const toggleUserModal = () => {
+    setUserModal(!userModal);
+  };
   return (
     <div className="vp-navigation">
       <Link href={"/"} title="Zur Startseite" className="logo-link">
@@ -34,14 +41,7 @@ const Navigation: FC<NavigationProps> = () => {
         ></input>
       </div>
       <div className="vp-nav-cta">
-        <button
-          className="vp-user-button"
-          onClick={() =>
-            alert(
-              "Hier ein Modal für den User, wenn nicht eingelogt kommt hier erstmal ein Modal für die Registrierung und das Login"
-            )
-          }
-        >
+        <button className="vp-user-button" onClick={toggleUserModal}>
           <LuDog size={30} />
         </button>
         <button
@@ -58,6 +58,7 @@ const Navigation: FC<NavigationProps> = () => {
           {Lang.navigation.btnAll}
         </Link>
       </div>
+      {userModal ? <UserModal toggleUserModal={toggleUserModal} /> : null}
     </div>
   );
 };
