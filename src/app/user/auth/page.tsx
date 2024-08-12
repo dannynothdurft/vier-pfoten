@@ -59,7 +59,6 @@ const Auth = () => {
 
       if (response.data.success) {
         localStorage.setItem("user", response.data.data);
-        setAlertContent(response.data.message);
       } else {
         setAlertContent(response.data.message);
         setAlert(true);
@@ -78,11 +77,6 @@ const Auth = () => {
   const handleRegisterSubmit = async (e: any) => {
     e.preventDefault();
 
-    if (registerData.password !== registerData.confirmPassword) {
-      alert("Die Passwörter stimmen nicht überein.");
-      return;
-    }
-
     setAlert(false);
     try {
       const response = await axios.post(`${currentUrl}/api/auth/register`, {
@@ -94,8 +88,16 @@ const Auth = () => {
       });
 
       if (response.data.success) {
-        console.log(response.data.data);
-        localStorage.setItem("user", response.data.data);
+        try {
+          const response = await axios.post(`${currentUrl}/api/auth/login`, {
+            email: registerData.email,
+            password: registerData.password,
+          });
+
+          if (response.data.success) {
+            localStorage.setItem("user", response.data.data);
+          }
+        } catch (error) {}
       } else {
         setAlertContent(response.data.message);
         setAlert(true);
