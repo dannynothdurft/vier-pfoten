@@ -1,5 +1,5 @@
 /* 
-    File: auth/page.tsx
+    File: user/auth/page.tsx
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:
@@ -22,12 +22,12 @@ const Auth = () => {
     termsAccepted: false,
   });
 
-  const handleLoginChange = (e) => {
+  const handleLoginChange = (e: any) => {
     const { name, value } = e.target;
     setLoginData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleRegisterChange = (e) => {
+  const handleRegisterChange = (e: any) => {
     const { name, value, type, checked } = e.target;
     setRegisterData((prev) => ({
       ...prev,
@@ -35,13 +35,13 @@ const Auth = () => {
     }));
   };
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = (e: any) => {
     e.preventDefault();
     console.log("Login data:", loginData);
     // Hier kommt später die API Kommunikation
   };
 
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = (e: any) => {
     e.preventDefault();
     if (registerData.password !== registerData.confirmPassword) {
       alert("Die Passwörter stimmen nicht überein.");
