@@ -8,5 +8,38 @@
         "titel": "Dein Marktplatz für Haustiere",
         "content": "Finden oder vermitteln Sie Ihren tierischen Begleiter – einfach, schnell und unkompliziert."
     },
-    "footer": {}
+    "footer": {
+        "marketplace": [
+            {
+                "title": "FAQ",
+                "link": "/"
+            }
+        ],
+        "service": [
+            {
+                "title": "Kontakt",
+                "link": "/"
+            }
+        ],
+        "company": [
+            {
+                "title": "Über Uns",
+                "link": "/"
+            },
+            {
+                "title": "Impressum",
+                "link": "/"
+            },
+            {
+                "title": "Datenschutz",
+                "link": "/"
+            }
+        ],
+        "socialmedia": [
+            {
+                "title": "Instagram",
+                "link": "https://www.instagram.com/tiny_invest/"
+            }
+        ]
+    }
 }

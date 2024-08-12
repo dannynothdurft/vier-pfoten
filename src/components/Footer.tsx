@@ -6,6 +6,9 @@
 */
 
 "use client";
+import Config from "@/config.json";
+import Lang from "@/lang/de.json";
+
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,27 +23,51 @@ const Footer: FC<FooterProps> = () => {
       <div className="footer-section">
         <h4>Marktplatz</h4>
         <div>
-          <Link href={"/"}>FAQ</Link>
+          {Lang.footer.marketplace.map((item, index) => {
+            return (
+              <Link href={item.link} key={index}>
+                {item.title}
+              </Link>
+            );
+          })}
         </div>
       </div>
       <div className="footer-section">
         <h4>Service</h4>
         <div>
-          <Link href={"/"}>Kontakt</Link>
+          {Lang.footer.service.map((item, index) => {
+            return (
+              <Link href={item.link} key={index}>
+                {item.title}
+              </Link>
+            );
+          })}
         </div>
       </div>
       <div className="footer-section">
         <h4>Unternehmen</h4>
         <div>
-          <Link href={"/"}>Über Uns</Link>
+          {Lang.footer.company.map((item, index) => {
+            return (
+              <Link href={item.link} key={index}>
+                {item.title}
+              </Link>
+            );
+          })}
         </div>
       </div>
       <div className="footer-section">
         <h4>Social-Media</h4>
         <div>
-          <Link href={"https://www.instagram.com/tiny_invest/"}>
-            <FaInstagram fill="#ffffff" size={25} />
-          </Link>
+          {Lang.footer.socialmedia.map((item, index) => {
+            return (
+              <Link href={item.link} key={index} target="_blank">
+                {item.title === "Instagram" ? (
+                  <FaInstagram fill="#ffffff" size={25} />
+                ) : null}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </footer>
