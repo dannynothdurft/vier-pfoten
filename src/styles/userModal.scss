@@ -29,19 +29,83 @@
 .vp-auth-ct {
   background-color: $color-bg-gray;
   padding: 50px;
-  min-height: calc(100vh - 228px);
+  min-height: calc(100vh - 253px);
 
   .vp-auth-wrapper {
     background-color: $color-bg-bright;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
     margin: 0 auto;
     max-width: 650px;
-    padding: 25px;
+    padding: 50px;
+    @include box-shadow;
 
-    h1 {
-      text-align: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      position: relative;
+      width: 100%;
+
+      h2 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        color: #7e7e7e;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 0.875rem;
+
+        &.line {
+          flex-direction: row;
+          align-items: center;
+          gap: 25px;
+        }
+
+        input {
+          height: 41px;
+          border-radius: 0;
+          background: #fff;
+          border: 1px solid #e6e6eb;
+          color: #6e6e6e;
+          padding: 0.5rem 1rem;
+          font-size: 1.1rem;
+          border-radius: 3px;
+
+          &:focus {
+            outline: 1px solid $color-primary;
+          }
+        }
+      }
+
+      button {
+        height: 50px;
+        font-weight: 700;
+        padding: 0.625rem 1rem;
+        border-radius: 4px;
+        color: $color-bg-bright;
+        background-color: $color-secondary;
+        width: 50%;
+      }
+    }
+
+    .alert-danger {
+      border-left: 4px solid #ff2e2e;
+      background: #fff0f0;
+      color: #ff2e2e;
+      padding: 1rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
     }
   }
 }
