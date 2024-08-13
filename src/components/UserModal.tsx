@@ -10,6 +10,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 
 import { useSelector } from "react-redux";
+import { userLogout } from "@/utils/auth";
 
 interface UserModalProps {
   toggleUserModal: Function;
@@ -27,7 +28,7 @@ const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
             <li>Profil</li>
             <li>Chat</li>
             <li>Merkliste</li>
-            <li>Logout</li>
+            <li onClick={() => userLogout()}>Logout</li>
           </ul>
         </>
       ) : (

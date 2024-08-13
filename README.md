@@ -7,5 +7,6 @@ In diesem Projekt werden wir folgende Schritte umsetzen, um das Design der Webse
 3. **Kontakt Formular erstellen NodeMailer**
 4. **Inserat Formular erstellen**
 5. **Chat Funktion**
+6. **User Login und register auslagern**
 
 - Config File und Sprach Datei

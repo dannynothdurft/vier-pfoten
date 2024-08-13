@@ -10,7 +10,7 @@ import React, { FC, ReactNode, useEffect } from "react";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import getUserInfo from "@/utils/getUserInfo";
+import { getUserInfo } from "@/utils/auth";
 
 interface MainLayoutProps {
   children: ReactNode;

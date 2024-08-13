@@ -16,7 +16,7 @@ import Image from "next/image";
 import axios from "axios";
 
 import currentUrl from "@/utils/currentUrl";
-import getUserInfo from "@/utils/getUserInfo";
+import { getUserInfo } from "@/utils/auth";
 
 const Auth = () => {
   const actionParams = useSearchParams();
@@ -49,7 +49,6 @@ const Auth = () => {
 
   const handleLoginSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Login data:", loginData);
 
     setAlert(false);
     try {
