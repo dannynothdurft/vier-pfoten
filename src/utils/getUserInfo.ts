@@ -8,7 +8,7 @@
 import { store } from "@/lib/redux/store";
 import { incrementUser } from "@/lib/redux/reducer/user";
 import axios from "axios";
-import currentUrl from "@/lib/currentUrl";
+import currentUrl from "@/utils/currentUrl";
 
 const getUserInfo = () => {
   const timer = setTimeout(async () => {

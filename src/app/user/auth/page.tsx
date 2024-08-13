@@ -15,7 +15,7 @@ import Image from "next/image";
 
 import axios from "axios";
 
-import currentUrl from "@/lib/currentUrl";
+import currentUrl from "@/utils/currentUrl";
 import getUserInfo from "@/utils/getUserInfo";
 
 const Auth = () => {
