@@ -1,5 +1,5 @@
 /* 
-    File: api/auth/register/route.js
+    File: api/auth/register/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

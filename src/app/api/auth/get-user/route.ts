@@ -1,3 +1,10 @@
+/* 
+    File: api/auth/get-user/route.ts
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 

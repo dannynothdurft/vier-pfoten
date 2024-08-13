@@ -1,5 +1,5 @@
 /* 
-    File: api/auth/logout/route.js
+    File: api/auth/logout/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

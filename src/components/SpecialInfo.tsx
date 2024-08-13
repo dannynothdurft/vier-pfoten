@@ -1,3 +1,10 @@
+/* 
+    File: SpecialInfo.tsx
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
 import React, { FC, useState, useEffect, useRef } from "react";
 import countTotalSI from "@/utils/countTotalSI";
 
