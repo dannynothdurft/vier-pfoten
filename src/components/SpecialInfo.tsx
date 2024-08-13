@@ -39,7 +39,7 @@ const SpecialInfo: FC<SpecialInfoProps> = ({ coll, text }) => {
             if (entries[0].isIntersecting) {
               const start = 0;
               const end = totalCount || 0;
-              const duration = 200;
+              const duration = 2500;
               const stepTime = 50;
               const totalSteps = duration / stepTime;
               const stepValue = (end - start) / totalSteps;
@@ -73,7 +73,7 @@ const SpecialInfo: FC<SpecialInfoProps> = ({ coll, text }) => {
 
   return (
     <p className="info-item" ref={ref}>
-      {totalCount}
+      {animatedCount}
       <span>{text}</span>
     </p>
   );
