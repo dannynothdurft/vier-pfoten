@@ -15,6 +15,7 @@
   - JsonWebToken
   - bcrypt
   - axios
+  - react-hot-toast
 
 ## Spätere Plannung
 

@@ -30,23 +30,21 @@ const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
   return (
     <div className="vp-user-modal-ct">
       {user ? (
-        <>
-          <ul>
-            <Link
-              href={`/user/profil/${user.username}`}
-              onClick={() => toggleUserModal()}
-            >
-              Profil
-            </Link>
-            <Link href={"/user/chat"} onClick={() => toggleUserModal()}>
-              Chat
-            </Link>
-            <Link href={"/user/merkliste"} onClick={() => toggleUserModal()}>
-              Merkliste
-            </Link>
-            <button onClick={logout}>Logout</button>
-          </ul>
-        </>
+        <div className="user-modal-list">
+          <Link
+            href={`/user/profil/${user.username}`}
+            onClick={() => toggleUserModal()}
+          >
+            Profil
+          </Link>
+          <Link href={"/user/chat"} onClick={() => toggleUserModal()}>
+            Chat
+          </Link>
+          <Link href={"/user/merkliste"} onClick={() => toggleUserModal()}>
+            Merkliste
+          </Link>
+          <button onClick={logout}>Logout</button>
+        </div>
       ) : (
         <>
           <p>Du musst dich erst einloggen</p>

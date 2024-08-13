@@ -8,6 +8,8 @@
 "use client";
 import React, { FC, ReactNode, useEffect } from "react";
 
+import { Toaster } from "react-hot-toast";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getUserInfo } from "@/utils/auth";
@@ -23,6 +25,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <body>
+      <Toaster />
       <header>
         <Navigation />
       </header>

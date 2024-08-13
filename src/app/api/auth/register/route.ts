@@ -136,6 +136,8 @@ export async function POST(request: any) {
       hashedPassword: hashedPassword,
       createdAt: new Date(),
       termsAccepted: data.termsAccepted,
+      watchList: [],
+      advertisements: [],
     });
 
     if (user) {
