@@ -12,6 +12,7 @@ import Image from "next/image";
 
 import { FaStar } from "react-icons/fa";
 
+import SpecialInfo from "@/components/SpecialInfo";
 import Tile from "@/components/Tile";
 
 export default function Home() {
@@ -24,18 +25,10 @@ export default function Home() {
       </section>
 
       <section className="vp-special-info">
-        <p className="info-item">
-          0<span>Mitglieder</span>
-        </p>
-        <p className="info-item">
-          0<span>Inserate</span>
-        </p>
-        <p className="info-item">
-          0<span>Vermittlungen</span>
-        </p>
-        <p className="info-item">
-          0<span>WNN</span>
-        </p>
+        <SpecialInfo coll="user" text="Mitglieder" />
+        <SpecialInfo coll="inserts" text="Inserate" />
+        <SpecialInfo coll="vermittlung" text="Vermittlungen" />
+        <SpecialInfo coll="wnn" text="WNN" />
       </section>
 
       <section className="vp-section">
