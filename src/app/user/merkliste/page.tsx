@@ -7,20 +7,9 @@
 
 "use client";
 
-import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useSelector } from "react-redux";
+import React from "react";
 
 const MerklistePage = () => {
-  const router = useRouter();
-  const { user } = useSelector((state: any) => state.user);
-
-  useEffect(() => {
-    if (!user) {
-      router.push("/");
-    }
-  }, [user, router]);
-
   return <div>MerklistePage</div>;
 };
 
