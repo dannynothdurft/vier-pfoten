@@ -43,5 +43,5 @@ function getCookieValue(cookies: string, name: string): string | undefined {
 
 // Konfiguriere die Middleware für alle Pfade unter /user/
 export const config = {
-  matcher: ["/user/:path*"], // Alle Pfade unter /user/ abdecken
+  matcher: ["/user/:path*", "/user/profile/:path*"], // Alle Pfade unter /user/ abdecken
 };

@@ -9,6 +9,7 @@ import "@/styles/userModal.scss";
 import React, { FC } from "react";
 import Link from "next/link";
 
+import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { userLogout } from "@/utils/auth";
 
@@ -17,17 +18,33 @@ interface UserModalProps {
 }
 
 const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
+  const router = useRouter();
   const { user } = useSelector((state: any) => state.user);
+
+  const logout = () => {
+    userLogout();
+    toggleUserModal();
+    router.push("/");
+  };
 
   return (
     <div className="vp-user-modal-ct">
       {user ? (
         <>
           <ul>
-            <Link href={"/user/profil"}>Profil</Link>
-            <Link href={"/user/chat"}>Chat</Link>
-            <Link href={"/user/merkliste"}>Merkliste</Link>
-            <button onClick={() => userLogout()}>Logout</button>
+            <Link
+              href={`/user/profil/${user.username}`}
+              onClick={() => toggleUserModal()}
+            >
+              Profil
+            </Link>
+            <Link href={"/user/chat"} onClick={() => toggleUserModal()}>
+              Chat
+            </Link>
+            <Link href={"/user/merkliste"} onClick={() => toggleUserModal()}>
+              Merkliste
+            </Link>
+            <button onClick={logout}>Logout</button>
           </ul>
         </>
       ) : (
