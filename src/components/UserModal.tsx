@@ -18,17 +18,16 @@ interface UserModalProps {
 
 const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
   const { user } = useSelector((state: any) => state.user);
-  console.log(user);
 
   return (
     <div className="vp-user-modal-ct">
       {user ? (
         <>
           <ul>
-            <li>Profil</li>
-            <li>Chat</li>
-            <li>Merkliste</li>
-            <li onClick={() => userLogout()}>Logout</li>
+            <Link href={"/user/profil"}>Profil</Link>
+            <Link href={"/user/chat"}>Chat</Link>
+            <Link href={"/user/merkliste"}>Merkliste</Link>
+            <button onClick={() => userLogout()}>Logout</button>
           </ul>
         </>
       ) : (
