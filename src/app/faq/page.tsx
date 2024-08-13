@@ -5,14 +5,17 @@
     Description:
 */
 
-"use client";
-import Config from "@/config.json"
-import React from "react";
+import type { Metadata } from "next";
+
+import FAQ from "@/pages/FAQ";
+
+export const metadata: Metadata = {
+  title: "Vier Pfoten - FAQ",
+  description: "Vier Pfoten - FAQ Seite",
+  robots: "index,follow",
+  keywords: ["Vier Pfoten, Danny Nothdurft, Tier Markplatz, FAQ"],
+};
 
 export default function FAQPage() {
-  return (
-    <>
-        <h1>FAQ</h1>
-    </>
-  );
+  return <FAQ />;
 }

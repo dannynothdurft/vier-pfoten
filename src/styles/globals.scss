@@ -286,3 +286,29 @@ footer {
     color: $color-secondary;
   }
 }
+
+// Info Pages
+
+.info-page-ct {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 253px);
+  padding: 30px 20px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    margin: 15px 0 10px;
+  }
+
+  h3 {
+    margin: 15px 0 10px;
+  }
+
+  ul {
+    margin: 15px;
+  }
+}
