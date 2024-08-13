@@ -9,7 +9,7 @@ import { NextResponse } from "next/server";
 
 import bcrypt from "bcrypt";
 
-import { connectDB } from "@/app/lib/db";
+import { connectDB } from "@/lib/db";
 
 export async function POST(request: any) {
   const collection = await connectDB("user");
