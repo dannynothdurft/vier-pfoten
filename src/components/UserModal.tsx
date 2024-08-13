@@ -9,30 +9,47 @@ import "@/styles/userModal.scss";
 import React, { FC } from "react";
 import Link from "next/link";
 
+import { useSelector } from "react-redux";
+
 interface UserModalProps {
   toggleUserModal: Function;
 }
 
 const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
+  const { user } = useSelector((state: any) => state.user);
+
   return (
     <div className="vp-user-modal-ct">
-      <p>Du musst dich erst einloggen</p>
-      <div className="cta-ct">
-        <Link
-          href={{ pathname: "/user/auth", query: { action: "login" } }}
-          className="btn"
-          onClick={() => toggleUserModal()}
-        >
-          Anmelden
-        </Link>
-        <Link
-          href={{ pathname: "/user/auth", query: { action: "register" } }}
-          className="btn secondary"
-          onClick={() => toggleUserModal()}
-        >
-          Registrieren
-        </Link>
-      </div>
+      {user ? (
+        <>
+          <ul>
+            <li>Profil</li>
+            <li>Chat</li>
+            <li>Merkliste</li>
+            <li>Logout</li>
+          </ul>
+        </>
+      ) : (
+        <>
+          <p>Du musst dich erst einloggen</p>
+          <div className="cta-ct">
+            <Link
+              href={{ pathname: "/user/auth", query: { action: "login" } }}
+              className="btn"
+              onClick={() => toggleUserModal()}
+            >
+              Anmelden
+            </Link>
+            <Link
+              href={{ pathname: "/user/auth", query: { action: "register" } }}
+              className="btn secondary"
+              onClick={() => toggleUserModal()}
+            >
+              Registrieren
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };

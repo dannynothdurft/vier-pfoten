@@ -9,7 +9,6 @@
 import React, { FC, ReactNode, useEffect } from "react";
 import axios from "axios";
 
-import Redux from "@/lib/redux";
 import { useDispatch } from "react-redux";
 import { incrementUser } from "@/lib/redux/reducer/user";
 import currentUrl from "@/lib/currentUrl";
@@ -28,7 +27,6 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     const timer = setTimeout(async () => {
       try {
         const token = localStorage.getItem("user");
-        console.log(token);
         const response = await axios.post(`${currentUrl()}/api/auth/get-user`, {
           headers: { Authorization: token },
         });
@@ -45,15 +43,13 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <Redux>
-      <body>
-        <header>
-          <Navigation />
-        </header>
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </Redux>
+    <body>
+      <header>
+        <Navigation />
+      </header>
+      <main>{children}</main>
+      <Footer />
+    </body>
   );
 };
 

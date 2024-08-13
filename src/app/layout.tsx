@@ -8,6 +8,8 @@
 import "@/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 
+import Redux from "@/lib/redux";
+
 import MainLayout from "@/layouts/MainLayout";
 
 export const metadata: Metadata = {
@@ -46,7 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <MainLayout>{children}</MainLayout>
+      <Redux>
+        <MainLayout>{children}</MainLayout>
+      </Redux>
     </html>
   );
 }
