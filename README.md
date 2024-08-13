@@ -2,11 +2,9 @@
 
 In diesem Projekt werden wir folgende Schritte umsetzen, um das Design der Webseite zu vervollständigen:
 
-1. **Footer Unterseiten bearbeiten**
+1. **Kontakt Formular erstellen NodeMailer**
 2. **User Modal für eingeloggte User erstellen**
-3. **Kontakt Formular erstellen NodeMailer**
+3. **Profil Seite erstellen**
 4. **Inserat Formular erstellen**
-5. **Chat Funktion**
-6. **User Login und register auslagern**
-
-- Config File und Sprach Datei
+5. **Merkliste erstellen**
+6. **Chat Erstellen**
