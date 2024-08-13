@@ -10,6 +10,7 @@
 6. **Chat Erstellen**
 7. **MongoDB Online Cluster erstellen**
 8. **Hosting Vercal einrichten**
+9. **Responsive Designen**
 
 ## Nebenaufgaben
 
