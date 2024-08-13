@@ -15,10 +15,9 @@ import Image from "next/image";
 
 import axios from "axios";
 
-const Auth = () => {
-  const currentUrl =
-    typeof window !== "undefined" ? window.location.origin : "";
+import currentUrl from "@/lib/currentUrl";
 
+const Auth = () => {
   const actionParams = useSearchParams();
   const action = actionParams.get("action");
 
@@ -52,7 +51,7 @@ const Auth = () => {
 
     setAlert(false);
     try {
-      const response = await axios.post(`${currentUrl}/api/auth/login`, {
+      const response = await axios.post(`${currentUrl()}/api/auth/login`, {
         email: loginData.email,
         password: loginData.password,
       });
@@ -79,7 +78,7 @@ const Auth = () => {
 
     setAlert(false);
     try {
-      const response = await axios.post(`${currentUrl}/api/auth/register`, {
+      const response = await axios.post(`${currentUrl()}/api/auth/register`, {
         username: registerData.username,
         email: registerData.email,
         password: registerData.password,
@@ -89,7 +88,7 @@ const Auth = () => {
 
       if (response.data.success) {
         try {
-          const response = await axios.post(`${currentUrl}/api/auth/login`, {
+          const response = await axios.post(`${currentUrl()}/api/auth/login`, {
             email: registerData.email,
             password: registerData.password,
           });
