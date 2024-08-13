@@ -7,39 +7,18 @@
 
 "use client";
 import React, { FC, ReactNode, useEffect } from "react";
-import axios from "axios";
-
-import { useDispatch } from "react-redux";
-import { incrementUser } from "@/lib/redux/reducer/user";
-import currentUrl from "@/lib/currentUrl";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import getUserInfo from "@/utils/getUserInfo";
 
 interface MainLayoutProps {
   children: ReactNode;
 }
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    const timer = setTimeout(async () => {
-      try {
-        const token = localStorage.getItem("user");
-        const response = await axios.post(`${currentUrl()}/api/auth/get-user`, {
-          headers: { Authorization: token },
-        });
-        if (response.data.success) {
-          dispatch(incrementUser(response.data.data));
-        } else {
-          localStorage.removeItem("user");
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }, 1);
-    return () => clearTimeout(timer);
+    getUserInfo();
   }, []);
 
   return (

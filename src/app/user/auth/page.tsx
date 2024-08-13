@@ -10,15 +10,17 @@ import "@/styles/userModal.scss";
 import Config from "@/config.json";
 
 import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
 import axios from "axios";
 
 import currentUrl from "@/lib/currentUrl";
+import getUserInfo from "@/utils/getUserInfo";
 
 const Auth = () => {
   const actionParams = useSearchParams();
+  const router = useRouter();
   const action = actionParams.get("action");
 
   const [alerts, setAlert] = useState(false);
@@ -58,6 +60,8 @@ const Auth = () => {
 
       if (response.data.success) {
         localStorage.setItem("user", response.data.data);
+        getUserInfo();
+        router.push("/");
       } else {
         setAlertContent(response.data.message);
         setAlert(true);
@@ -95,6 +99,8 @@ const Auth = () => {
 
           if (response.data.success) {
             localStorage.setItem("user", response.data.data);
+            getUserInfo();
+            router.push("/");
           }
         } catch (error) {}
       } else {

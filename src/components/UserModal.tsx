@@ -17,6 +17,7 @@ interface UserModalProps {
 
 const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
   const { user } = useSelector((state: any) => state.user);
+  console.log(user);
 
   return (
     <div className="vp-user-modal-ct">
