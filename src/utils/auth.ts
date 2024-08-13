@@ -11,35 +11,52 @@ import currentUrl from "@/utils/currentUrl";
 
 export const userRegister = async (data: any) => {
   try {
-    const response = await axios.post(`${process.env.URL}/auth/register`, {
-      data,
+    const response = await axios.post(`${currentUrl()}/api/auth/register`, {
+      username: data.username,
+      email: data.email,
+      password: data.password,
+      passwordRepeat: data.confirmPassword,
+      termsAccepted: data.termsAccepted,
     });
-    if (response.status === 200) {
-      return response.data.message;
+
+    if (response.data.success) {
+      const response = await userLogin({
+        email: data.email,
+        password: data.password,
+      });
+
+      if (response?.data.success) {
+        return response;
+      }
+    } else {
+      return response;
     }
   } catch (error: any) {
-    console.error(error.response.data.message);
+    return error.response;
   }
 };
 
 export const userLogin = async (data: any) => {
   try {
-    const response = await axios.post(`${process.env.URL}/auth/login`, {
-      data: { email: data.email, password: data.password },
+    const response = await axios.post(`${currentUrl()}/api/auth/login`, {
+      email: data.email,
+      password: data.password,
     });
-    if (response.status === 200) {
-      localStorage.setItem("user", response.data.token);
-      return response.data.data;
+
+    if (response.data.success) {
+      localStorage.setItem("user", response.data.data);
+      getUserInfo();
+      return response;
     }
+    return response;
   } catch (error: any) {
-    console.error(error.response.data.message);
+    return error.response;
   }
 };
 
 export const userLogout = async () => {
   try {
     const response = await axios.post(`${currentUrl()}/api/auth/logout`);
-
     if (response.data.success) {
       localStorage.removeItem("user");
       store.dispatch(incrementUser(undefined));

@@ -13,10 +13,7 @@ import React, { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
-import axios from "axios";
-
-import currentUrl from "@/utils/currentUrl";
-import { getUserInfo } from "@/utils/auth";
+import { userLogin, userRegister } from "@/utils/auth";
 
 const Auth = () => {
   const actionParams = useSearchParams();
@@ -49,71 +46,28 @@ const Auth = () => {
 
   const handleLoginSubmit = async (e: any) => {
     e.preventDefault();
-
     setAlert(false);
-    try {
-      const response = await axios.post(`${currentUrl()}/api/auth/login`, {
-        email: loginData.email,
-        password: loginData.password,
-      });
 
-      if (response.data.success) {
-        localStorage.setItem("user", response.data.data);
-        getUserInfo();
-        router.push("/");
-      } else {
-        setAlertContent(response.data.message);
-        setAlert(true);
-      }
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        const errorMessage = error.response?.data?.message;
-        setAlertContent(errorMessage);
-        setAlert(true);
-      } else {
-        console.error("Ein unerwarteter Fehler ist aufgetreten", error);
-      }
+    const response = await userLogin(loginData);
+    if (response?.data.success) {
+      router.push("/");
+    } else {
+      setAlertContent(response?.data?.message);
+      setAlert(true);
     }
   };
 
   const handleRegisterSubmit = async (e: any) => {
     e.preventDefault();
-
     setAlert(false);
-    try {
-      const response = await axios.post(`${currentUrl()}/api/auth/register`, {
-        username: registerData.username,
-        email: registerData.email,
-        password: registerData.password,
-        passwordRepeat: registerData.confirmPassword,
-        termsAccepted: registerData.termsAccepted,
-      });
 
-      if (response.data.success) {
-        try {
-          const response = await axios.post(`${currentUrl()}/api/auth/login`, {
-            email: registerData.email,
-            password: registerData.password,
-          });
+    const response = await userRegister(registerData);
 
-          if (response.data.success) {
-            localStorage.setItem("user", response.data.data);
-            getUserInfo();
-            router.push("/");
-          }
-        } catch (error) {}
-      } else {
-        setAlertContent(response.data.message);
-        setAlert(true);
-      }
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        const errorMessage = error.response?.data?.message;
-        setAlertContent(errorMessage);
-        setAlert(true);
-      } else {
-        console.error("Ein unerwarteter Fehler ist aufgetreten", error);
-      }
+    if (response?.data.success) {
+      router.push("/");
+    } else {
+      setAlertContent(response?.data.message);
+      setAlert(true);
     }
   };
 

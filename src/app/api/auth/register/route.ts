@@ -16,6 +16,20 @@ export async function POST(request: any) {
 
   try {
     const data = await request.json();
+    const existingUserName = await collection.findOne({
+      username: data.username,
+    });
+
+    if (existingUserName) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Es ist bereits dieser Benutername vergeben",
+        },
+        { status: 422 }
+      );
+    }
+
     const existingUser = await collection.findOne({ email: data.email });
 
     if (existingUser) {
