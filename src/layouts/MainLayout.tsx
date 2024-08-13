@@ -9,6 +9,9 @@
 import React, { FC, ReactNode, useEffect } from "react";
 import axios from "axios";
 
+import Redux from "@/lib/redux";
+import { useDispatch } from "react-redux";
+import { incrementUser } from "@/lib/redux/reducer/user";
 import currentUrl from "@/lib/currentUrl";
 
 import Navigation from "@/components/Navigation";
@@ -19,6 +22,8 @@ interface MainLayoutProps {
 }
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const timer = setTimeout(async () => {
       try {
@@ -28,8 +33,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
           headers: { Authorization: token },
         });
         if (response.data.success) {
-          console.log(response.data.data);
-          return response.data.data;
+          dispatch(incrementUser(response.data.data));
         } else {
           localStorage.removeItem("user");
         }
@@ -41,13 +45,15 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <body>
-      <header>
-        <Navigation />
-      </header>
-      <main>{children}</main>
-      <Footer />
-    </body>
+    <Redux>
+      <body>
+        <header>
+          <Navigation />
+        </header>
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </Redux>
   );
 };
 
