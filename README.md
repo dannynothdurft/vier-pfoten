@@ -2,45 +2,40 @@
 
 ## Hauptaufgaben
 
-1. **Mail Vorlage erstellen mit einer Software oder so**
-
-   - Es Gibt viele anbieter um Vorlagen zu erstellen
-   - Eventuell auch rausfinden ob es mit einem anderen Template umzusetzten ist z.B. als normales HTML
-
-2. **Profil Seite erstellen**
+1. **Profil Seite erstellen**
 
    - Eine Funktion um den User über die API zu erhalten ist angelegt.
    - Es muss jetzt ein UserProfil Style erstellt werden um die UserPage aufzubauen
 
-3. **Inserat Formular erstellen**
+2. **Inserat Formular erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 
-4. **Merkliste erstellen**
+3. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 
-5. **Chat Erstellen**
+4. **Chat Erstellen**
 
    - Eventuell ein Tutorial hierzu ansehen
    - Es soll ein real Time chat werden
    - Wenn der User ausgeloggt ist soll der User eine Mail bekommen
 
-6. **MongoDB Online Cluster erstellen**
+5. **MongoDB Online Cluster erstellen**
 
    - Hier ein Account erstellen und Daten in die .env abscpeichern
 
-7. **Hosting Vercal einrichten**
+6. **Hosting Vercal einrichten**
 
    - Project mit Vercal verbinden
    - .env Variablen hinterlegen
    - URL auf Instagramm kommunizieren
 
-8. **Responsive Designen**
+7. **Responsive Designen**
 
    - Alle Seiten Responsive schreiben
 
@@ -48,7 +43,8 @@
 
 1. **Config Datei erweitern**
 2. **Sprachdatei ausbauen und überall einfügen**
+3. **Mailhog einrichten**
 
 ## Marketing Aufgaben
 
-1. **Auf Instagramm jeden Tag ein Post**
+1. **Auf Instagramm jeden Tag ein Post am da wo die Seite online ist**
