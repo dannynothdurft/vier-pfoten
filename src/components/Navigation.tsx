@@ -26,6 +26,7 @@ const Navigation: FC<NavigationProps> = () => {
   const toggleUserModal = () => {
     setUserModal(!userModal);
   };
+
   return (
     <div className="vp-navigation">
       <Link href={"/"} title="Zur Startseite" className="logo-link">
@@ -41,8 +42,19 @@ const Navigation: FC<NavigationProps> = () => {
         ></input>
       </div>
       <div className="vp-nav-cta">
-        <button className="vp-user-button" onClick={toggleUserModal}>
-          <LuDog size={30} />
+        <button
+          className="vp-user-button"
+          onClick={toggleUserModal}
+          data-ref="modalRef"
+        >
+          <Image
+            src={"/logos/icon.svg"}
+            alt="Hunde Icon"
+            title="Hunde Icon"
+            width={35}
+            height={35}
+            data-ref="modalRef"
+          />
         </button>
         <button
           className="btn"

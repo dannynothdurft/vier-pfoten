@@ -14,13 +14,13 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Liste der Pfade, die von der Middleware-Ausführung ausgenommen sind
-  const excludedPaths = ["/user/auth"];
+  const excludedPaths = ["/user/auth", "/user/profil"];
 
   // Wenn der Benutzer nicht eingeloggt ist und auf einen Pfad unter /user/ zugreifen möchte, der nicht ausgeschlossen ist
   if (
     !user &&
     pathname.startsWith("/user/") &&
-    !excludedPaths.includes(pathname)
+    !isPathExcluded(pathname, excludedPaths)
   ) {
     return NextResponse.redirect(new URL("/", request.url));
   }
@@ -41,7 +41,14 @@ function getCookieValue(cookies: string, name: string): string | undefined {
   return undefined;
 }
 
+// Hilfsfunktion zum Überprüfen, ob ein Pfad in der Ausnahmeliste enthalten ist
+function isPathExcluded(pathname: string, excludedPaths: string[]): boolean {
+  return excludedPaths.some((excludedPath) =>
+    pathname.startsWith(excludedPath)
+  );
+}
+
 // Konfiguriere die Middleware für alle Pfade unter /user/
 export const config = {
-  matcher: ["/user/:path*", "/user/profile/:path*"], // Alle Pfade unter /user/ abdecken
+  matcher: ["/user/:path*"], // Alle Pfade unter /user/ abdecken
 };
