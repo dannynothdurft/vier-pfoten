@@ -2,42 +2,42 @@
 
 ## Hauptaufgaben
 
-1. **Profil Seite erstellen**
-
-   - Eine Funktion um den User über die API zu erhalten ist angelegt.
-   - Es muss jetzt ein UserProfil Style erstellt werden um die UserPage aufzubauen
-
-2. **Inserat Formular erstellen**
+1. **Inserat Formular erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 
-3. **Merkliste erstellen**
+2. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 
-4. **Chat Erstellen**
+3. **Chat Erstellen**
 
    - Eventuell ein Tutorial hierzu ansehen
    - Es soll ein real Time chat werden
    - Wenn der User ausgeloggt ist soll der User eine Mail bekommen
 
-5. **MongoDB Online Cluster erstellen**
+4. **MongoDB Online Cluster erstellen**
 
    - Hier ein Account erstellen und Daten in die .env abscpeichern
 
-6. **Hosting Vercal einrichten**
+5. **Hosting Vercal einrichten**
 
    - Project mit Vercal verbinden
    - .env Variablen hinterlegen
    - URL auf Instagramm kommunizieren
 
-7. **Responsive Designen**
+6. **Responsive Designen**
 
    - Alle Seiten Responsive schreiben
+
+7. **Profil Seite**
+
+   - Funktion um Profilbild und Headerbild zu ändern
+   - Funktion um seine Informationen zu ändern
 
 ## Nebenaufgaben
 

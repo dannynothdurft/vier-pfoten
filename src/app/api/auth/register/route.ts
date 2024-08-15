@@ -138,6 +138,10 @@ export async function POST(request: any) {
       termsAccepted: data.termsAccepted,
       watchList: [],
       advertisements: [],
+      headerImage: "",
+      profileImage: "",
+      city: "",
+      website: "",
     });
 
     if (user) {
