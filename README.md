@@ -4,6 +4,7 @@
 
 1. **Inserate Ausgabe auf allen Seiten**
 
+   - API um alle Anzeigen zu erhalten (muss eine Post methode sein weil Vercal mit GET nicht klar kommt. Da scheint er dann etwas im Cache zu speichern)
    - Inserate Anzeigen Homepage
    - Inserate Anzeigen Alle Anzeigen
    - Inserate Anzeigen beim UserProfile
