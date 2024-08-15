@@ -2,6 +2,12 @@
 
 ## Hauptaufgaben
 
+1. **Inserate Ausgabe auf allen Seiten**
+
+   - Inserate Anzeigen Homepage
+   - Inserate Anzeigen Alle Anzeigen
+   - Inserate Anzeigen beim UserProfile
+
 2. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
