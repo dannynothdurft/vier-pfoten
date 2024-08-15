@@ -8,6 +8,8 @@
    - Inserate Anzeigen beim UserProfile
    - Inserate Tile Überarbeiten
    - Inserate Einzel Page
+   - Modal muss geschlossen werden
+   - Nur erlaubt wenn user ist eingelogt
 
 2. **Merkliste erstellen**
 
