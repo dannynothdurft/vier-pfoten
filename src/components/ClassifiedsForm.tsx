@@ -36,8 +36,8 @@ const ClassfieldsForm: FC = () => {
 
       // Zugriff auf das data-ref Attribut des angeklickten Elements
       const dataRefValue = clickedNode.getAttribute("data-ref");
-      console.log(dataRefValue);
-      if (dataRefValue) {
+
+      if (dataRefValue === "cfRef") {
         return;
       }
 

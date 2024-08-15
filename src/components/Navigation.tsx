@@ -63,8 +63,8 @@ const Navigation: FC<NavigationProps> = () => {
             data-ref="modalRef"
           />
         </button>
-        <button className="btn" onClick={switchClassfield} data-ref="cflRef">
-          <FaPlus data-ref="cflRef" /> {Lang.navigation.btnPlus}
+        <button className="btn" onClick={switchClassfield} data-ref="cfRef">
+          <FaPlus data-ref="cfRef" /> {Lang.navigation.btnPlus}
         </button>
         <Link href={"/inserate"} className="btn secondary">
           {Lang.navigation.btnAll}

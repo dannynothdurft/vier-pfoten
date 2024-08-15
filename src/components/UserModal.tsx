@@ -31,7 +31,7 @@ const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
 
       // Zugriff auf das data-ref Attribut des angeklickten Elements
       const dataRefValue = clickedNode.getAttribute("data-ref");
-      if (dataRefValue) {
+      if (dataRefValue === "modalRef") {
         return;
       }
 
