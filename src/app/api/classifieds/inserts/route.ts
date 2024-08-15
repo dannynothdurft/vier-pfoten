@@ -15,8 +15,6 @@ export async function POST(request: any) {
   try {
     const data = await request.json();
 
-    console.log(data.breed);
-
     const classifieds = await collection.insertOne(data);
 
     if (classifieds) {

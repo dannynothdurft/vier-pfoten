@@ -15,7 +15,6 @@ export const classfield = createSlice({
   },
   reducers: {
     toogleClassfield(state) {
-      console.log(state);
       state.classfield = !state.classfield;
     },
   },

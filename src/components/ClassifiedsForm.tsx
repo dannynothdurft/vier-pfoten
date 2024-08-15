@@ -21,11 +21,16 @@ interface FormState {
   breed: string;
   price: string;
   description: string;
+  titel: string;
+  location: string;
+  user: string;
+  date: string;
 }
 
 const ClassfieldsForm: FC = () => {
   const dispatch = useDispatch();
   const { classfield } = useSelector((state: any) => state.classfield);
+  const { user } = useSelector((state: any) => state.user);
   const cfRef = useRef<HTMLFormElement>(null);
 
   // useEffect zum Hinzufügen eines Event-Listeners bei jedem Rendern des Modals
@@ -60,6 +65,10 @@ const ClassfieldsForm: FC = () => {
     breed: "", // Rasse
     price: "", // Preis
     description: "", // Beschreibung
+    titel: "",
+    location: "",
+    user: user.username,
+    date: new Date().toISOString(),
   });
 
   // Allgemeiner Handler für das Formular
@@ -137,6 +146,28 @@ const ClassfieldsForm: FC = () => {
           </select>
         </div>
       )}
+
+      <div>
+        <label>Titel:</label>
+        <input
+          type="text"
+          value={formState.titel}
+          name="titel"
+          onChange={handleChange}
+          placeholder="Preis eingeben"
+        />
+      </div>
+
+      <div>
+        <label>Standort:</label>
+        <input
+          type="text"
+          value={formState.location}
+          name="location"
+          onChange={handleChange}
+          placeholder="Preis eingeben"
+        />
+      </div>
 
       <div>
         <label>Preis:</label>

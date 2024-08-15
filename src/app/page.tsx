@@ -7,7 +7,7 @@
 
 "use client";
 import Lang from "@/lang/de.json";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { FaStar } from "react-icons/fa";
@@ -17,13 +17,25 @@ import { toogleClassfield } from "@/lib/redux/reducer/classfield";
 import SpecialInfo from "@/components/SpecialInfo";
 import Tile from "@/components/Tile";
 
+import { getClassifieds } from "@/utils/classifieds";
+
 export default function Home() {
   const dispatch = useDispatch();
   const { classfield } = useSelector((state: any) => state.classfield);
+  const [lastClassifieds, setLastClassifieds] = useState([]);
 
   const switchClassfield = () => {
     dispatch(toogleClassfield(classfield));
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const inserts = await getClassifieds(8);
+      setLastClassifieds(inserts);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -37,7 +49,7 @@ export default function Home() {
 
       <section className="vp-special-info">
         <SpecialInfo coll="user" text="Mitglieder" />
-        <SpecialInfo coll="inserts" text="Inserate" />
+        <SpecialInfo coll="classifields" text="Anzeigen Online" />
         <SpecialInfo coll="vermittlung" text="Vermittlungen" />
         <SpecialInfo coll="wnn" text="WNN" />
       </section>
@@ -110,14 +122,9 @@ export default function Home() {
       </section>
 
       <section className="vp-advertisement-tiles">
-        <Tile title="Überschrift" />
-        <Tile title="Überschrift Überschrift" />
-        <Tile title="Überschrift Überschrift" />
-        <Tile title="Überschrift Überschrift Überschrift" />
-        <Tile title="Überschrift Überschrift Überschrift Überschrift" />
-        <Tile title="Überschrift Überschrift Überschrift Überschrift Überschrift" />
-        <Tile title="Überschrift Überschrift Überschrift Überschrift Überschrift" />
-        <Tile title="Überschrift" />
+        {lastClassifieds.map((item, index) => {
+          return <Tile key={index} classifieds={item} />;
+        })}
       </section>
 
       <section className="vp-section">
