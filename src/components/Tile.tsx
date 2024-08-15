@@ -51,8 +51,8 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
   // Erhalte die Differenz in Minuten
   const minutesAgo = calculateDateDifferences(classifieds.date);
 
-  console.log(daysAgo);
-  console.log(minutesAgo);
+  // console.log(daysAgo);
+  // console.log(minutesAgo);
   return (
     <Link href={"/inserate/jfalejfoiae"} className="vp-tile">
       <div className="vp-tile-image-wrapper">
@@ -64,7 +64,7 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
           title="Anzeige Bild"
         />
       </div>
-      <h3>{classifieds?.animalType}</h3>
+      <h3>{classifieds?.titel}</h3>
       <div className="tile-info">
         <span>{classifieds?.price} €</span>
         <span>22111 Hamburg</span>

@@ -9,6 +9,7 @@
 import "@/styles/classfieldsform.scss";
 import CFconfig from "@/config/classfield.json";
 import React, { FC, useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
@@ -23,15 +24,28 @@ interface FormState {
   description: string;
   titel: string;
   location: string;
-  user: string;
+  user?: string;
   date: string;
 }
 
 const ClassfieldsForm: FC = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { classfield } = useSelector((state: any) => state.classfield);
   const { user } = useSelector((state: any) => state.user);
   const cfRef = useRef<HTMLFormElement>(null);
+
+  // Wenn kein User eingelogt ist wird man zur login seite weitergeleitet
+  useEffect(() => {
+    if (!user) {
+      router.push("/user/auth?action=login");
+      const timer = setTimeout(() => {
+        dispatch(toogleClassfield(classfield));
+      }, 1);
+
+      return () => clearTimeout(timer);
+    }
+  }, [user, router]);
 
   // useEffect zum Hinzufügen eines Event-Listeners bei jedem Rendern des Modals
   useEffect(() => {
@@ -67,7 +81,7 @@ const ClassfieldsForm: FC = () => {
     description: "", // Beschreibung
     titel: "",
     location: "",
-    user: user.username,
+    user: user?.username,
     date: new Date().toISOString(),
   });
 
@@ -98,7 +112,7 @@ const ClassfieldsForm: FC = () => {
       );
 
       if (response.data.success) {
-        console.log("yo");
+        dispatch(toogleClassfield(classfield));
       } else {
         return response;
       }

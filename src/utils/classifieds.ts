@@ -16,11 +16,30 @@ export const getClassifieds = async (data: any) => {
     );
 
     if (response.data.success) {
-      return response.data.data;
+      return response.data;
     } else {
-      return response;
+      return response.data.data;
     }
   } catch (error: any) {
-    return error.response;
+    console.log(error.response);
+    return error.response.data.message;
+  }
+};
+
+export const paginationClassifieds = async (data: any) => {
+  try {
+    const response = await axios.post(
+      `${currentUrl()}/api/classifieds/get-from-pagination`,
+      data
+    );
+
+    if (response.data.success) {
+      return response.data;
+    } else {
+      return response.data.data;
+    }
+  } catch (error: any) {
+    console.log(error.response);
+    return error.response.data.message;
   }
 };

@@ -8,11 +8,45 @@
 "use client";
 import "@/styles/inserate.scss";
 import Lang from "@/lang/de.json";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Tile from "@/components/Tile";
+import Pagination from "@/components/Pagination";
+import { getClassifieds, paginationClassifieds } from "@/utils/classifieds";
 
 export default function Inserate() {
+  const [classifieds, setClassifieds] = useState<any>(undefined);
+  const [pages, setPages] = useState(0);
+  const [activePage, setActivePage] = useState(1);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const inserts = await getClassifieds({
+        count: "all",
+      });
+      setClassifieds(inserts);
+      setPages(Math.ceil(inserts.length / 20));
+    };
+
+    fetchData();
+  }, []);
+
+  const handleClick = (page: any) => {
+    const fetchData = async () => {
+      let to = page * 20;
+      let from = to - 19;
+      console.log(from);
+      const inserts = await paginationClassifieds({
+        from: from,
+        to: to,
+      });
+      setActivePage(page);
+      setClassifieds(inserts);
+    };
+
+    fetchData();
+  };
+
   return (
     <>
       <section className="vp-inserate-header">
@@ -23,30 +57,26 @@ export default function Inserate() {
           Filterung muss hier eingebaut werden
         </div>
         <div className="vp-search">
-          <p>1 ... 20</p>
+          <Pagination
+            pages={pages}
+            activePage={activePage}
+            onPageChange={handleClick}
+          />
           <div className="vp-search-results">
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
-            <Tile title="Überschrift" />
+            {classifieds?.data?.length >= 1 &&
+            classifieds.data !== "Leider ist ein Fehler aufgetretten" ? (
+              classifieds.data.map((item: any, index: any) => {
+                return <Tile key={index} classifieds={item} />;
+              })
+            ) : (
+              <p>Leider sind derzeit keine Anzeigen Online</p>
+            )}
           </div>
-          <p>1 ... 20</p>
+          <Pagination
+            pages={pages}
+            activePage={activePage}
+            onPageChange={handleClick}
+          />
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 /* 
-    File: classifields/get/route.ts
+    File: classifields/get-from-paginete/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:
@@ -15,39 +15,20 @@ export async function POST(request: any) {
   try {
     const data = await request.json();
 
-    if (data.count === "all") {
-      const classifieds = await collection.find().toArray();
+    console.log(data);
+
+    if (data.from && data.to) {
       const classfieldsPagination = await collection
         .find()
         .sort({ _id: -1 })
-        .limit(20)
+        .skip(data.from - 1)
+        .limit(data.to)
         .toArray();
 
-      if (classifieds && classifieds.length > 0) {
+      if (classfieldsPagination && classfieldsPagination.length > 0) {
         return NextResponse.json({
           success: true,
-          length: classifieds.length,
           data: classfieldsPagination,
-        });
-      } else {
-        return NextResponse.json({
-          success: false,
-          message: "Keine Inserate gefunden",
-          data: [],
-        });
-      }
-    } else if (typeof data === "number" && data > 0) {
-      // Die neuesten n Inserate zurückgeben
-      const classifieds = await collection
-        .find()
-        .sort({ _id: -1 }) // Sortieren nach _id in absteigender Reihenfolge (neueste zuerst)
-        .limit(data) // Anzahl der zurückgegebenen Dokumente begrenzen
-        .toArray();
-
-      if (classifieds && classifieds.length > 0) {
-        return NextResponse.json({
-          success: true,
-          data: classifieds,
         });
       } else {
         return NextResponse.json({

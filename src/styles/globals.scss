@@ -285,6 +285,11 @@ footer {
     left: 50%;
     top: -50px;
     transform: translate(-50%);
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   .tile-info {

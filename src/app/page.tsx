@@ -22,7 +22,7 @@ import { getClassifieds } from "@/utils/classifieds";
 export default function Home() {
   const dispatch = useDispatch();
   const { classfield } = useSelector((state: any) => state.classfield);
-  const [lastClassifieds, setLastClassifieds] = useState([]);
+  const [lastClassifieds, setLastClassifieds] = useState<any>(undefined);
 
   const switchClassfield = () => {
     dispatch(toogleClassfield(classfield));
@@ -31,7 +31,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const inserts = await getClassifieds(8);
-      setLastClassifieds(inserts);
+      setLastClassifieds(inserts.data);
     };
 
     fetchData();
@@ -122,9 +122,14 @@ export default function Home() {
       </section>
 
       <section className="vp-advertisement-tiles">
-        {lastClassifieds.map((item, index) => {
-          return <Tile key={index} classifieds={item} />;
-        })}
+        {lastClassifieds?.length >= 1 &&
+        lastClassifieds !== "Leider ist ein Fehler aufgetretten" ? (
+          lastClassifieds.map((item: any, index: any) => {
+            return <Tile key={index} classifieds={item} />;
+          })
+        ) : (
+          <p>Leider sind derzeit keine Anzeigen Online</p>
+        )}
       </section>
 
       <section className="vp-section">

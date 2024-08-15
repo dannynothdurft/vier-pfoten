@@ -4,12 +4,10 @@
 
 1. **Inserate Ausgabe auf allen Seiten**
 
-   - Inserate Anzeigen Alle Anzeigen
+   - Inserate Tile Überarbeiten / Hier muss noch das Datum des Inserate rein
    - Inserate Anzeigen beim UserProfile
-   - Inserate Tile Überarbeiten
    - Inserate Einzel Page
-   - Modal muss geschlossen werden
-   - Nur erlaubt wenn user ist eingelogt
+   - Wenn Inserate geladen werden, dann muss ein Loader rein oder es müssen graue Kästen rein
 
 2. **Merkliste erstellen**
 
