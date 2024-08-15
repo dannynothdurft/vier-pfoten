@@ -1,3 +1,10 @@
+/* 
+    File: api/mails/send-contact-form/route.ts
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
 import { NextResponse } from "next/server";
 import contactForm from "@/mails/contactForm";
 

@@ -1,3 +1,10 @@
+/* 
+    File: mails/contactForm.ts
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
 import nodemailer from "nodemailer";
 
 const contactForm = async (mailObj: any, emailSubject: string) => {
