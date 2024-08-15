@@ -14,22 +14,24 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { FaPlus, FaSearch } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { toogleClassfield } from "@/lib/redux/reducer/classfield";
 
 import UserModal from "./UserModal";
-import ClassfieldsForm from "./ClassifiedsForm";
 
 interface NavigationProps {}
 
 const Navigation: FC<NavigationProps> = () => {
+  const dispatch = useDispatch();
+  const { classfield } = useSelector((state: any) => state.classfield);
   const [userModal, setUserModal] = useState(false);
-  const [classfield, setClassfield] = useState(false);
 
   const toggleUserModal = () => {
     setUserModal(!userModal);
   };
 
-  const toggleClassfield = () => {
-    setClassfield(!classfield);
+  const switchClassfield = () => {
+    dispatch(toogleClassfield(classfield));
   };
 
   return (
@@ -61,15 +63,14 @@ const Navigation: FC<NavigationProps> = () => {
             data-ref="modalRef"
           />
         </button>
-        <button className="btn" onClick={toggleClassfield}>
-          <FaPlus /> {Lang.navigation.btnPlus}
+        <button className="btn" onClick={switchClassfield} data-ref="cflRef">
+          <FaPlus data-ref="cflRef" /> {Lang.navigation.btnPlus}
         </button>
         <Link href={"/inserate"} className="btn secondary">
           {Lang.navigation.btnAll}
         </Link>
       </div>
       {userModal ? <UserModal toggleUserModal={toggleUserModal} /> : null}
-      {classfield ? <ClassfieldsForm /> : null}
     </div>
   );
 };

@@ -11,16 +11,18 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import { FaStar } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { toogleClassfield } from "@/lib/redux/reducer/classfield";
 
 import SpecialInfo from "@/components/SpecialInfo";
 import Tile from "@/components/Tile";
-import ClassfieldsForm from "@/components/ClassifiedsForm";
 
 export default function Home() {
-  const [classfield, setClassfield] = useState(false);
+  const dispatch = useDispatch();
+  const { classfield } = useSelector((state: any) => state.classfield);
 
-  const toggleClassfield = () => {
-    setClassfield(!classfield);
+  const switchClassfield = () => {
+    dispatch(toogleClassfield(classfield));
   };
 
   return (
@@ -28,10 +30,9 @@ export default function Home() {
       <section className="vp-home-header">
         <h1>{Lang.homepage.titel}</h1>
         <p>{Lang.homepage.content}</p>
-        <button className="btn header" onClick={toggleClassfield}>
+        <button className="btn header" onClick={switchClassfield}>
           Anzeige Schalten
         </button>
-        {classfield ? <ClassfieldsForm /> : null}
       </section>
 
       <section className="vp-special-info">

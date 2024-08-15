@@ -8,7 +8,10 @@
 "use client";
 import "@/styles/classfieldsform.scss";
 import CFconfig from "@/config/classfield.json";
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { toogleClassfield } from "@/lib/redux/reducer/classfield";
 
 interface FormState {
   animalType: string;
@@ -18,6 +21,37 @@ interface FormState {
 }
 
 const ClassfieldsForm: FC = () => {
+  const dispatch = useDispatch();
+  const { classfield } = useSelector((state: any) => state.classfield);
+  const cfRef = useRef<HTMLFormElement>(null);
+
+  // useEffect zum Hinzufügen eines Event-Listeners bei jedem Rendern des Modals
+  useEffect(() => {
+    // Funktion zum Überprüfen, ob ein Klick außerhalb des Modals passiert
+    const handleClickOutside = (event: MouseEvent) => {
+      const clickedNode = event.target as HTMLElement;
+
+      // Zugriff auf das data-ref Attribut des angeklickten Elements
+      const dataRefValue = clickedNode.getAttribute("data-ref");
+      console.log(dataRefValue);
+      if (dataRefValue) {
+        return;
+      }
+
+      if (cfRef.current && !cfRef.current.contains(event.target as Node)) {
+        dispatch(toogleClassfield(classfield));
+      }
+    };
+
+    // Event-Listener hinzufügen
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup des Event-Listeners bei Unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [classfield, dispatch]);
+
   const [formState, setFormState] = useState<FormState>({
     animalType: "", // Hund oder Katze
     breed: "", // Rasse
@@ -50,7 +84,7 @@ const ClassfieldsForm: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="animal-form">
+    <form onSubmit={handleSubmit} className="animal-form" ref={cfRef}>
       <h2>Anzeige Schalten</h2>
       <div className="animaltype-ct">
         {CFconfig.animalType.map((type) => {
