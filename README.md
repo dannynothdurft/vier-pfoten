@@ -2,11 +2,6 @@
 
 ## Hauptaufgaben
 
-1. **Inserat Formular erstellen**
-
-   - Funktion muss geschrieben werden / Global
-   - API muss eingerichtet werden
-
 2. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
@@ -37,6 +32,11 @@
 
    - Funktion um Profilbild und Headerbild zu ändern
    - Funktion um seine Informationen zu ändern
+
+8. **Inserat Formular**
+
+   - Funktion Bilder Hochladen
+   - User mit übergeben
 
 ## Nebenaufgaben
 

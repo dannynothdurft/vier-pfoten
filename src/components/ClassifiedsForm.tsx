@@ -10,8 +10,11 @@ import "@/styles/classfieldsform.scss";
 import CFconfig from "@/config/classfield.json";
 import React, { FC, useState, useEffect, useRef } from "react";
 
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { toogleClassfield } from "@/lib/redux/reducer/classfield";
+
+import currentUrl from "@/utils/currentUrl";
 
 interface FormState {
   animalType: string;
@@ -66,7 +69,6 @@ const ClassfieldsForm: FC = () => {
     >
   ) => {
     const { name, value } = e.target;
-    console.log(name, value);
 
     setFormState((prevState: any) => ({
       ...prevState,
@@ -77,10 +79,23 @@ const ClassfieldsForm: FC = () => {
   };
 
   // Formulardaten-Handler (zum Beispiel für das Absenden des Formulars)
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Hier könntest du die Daten verarbeiten oder an einen Server senden
-    console.log(formState);
+
+    try {
+      const response = await axios.post(
+        `${currentUrl()}/api/classifieds/inserts`,
+        formState
+      );
+
+      if (response.data.success) {
+        console.log("yo");
+      } else {
+        return response;
+      }
+    } catch (error: any) {
+      return error.response;
+    }
   };
 
   return (
