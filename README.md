@@ -4,7 +4,6 @@
 
 1. **Inserat Formular erstellen**
 
-   - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 

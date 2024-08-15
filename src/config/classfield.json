@@ -1,0 +1,5 @@
+{
+    "animalType": ["Hund", "Katze"],
+    "dogBreeds": ["Labrador", "Golden Retriever", "Bulldog"],
+    "catBreeds": ["Siamese", "Persian", "Maine Coon"]
+}

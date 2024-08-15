@@ -18,6 +18,10 @@
   color: $color-dark;
 }
 
+body {
+  position: relative;
+}
+
 h1 {
   font-size: 3em;
   font-family: "Poppins";
@@ -111,7 +115,6 @@ ul {
   justify-content: space-between;
   gap: 25px;
   padding: 10px 20px;
-  position: relative;
   @include box-shadow;
 
   .vp-nav-cta {

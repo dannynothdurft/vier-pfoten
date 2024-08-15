@@ -22,9 +22,15 @@ $color-border-secondary: rgba(50, 105, 22, 0.1);
 
 // Mixin
 @mixin box-shadow {
-  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+@mixin box-shadow-inset {
+  -webkit-box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
 // Viewports

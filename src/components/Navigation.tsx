@@ -13,18 +13,23 @@ import React, { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { LuDog } from "react-icons/lu";
 import { FaPlus, FaSearch } from "react-icons/fa";
 
 import UserModal from "./UserModal";
+import ClassfieldsForm from "./ClassifiedsForm";
 
 interface NavigationProps {}
 
 const Navigation: FC<NavigationProps> = () => {
   const [userModal, setUserModal] = useState(false);
+  const [classfield, setClassfield] = useState(false);
 
   const toggleUserModal = () => {
     setUserModal(!userModal);
+  };
+
+  const toggleClassfield = () => {
+    setClassfield(!classfield);
   };
 
   return (
@@ -56,14 +61,7 @@ const Navigation: FC<NavigationProps> = () => {
             data-ref="modalRef"
           />
         </button>
-        <button
-          className="btn"
-          onClick={() =>
-            alert(
-              "Hier kommt ein Modal oder eine Seite um eine Anzeige zu inserieren"
-            )
-          }
-        >
+        <button className="btn" onClick={toggleClassfield}>
           <FaPlus /> {Lang.navigation.btnPlus}
         </button>
         <Link href={"/inserate"} className="btn secondary">
@@ -71,6 +69,7 @@ const Navigation: FC<NavigationProps> = () => {
         </Link>
       </div>
       {userModal ? <UserModal toggleUserModal={toggleUserModal} /> : null}
+      {classfield ? <ClassfieldsForm /> : null}
     </div>
   );
 };

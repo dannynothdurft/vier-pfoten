@@ -7,21 +7,31 @@
 
 "use client";
 import Lang from "@/lang/de.json";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import { FaStar } from "react-icons/fa";
 
 import SpecialInfo from "@/components/SpecialInfo";
 import Tile from "@/components/Tile";
+import ClassfieldsForm from "@/components/ClassifiedsForm";
 
 export default function Home() {
+  const [classfield, setClassfield] = useState(false);
+
+  const toggleClassfield = () => {
+    setClassfield(!classfield);
+  };
+
   return (
     <>
       <section className="vp-home-header">
         <h1>{Lang.homepage.titel}</h1>
         <p>{Lang.homepage.content}</p>
-        <button className="btn header">Anzeige Schalten</button>
+        <button className="btn header" onClick={toggleClassfield}>
+          Anzeige Schalten
+        </button>
+        {classfield ? <ClassfieldsForm /> : null}
       </section>
 
       <section className="vp-special-info">
