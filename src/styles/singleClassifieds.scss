@@ -1,0 +1,22 @@
+/* 
+    File: singleClassifieds.scss
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
+@import "./variables.scss";
+
+.single-classifieds-ct {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0px 20px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+
+  img {
+    width: 100%;
+  }
+}

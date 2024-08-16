@@ -34,7 +34,7 @@ const ProfilePage = () => {
   const router = useRouter();
 
   const [profile, setProfile] = useState<UserProfile | undefined>(undefined);
-  const [uClassifieds, setUClassifieds] = useState(undefined);
+  const [uClassifieds, setUClassifieds] = useState<any>(undefined);
 
   useEffect(() => {
     const timer = setTimeout(() => {

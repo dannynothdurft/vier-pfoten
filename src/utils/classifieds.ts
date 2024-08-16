@@ -60,3 +60,22 @@ export const getUserClassifieds = async (data: any) => {
     return error.response.data.message;
   }
 };
+
+export const getCurrentClassifieds = async (data: any) => {
+  try {
+    const response = await axios.post(
+      `${currentUrl()}/api/classifieds/get-current-classifieds`,
+      {
+        id: data,
+      }
+    );
+    if (response.data.success) {
+      return response.data;
+    } else {
+      return response.data.data;
+    }
+  } catch (error: any) {
+    console.log(error.response);
+    return error.response.data.message;
+  }
+};
