@@ -2,41 +2,40 @@
 
 ## Hauptaufgaben
 
-1. **Merkliste erstellen**
+6. **Inserat Formular**
 
-   - Page oder Seite muss geschrieben werden
-   - Funktion muss geschrieben werden / Global
-   - API muss eingerichtet werden
+   - Funktion Bilder Hochladen
 
-2. **Chat Erstellen**
+1. **Chat Erstellen**
 
    - Eventuell ein Tutorial hierzu ansehen
    - Es soll ein real Time chat werden
    - Wenn der User ausgeloggt ist soll der User eine Mail bekommen
 
-3. **MongoDB Online Cluster erstellen**
+1. **MongoDB Online Cluster erstellen**
 
    - Hier ein Account erstellen und Daten in die .env abscpeichern
 
-4. **Hosting Vercal einrichten**
+1. **Hosting Vercal einrichten**
 
    - Project mit Vercal verbinden
    - .env Variablen hinterlegen
    - URL auf Instagramm kommunizieren
 
-5. **Responsive Designen**
+1. **Responsive Designen**
 
    - Alle Seiten Responsive schreiben
 
-6. **Profil Seite**
+1. **Profil Seite**
 
    - Funktion um Profilbild und Headerbild zu ändern
    - Funktion um seine Informationen zu ändern
 
-7. **Inserat Formular**
+1. **Merkliste erstellen**
 
-   - Funktion Bilder Hochladen
-   - User mit übergeben
+   - Page oder Seite muss geschrieben werden
+   - Funktion muss geschrieben werden / Global
+   - API muss eingerichtet werden
 
 ## Nebenaufgaben
 
