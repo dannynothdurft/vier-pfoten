@@ -10,6 +10,7 @@ import React, { FC, ReactNode, useEffect } from "react";
 
 import { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 import ClassfieldsForm from "@/components/ClassifiedsForm";
 import Navigation from "@/components/Navigation";
@@ -29,13 +30,15 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <body>
-      <Toaster />
-      {classfield ? <ClassfieldsForm /> : null}
-      <header>
-        <Navigation />
-      </header>
-      <main>{children}</main>
-      <Footer />
+      <EdgeStoreProvider>
+        <Toaster />
+        {classfield ? <ClassfieldsForm /> : null}
+        <header>
+          <Navigation />
+        </header>
+        <main>{children}</main>
+        <Footer />
+      </EdgeStoreProvider>
     </body>
   );
 };

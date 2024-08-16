@@ -6,6 +6,7 @@
 - **Backend**: Next.js
 - **Datenbank**: MongoDB
 - **Hosting**: Vercal
+- **Bilder Hosting**: Edge Store
 
 - **Abhängigkeiten**:
   - SASS
@@ -16,6 +17,9 @@
   - bcrypt
   - axios
   - react-hot-toast
+  - @edgestore/server
+  - @edgestore/react
+  - zod
 
 ## Spätere Plannung
 

@@ -64,8 +64,6 @@ const ProfilePage = () => {
     }
   }, [profile?.advertisements]);
 
-  console.log(uClassifieds);
-
   return profile ? (
     <div className="profile-page-ct">
       <div className="profile-header-wrapper">

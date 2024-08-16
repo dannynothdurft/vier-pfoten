@@ -22,6 +22,7 @@ interface Classifieds {
   breed: string;
   user: string;
   date: string;
+  imageFile: string;
 }
 interface TileProps {
   classifieds: Classifieds;
@@ -66,7 +67,11 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
     <Link href={`/inserate/${classifieds._id}`} className="vp-tile">
       <div className="vp-tile-image-wrapper">
         <Image
-          src={"/images/tile-placeholder.png"}
+          src={
+            classifieds.imageFile
+              ? classifieds.imageFile
+              : "/images/tile-placeholder.png"
+          }
           height={150}
           width={200}
           alt="Anzeige Bild"

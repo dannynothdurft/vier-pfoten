@@ -42,7 +42,11 @@ const SingleClassifieds = () => {
     <div className="single-classifieds-ct">
       <div>
         <Image
-          src={"/images/vier-pfoten-header.jpg"}
+          src={
+            currentClassifieds.imageFile
+              ? currentClassifieds.imageFile
+              : "/images/tile-placeholder.png"
+          }
           title="Bild"
           alt="Bild"
           width={700}

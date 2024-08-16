@@ -21,7 +21,6 @@ export const getClassifieds = async (data: any) => {
       return response.data.data;
     }
   } catch (error: any) {
-    console.log(error.response);
     return error.response.data.message;
   }
 };
@@ -39,7 +38,6 @@ export const paginationClassifieds = async (data: any) => {
       return response.data.data;
     }
   } catch (error: any) {
-    console.log(error.response);
     return error.response.data.message;
   }
 };
@@ -56,7 +54,6 @@ export const getUserClassifieds = async (data: any) => {
       return response.data.data;
     }
   } catch (error: any) {
-    console.log(error.response);
     return error.response.data.message;
   }
 };
@@ -75,7 +72,6 @@ export const getCurrentClassifieds = async (data: any) => {
       return response.data.data;
     }
   } catch (error: any) {
-    console.log(error.response);
     return error.response.data.message;
   }
 };

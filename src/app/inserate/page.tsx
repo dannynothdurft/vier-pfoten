@@ -35,7 +35,7 @@ export default function Inserate() {
     const fetchData = async () => {
       let to = page * 9;
       let from = to - 8;
-      console.log(from);
+
       const inserts = await paginationClassifieds({
         from: from,
         to: to,

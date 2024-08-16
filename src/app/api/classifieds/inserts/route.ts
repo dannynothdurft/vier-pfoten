@@ -28,7 +28,6 @@ export async function POST(request: any) {
 
     if (classifieds) {
       const id = classifieds.insertedId.toString();
-      console.log(id);
       // User anhand von data.username finden und aktualisieren
       const updatedUser = await colUser.updateOne(
         { username: data.username }, // Finde den User anhand des Benutzernamens
@@ -36,8 +35,6 @@ export async function POST(request: any) {
           $push: { advertisements: id } as UpdateFilter<UserDocument>,
         } // Füge die ID des neuen Inserats zum advertisements-Array hinzu
       );
-
-      console.log(updatedUser);
 
       if (updatedUser.modifiedCount > 0) {
         // Überprüfe, ob der User erfolgreich aktualisiert wurde

@@ -23,8 +23,6 @@ export async function POST(request: any) {
         .find({ _id: { $in: ids } })
         .toArray();
 
-      console.log(classifieds);
-
       if (classifieds && classifieds.length > 0) {
         return NextResponse.json({
           success: true,

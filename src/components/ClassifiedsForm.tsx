@@ -12,6 +12,7 @@ import React, { FC, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 import axios from "axios";
+import { useEdgeStore } from "@/lib/edgestore";
 import { useSelector, useDispatch } from "react-redux";
 import { toogleClassfield } from "@/lib/redux/reducer/classfield";
 
@@ -26,11 +27,13 @@ interface FormState {
   location: string;
   username?: string;
   date: string;
+  imageFile: string;
 }
 
 const ClassfieldsForm: FC = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+  const { edgestore } = useEdgeStore();
   const { classfield } = useSelector((state: any) => state.classfield);
   const { user } = useSelector((state: any) => state.user);
   const cfRef = useRef<HTMLFormElement>(null);
@@ -74,6 +77,7 @@ const ClassfieldsForm: FC = () => {
     };
   }, [classfield, dispatch]);
 
+  const [file, setFile] = useState<File>();
   const [formState, setFormState] = useState<FormState>({
     animalType: "", // Hund oder Katze
     breed: "", // Rasse
@@ -83,6 +87,7 @@ const ClassfieldsForm: FC = () => {
     location: "",
     username: user?.username,
     date: new Date().toISOString(),
+    imageFile: "",
   });
 
   // Allgemeiner Handler für das Formular
@@ -106,15 +111,31 @@ const ClassfieldsForm: FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        `${currentUrl()}/api/classifieds/inserts`,
-        formState
-      );
+      if (file) {
+        const res = await edgestore.publicFiles.upload({
+          file,
+        });
 
-      if (response.data.success) {
-        dispatch(toogleClassfield(classfield));
-      } else {
-        return response;
+        if (res) {
+          const updatedFormState = {
+            ...formState,
+            imageFile: res.url,
+          };
+
+          // Aktuellen Zustand setzen
+          setFormState(updatedFormState);
+
+          const response = await axios.post(
+            `${currentUrl()}/api/classifieds/inserts`,
+            updatedFormState
+          );
+
+          if (response.data.success) {
+            dispatch(toogleClassfield(classfield));
+          } else {
+            return response;
+          }
+        }
       }
     } catch (error: any) {
       return error.response;
@@ -124,6 +145,14 @@ const ClassfieldsForm: FC = () => {
   return (
     <form onSubmit={handleSubmit} className="animal-form" ref={cfRef}>
       <h2>Anzeige Schalten</h2>
+      <div>
+        <input
+          type="file"
+          onChange={(e) => {
+            setFile(e.target.files?.[0]);
+          }}
+        />
+      </div>
       <div className="animaltype-ct">
         {CFconfig.animalType.map((type) => {
           return (
@@ -140,7 +169,6 @@ const ClassfieldsForm: FC = () => {
           );
         })}
       </div>
-
       {formState.animalType && (
         <div>
           <label>Rasse:</label>
@@ -160,7 +188,6 @@ const ClassfieldsForm: FC = () => {
           </select>
         </div>
       )}
-
       <div>
         <label>Titel:</label>
         <input
@@ -171,7 +198,6 @@ const ClassfieldsForm: FC = () => {
           placeholder="Preis eingeben"
         />
       </div>
-
       <div>
         <label>Standort:</label>
         <input
@@ -182,7 +208,6 @@ const ClassfieldsForm: FC = () => {
           placeholder="Preis eingeben"
         />
       </div>
-
       <div>
         <label>Preis:</label>
         <input
@@ -193,7 +218,6 @@ const ClassfieldsForm: FC = () => {
           placeholder="Preis eingeben"
         />
       </div>
-
       <div>
         <label>Beschreibung:</label>
         <textarea
@@ -203,7 +227,6 @@ const ClassfieldsForm: FC = () => {
           placeholder="Beschreibung eingeben"
         />
       </div>
-
       <button type="submit">Absenden</button>
     </form>
   );

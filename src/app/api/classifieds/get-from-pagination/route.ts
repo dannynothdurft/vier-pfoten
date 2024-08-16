@@ -15,8 +15,6 @@ export async function POST(request: any) {
   try {
     const data = await request.json();
 
-    console.log(data);
-
     if (data.from && data.to) {
       const classfieldsPagination = await collection
         .find()
