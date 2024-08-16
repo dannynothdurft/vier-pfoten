@@ -1,5 +1,5 @@
 /* 
-    File: classfield.ts
+    File: redux/reducer/classfield.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

@@ -1,3 +1,10 @@
+/* 
+    File: api/edgestore/[...edgestore]/route.ts
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
 import { initEdgeStore } from "@edgestore/server";
 import { createEdgeStoreNextHandler } from "@edgestore/server/adapters/next/app";
 const es = initEdgeStore.create();

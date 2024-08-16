@@ -1,5 +1,5 @@
 /* 
-    File: get-user-classifieds/get/route.ts
+    File: api/classifieds/get-user-classifieds/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

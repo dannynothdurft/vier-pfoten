@@ -1,5 +1,5 @@
 /* 
-    File: classifields/get-from-paginete/route.ts
+    File: api/classifields/get-from-paginete/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

@@ -1,5 +1,5 @@
 /* 
-    File: redux/reducer/index.tsx
+    File: redux/index.tsx
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

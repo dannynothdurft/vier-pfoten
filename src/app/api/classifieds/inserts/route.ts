@@ -1,5 +1,5 @@
 /* 
-    File: classifields/inserts/route.ts
+    File: api/classifields/inserts/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

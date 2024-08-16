@@ -1,5 +1,5 @@
 /* 
-    File: user.ts
+    File: redux/reducer/user.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

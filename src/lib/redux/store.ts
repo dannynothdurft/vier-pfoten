@@ -1,6 +1,5 @@
-import { user } from "./reducer/user";
 /* 
-    File: store.ts
+    File: redux/store.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

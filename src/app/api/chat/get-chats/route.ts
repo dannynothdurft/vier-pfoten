@@ -1,5 +1,5 @@
 /* 
-    File: chat/get-chats/route.ts
+    File: api/chat/get-chats/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

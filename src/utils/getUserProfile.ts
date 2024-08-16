@@ -1,5 +1,5 @@
 /* 
-    File: auth.ts
+    File: getUserProfile.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:

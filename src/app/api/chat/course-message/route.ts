@@ -1,5 +1,5 @@
 /* 
-    File: chat/start-message/route.ts
+    File: api/chat/course-message/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:
