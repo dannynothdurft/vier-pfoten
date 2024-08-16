@@ -12,10 +12,12 @@ import React, { useEffect, useState } from "react";
 
 import { useSelector } from "react-redux";
 
+import CurrentChat from "@/components/CurrentChat";
+
 const ChatPage = () => {
   const { user } = useSelector((state: any) => state.user);
   const [aChats, setAChats] = useState<any>([]);
-  const [currentChat, setCurrentChat] = useState<any | undefined>(undefined);
+  const [cChat, setCChat] = useState<any | undefined>(undefined);
 
   useEffect(() => {
     if (user) {
@@ -35,7 +37,7 @@ const ChatPage = () => {
   }, [user]);
 
   const setCurrentMSG = (chat: any) => {
-    setCurrentChat(chat);
+    setCChat(chat);
   };
 
   return (
@@ -58,8 +60,8 @@ const ChatPage = () => {
         </ul>
       </div>
       <div>
-        {currentChat !== undefined ? (
-          <div>{currentChat.classifiedsTitel}</div>
+        {cChat !== undefined ? (
+          <CurrentChat chat={cChat} />
         ) : (
           "Wähle ein Chat aus"
         )}
