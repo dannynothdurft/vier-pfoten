@@ -36,9 +36,10 @@
     .vp-search-results {
       margin: 80px auto 30px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, auto);
       gap: 80px 20px;
+      width: 100%;
     }
   }
 }
@@ -58,21 +59,14 @@
     background-color: $color-bright;
     color: $color-secondary;
 
-      &:hover {
-       background-color: $color-primary;
-      }   
-      
-      &.active {
-        background-color: $color-secondary;
-        color: white;
-        border-color: $color-secondary;
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &.active {
+      background-color: $color-secondary;
+      color: white;
+      border-color: $color-secondary;
     }
   }
-
 }
-
-
-
-
-
-

@@ -43,3 +43,20 @@ export const paginationClassifieds = async (data: any) => {
     return error.response.data.message;
   }
 };
+
+export const getUserClassifieds = async (data: any) => {
+  try {
+    const response = await axios.post(
+      `${currentUrl()}/api/classifieds/get-user-classifieds`,
+      data
+    );
+    if (response.data.success) {
+      return response.data.data;
+    } else {
+      return response.data.data;
+    }
+  } catch (error: any) {
+    console.log(error.response);
+    return error.response.data.message;
+  }
+};

@@ -25,7 +25,7 @@ export default function Inserate() {
         count: "all",
       });
       setClassifieds(inserts);
-      setPages(Math.ceil(inserts.length / 20));
+      setPages(Math.ceil(inserts.length / 9));
     };
 
     fetchData();
@@ -33,8 +33,8 @@ export default function Inserate() {
 
   const handleClick = (page: any) => {
     const fetchData = async () => {
-      let to = page * 20;
-      let from = to - 19;
+      let to = page * 9;
+      let from = to - 8;
       console.log(from);
       const inserts = await paginationClassifieds({
         from: from,

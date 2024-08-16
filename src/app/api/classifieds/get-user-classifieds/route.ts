@@ -1,11 +1,13 @@
 /* 
-    File: classifields/get/route.ts
+    File: get-user-classifieds/get/route.ts
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:
 */
 
 import { NextResponse } from "next/server";
+
+import { ObjectId } from "mongodb";
 
 import { connectDB } from "@/lib/db";
 
@@ -14,20 +16,19 @@ export async function POST(request: any) {
 
   try {
     const data = await request.json();
+    const ids = data.map((id: string) => new ObjectId(id));
 
-    if (data.count === "all") {
-      const classifieds = await collection.find().toArray();
-      const classfieldsPagination = await collection
-        .find()
-        .sort({ _id: -1 })
-        .limit(9)
+    if (data) {
+      const classifieds = await collection
+        .find({ _id: { $in: ids } })
         .toArray();
+
+      console.log(classifieds);
 
       if (classifieds && classifieds.length > 0) {
         return NextResponse.json({
           success: true,
-          length: classifieds.length,
-          data: classfieldsPagination,
+          data: classifieds,
         });
       } else {
         return NextResponse.json({

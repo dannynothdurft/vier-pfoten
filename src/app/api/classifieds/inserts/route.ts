@@ -7,21 +7,55 @@
 
 import { NextResponse } from "next/server";
 
+import { UpdateFilter } from "mongodb";
+
 import { connectDB } from "@/lib/db";
 
+interface UserDocument {
+  username: string;
+  advertisements: string[];
+}
+
 export async function POST(request: any) {
-  const collection = await connectDB("classifields");
+  const colClassifields = await connectDB("classifields");
+  const colUser = await connectDB("user");
 
   try {
     const data = await request.json();
 
-    const classifieds = await collection.insertOne(data);
+    // Inserat in der classifieds-Sammlung speichern
+    const classifieds = await colClassifields.insertOne(data);
 
     if (classifieds) {
+      const id = classifieds.insertedId.toString();
+      console.log(id);
+      // User anhand von data.username finden und aktualisieren
+      const updatedUser = await colUser.updateOne(
+        { username: data.username }, // Finde den User anhand des Benutzernamens
+        {
+          $push: { advertisements: id } as UpdateFilter<UserDocument>,
+        } // Füge die ID des neuen Inserats zum advertisements-Array hinzu
+      );
+
+      console.log(updatedUser);
+
+      if (updatedUser.modifiedCount > 0) {
+        // Überprüfe, ob der User erfolgreich aktualisiert wurde
+        return NextResponse.json({
+          success: true,
+          message: "Erfolgreich inseriert",
+          data: data,
+        });
+      } else {
+        return NextResponse.json({
+          success: false,
+          message: "User konnte nicht aktualisiert werden",
+        });
+      }
+    } else {
       return NextResponse.json({
-        success: true,
-        message: "Erfolgreich inseriert",
-        data: data,
+        success: false,
+        message: "Inserat konnte nicht erstellt werden",
       });
     }
   } catch (error) {

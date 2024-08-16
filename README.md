@@ -4,10 +4,7 @@
 
 1. **Inserate Ausgabe auf allen Seiten**
 
-   - Inserate Tile Überarbeiten / Hier muss noch das Datum des Inserate rein
-   - Inserate Anzeigen beim UserProfile
    - Inserate Einzel Page
-   - Wenn Inserate geladen werden, dann muss ein Loader rein oder es müssen graue Kästen rein
 
 2. **Merkliste erstellen**
 

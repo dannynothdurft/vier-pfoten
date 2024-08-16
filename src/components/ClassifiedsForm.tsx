@@ -24,7 +24,7 @@ interface FormState {
   description: string;
   titel: string;
   location: string;
-  user?: string;
+  username?: string;
   date: string;
 }
 
@@ -45,7 +45,7 @@ const ClassfieldsForm: FC = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [user, router]);
+  }, [user, router, dispatch, classfield]);
 
   // useEffect zum Hinzufügen eines Event-Listeners bei jedem Rendern des Modals
   useEffect(() => {
@@ -81,7 +81,7 @@ const ClassfieldsForm: FC = () => {
     description: "", // Beschreibung
     titel: "",
     location: "",
-    user: user?.username,
+    username: user?.username,
     date: new Date().toISOString(),
   });
 

@@ -15,7 +15,6 @@ export async function POST(request: Request) {
     const reqBody = await request.json();
     const findUser = await collection.findOne({ username: reqBody.username });
 
-    console.log(findUser);
     if (findUser) {
       return NextResponse.json({
         success: true,

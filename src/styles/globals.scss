@@ -275,6 +275,7 @@ footer {
 
   h3 {
     color: $color-secondary;
+    font-size: 1.1em;
   }
 
   .vp-tile-image-wrapper {
@@ -292,23 +293,33 @@ footer {
     }
   }
 
+  .tile-location-info {
+    color: $color-gray-dark;
+    font-size: 0.9em;
+  }
+
   .tile-info {
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
   }
 
-  .tile-username {
+  .tile-classifieds-info {
     position: absolute;
     font-size: 0.85em;
     bottom: 0;
     border-top: 1px solid black;
     width: 100%;
     left: 0;
-    padding-left: 10px;
+    padding: 0 10px;
     background-color: $color-bg-gray;
     border-radius: 0 0 8px 8px;
-    color: $color-secondary;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: $color-secondary;
+    }
   }
 }
 

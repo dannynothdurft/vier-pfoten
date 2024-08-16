@@ -27,6 +27,8 @@ interface TileProps {
 }
 
 const Tile: FC<TileProps> = ({ classifieds }) => {
+  let timeDisplay;
+
   // Berechne die Differenz zwischen dem Anzeigen-Datum und dem aktuellen Datum
   const calculateDateDifference = (date: string) => {
     const adDate = new Date(date);
@@ -51,8 +53,14 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
   // Erhalte die Differenz in Minuten
   const minutesAgo = calculateDateDifferences(classifieds.date);
 
-  // console.log(daysAgo);
-  // console.log(minutesAgo);
+  if (minutesAgo < 60) {
+    timeDisplay = minutesAgo + " Minuten";
+  } else if (minutesAgo >= 60 && minutesAgo < 1440) {
+    timeDisplay = Math.round(minutesAgo / 60) + " Stunden";
+  } else if (minutesAgo >= 1440) {
+    timeDisplay = daysAgo;
+  }
+
   return (
     <Link href={"/inserate/jfalejfoiae"} className="vp-tile">
       <div className="vp-tile-image-wrapper">
@@ -64,13 +72,19 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
           title="Anzeige Bild"
         />
       </div>
+
+      <span className="tile-location-info">{classifieds?.location}</span>
+
       <h3>{classifieds?.titel}</h3>
       <div className="tile-info">
         <span>{classifieds?.price} €</span>
         <span>22111 Hamburg</span>
       </div>
       <p className="tile-content">{classifieds?.description}</p>
-      <p className="tile-username">Anzeige von {classifieds?.user}</p>
+      <div className="tile-classifieds-info">
+        <p>{classifieds?.username}</p>
+        <p>{timeDisplay}</p>
+      </div>
     </Link>
   );
 };

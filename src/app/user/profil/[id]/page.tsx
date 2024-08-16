@@ -15,6 +15,8 @@ import toast from "react-hot-toast";
 import { FaLocationDot, FaGlobe } from "react-icons/fa6";
 
 import getUserProfile from "@/utils/getUserProfile";
+import { getUserClassifieds } from "@/utils/classifieds";
+import Tile from "@/components/Tile";
 
 type UserProfile = {
   username: string;
@@ -32,6 +34,7 @@ const ProfilePage = () => {
   const router = useRouter();
 
   const [profile, setProfile] = useState<UserProfile | undefined>(undefined);
+  const [uClassifieds, setUClassifieds] = useState(undefined);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,6 +51,20 @@ const ProfilePage = () => {
     }, 1);
     return () => clearTimeout(timer);
   }, [params?.id, router]);
+
+  useEffect(() => {
+    if (profile?.advertisements && profile?.advertisements?.length > 0) {
+      const guc = async () => {
+        const userClassifieds = await getUserClassifieds(
+          profile?.advertisements
+        );
+        setUClassifieds(userClassifieds);
+      };
+      guc();
+    }
+  }, [profile?.advertisements]);
+
+  console.log(uClassifieds);
 
   return profile ? (
     <div className="profile-page-ct">
@@ -104,11 +121,15 @@ const ProfilePage = () => {
         <div className="profile-content-ct">
           <div className="content-classifieds-ct">
             <h3>Aktuelle Anzeigen</h3>
-            {profile?.advertisements && profile?.advertisements?.length > 0 ? (
-              <>Liste</>
-            ) : (
-              <p>Es sind keine Anzeigen veröffentlicht</p>
-            )}
+            <section className="vp-advertisement-tiles">
+              {uClassifieds ? (
+                uClassifieds.map((item: any, index: any) => {
+                  return <Tile key={index} classifieds={item} />;
+                })
+              ) : (
+                <p>Es sind keine Anzeigen veröffentlicht</p>
+              )}
+            </section>
           </div>
           <div className="content-classifieds-ct">Weis noch nicht</div>
         </div>
