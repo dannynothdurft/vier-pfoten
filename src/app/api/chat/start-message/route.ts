@@ -8,6 +8,7 @@
 import { NextResponse } from "next/server";
 import { UpdateFilter } from "mongodb";
 import { connectDB } from "@/lib/db";
+import newMessage from "@/mails/newMessage";
 
 interface UserDocument {
   username: string;
@@ -21,6 +22,9 @@ export async function POST(request: any) {
   try {
     const data = await request.json();
     const setChat = await colChat.insertOne(data);
+    const getMailUser = await colUser.findOne({ username: data.user2 });
+
+    console.log(getMailUser);
 
     if (setChat.acknowledged) {
       const user1 = await colUser.updateOne(
@@ -42,6 +46,12 @@ export async function POST(request: any) {
       );
 
       if (user1.modifiedCount > 0 && user2.modifiedCount > 0) {
+        const dataMail = {
+          email: getMailUser?.email,
+          msg: data.msg,
+        };
+        await newMessage(dataMail, `Nachricht von ${data.user1}`);
+
         return NextResponse.json({
           success: true,
           message: "Erfolgreich gesendet",
