@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface Classifieds {
+  _id: string;
   animalType: string;
   price: number;
   location: string;
@@ -62,7 +63,7 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
   }
 
   return (
-    <Link href={"/inserate/jfalejfoiae"} className="vp-tile">
+    <Link href={`/inserate/${classifieds._id}`} className="vp-tile">
       <div className="vp-tile-image-wrapper">
         <Image
           src={"/images/tile-placeholder.png"}
