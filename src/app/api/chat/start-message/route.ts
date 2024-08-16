@@ -24,8 +24,6 @@ export async function POST(request: any) {
     const setChat = await colChat.insertOne(data);
     const getMailUser = await colUser.findOne({ username: data.user2 });
 
-    console.log(getMailUser);
-
     if (setChat.acknowledged) {
       const user1 = await colUser.updateOne(
         { username: data.user1 },

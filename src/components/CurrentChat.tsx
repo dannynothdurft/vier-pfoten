@@ -7,7 +7,7 @@
 
 "use client";
 
-import React, { FC, FormEvent, useState } from "react";
+import React, { FC, FormEvent, useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { courseMessage } from "@/utils/chat";
 
@@ -28,11 +28,23 @@ interface FormState {
 }
 
 const CurrentChat: FC<CurrentChatProps> = ({ chat }) => {
+  const containerRef = useRef<HTMLUListElement>(null);
   const [cChat, setCchat] = useState(chat);
   const { user } = useSelector((state: any) => state.user);
   const [formState, setFormState] = useState<FormState>({
     msg: "",
   });
+
+  const scrollToBottom = () => {
+    const container = containerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [cChat]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -77,12 +89,12 @@ const CurrentChat: FC<CurrentChatProps> = ({ chat }) => {
       <hr />
       <p
         className={
-          cChat.user1 !== user.username ? "smsg msgLeft" : "smsg msgRight"
+          cChat.user1 !== user.username ? "msg msgLeft" : "msg msgRight"
         }
       >
         {cChat.msg}
       </p>
-      <ul>
+      <ul ref={containerRef}>
         {cChat.course.map((msg: any, index: any) => {
           return (
             <li

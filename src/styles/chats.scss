@@ -55,6 +55,8 @@
       left: 0;
       right: 0;
       bottom: 50px;
+      max-height: calc(100% - 210px);
+      overflow: scroll;
 
       li {
         display: flex;
