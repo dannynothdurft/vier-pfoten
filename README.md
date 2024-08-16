@@ -2,36 +2,37 @@
 
 ## Hauptaufgaben
 
-1. **Chat Erstellen**
+1. **Chat Page erstellen**
+
+   - linke Seite Chats
+   - Rechte Seite Chat verlauf
+
+2. **Chat Erstellen**
 
    - Erstmal kein realtime Chat
    - Wenn der user die Seite Wechselt soll ein update abgefragt werden ob eine neue Nachricht da ist oder nicht.
    - User soll auch eine Mail bekommen, das er eine Nachricht von XYZ hat.
-   - Button erstellen auf der DeteilsSeite
-   - Button erstellen auf der Profil seite
 
-     - Wir brauchen den User1, User2 und die InsertID
-
-2. **MongoDB Online Cluster erstellen**
+3. **MongoDB Online Cluster erstellen**
 
    - Hier ein Account erstellen und Daten in die .env abscpeichern
 
-3. **Hosting Vercal einrichten**
+4. **Hosting Vercal einrichten**
 
    - Project mit Vercal verbinden
    - .env Variablen hinterlegen
    - URL auf Instagramm kommunizieren
 
-4. **Responsive Designen**
+5. **Responsive Designen**
 
    - Alle Seiten Responsive schreiben
 
-5. **Profil Seite**
+6. **Profil Seite**
 
    - Funktion um Profilbild und Headerbild zu ändern
    - Funktion um seine Informationen zu ändern
 
-6. **Merkliste erstellen**
+7. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global

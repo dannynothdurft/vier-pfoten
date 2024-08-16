@@ -84,6 +84,7 @@ const SingleClassifieds = () => {
       classifiedsTitel: currentClassifieds.titel,
       user1: user.username,
       user2: currentClassifieds.username,
+      msg: formState.msg,
       date: new Date().toLocaleString(),
     };
     const sendMSG = async () => {

@@ -32,6 +32,7 @@ export async function POST(request: any) {
           username: findUser.username,
           password: findUser.hashedPassword,
           watchList: findUser.watchList,
+          chats: findUser.chats,
         };
 
         const token = jwt.sign(dataToBeSentToFrontend, "AUTH", {

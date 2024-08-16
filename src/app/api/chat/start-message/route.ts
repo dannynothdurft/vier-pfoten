@@ -20,7 +20,7 @@ export async function POST(request: any) {
 
   try {
     const data = await request.json();
-    const setChat = await colChat.insertOne({ data });
+    const setChat = await colChat.insertOne(data);
 
     if (setChat.acknowledged) {
       const user1 = await colUser.updateOne(
