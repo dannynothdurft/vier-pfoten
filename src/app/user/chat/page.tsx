@@ -6,6 +6,7 @@
 */
 
 "use client";
+import "@/styles/chats.scss";
 
 import { getChats } from "@/utils/chat";
 import React, { useEffect, useState } from "react";
@@ -41,8 +42,8 @@ const ChatPage = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="vp-chats-ct">
+      <div className="chat-list">
         <h3>Chats</h3>
         <ul>
           {aChats && aChats.length > 0
@@ -50,16 +51,17 @@ const ChatPage = () => {
                 return (
                   <li key={index} onClick={() => setCurrentMSG(chat)}>
                     <p>{chat.date}</p>
-                    <p>{chat.user1}</p>
+                    <p className="bold">{chat.user1}</p>
                     <p>{chat.classifiedsTitel}</p>
-                    <p>{chat.msg}</p>
+                    <p className="single-line">{chat.msg}</p>
                   </li>
                 );
               })
             : null}
         </ul>
       </div>
-      <div>
+      <div className="chat-ct">
+        <h3>Nachricht</h3>
         {cChat !== undefined ? (
           <CurrentChat chat={cChat} />
         ) : (

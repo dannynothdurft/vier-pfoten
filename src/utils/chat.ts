@@ -41,3 +41,20 @@ export const getChats = async (data: any) => {
     return error.response.data.message;
   }
 };
+
+export const courseMessage = async (data: any) => {
+  try {
+    const response = await axios.post(
+      `${currentUrl()}/api/chat/course-message`,
+      data
+    );
+
+    if (response.data.success) {
+      return response.data;
+    } else {
+      return response.data.data;
+    }
+  } catch (error: any) {
+    return error.response.data.message;
+  }
+};

@@ -1,0 +1,114 @@
+/* 
+    File: classfieldsform.scss
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
+//imports
+@import "./variables.scss";
+
+.vp-chats-ct {
+  display: flex;
+  max-width: 1200px;
+  margin: 30px auto;
+  gap: 30px;
+  min-height: calc(100vh - 313px);
+
+  .chat-list {
+    width: 250px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        @include box-shadow;
+
+        p {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+.chat-ct {
+  width: 100%;
+
+  .cc-chat-ct {
+    width: 100%;
+    border-radius: 8px;
+    height: calc(100% - 30px);
+    position: relative;
+
+    @include box-shadow;
+    ul {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+
+      li {
+        display: flex;
+        margin: 5px;
+      }
+    }
+    .msgBox {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      gap: 25px;
+    }
+  }
+}
+
+.msg {
+  max-width: 500px;
+  margin: 0 25px;
+  padding: 3px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0;
+
+  &.msgLeft {
+    background-color: $color-primary;
+  }
+
+  &.msgRight {
+    justify-content: flex-end;
+    background-color: $color-secondary;
+    color: $color-bright;
+  }
+}
+
+.CmsgLeft {
+  background-color: $color-primary;
+  width: max-content;
+  border-radius: 8px;
+
+  .Cmsg {
+    max-width: 100%;
+    padding: 3px 15px;
+  }
+}
+
+.CmsgRight {
+  justify-content: flex-end;
+  border-radius: 8px;
+
+  .Cmsg {
+    border-radius: 8px;
+    padding: 3px 15px;
+    background-color: $color-secondary;
+    color: $color-bright;
+  }
+}
