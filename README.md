@@ -4,9 +4,13 @@
 
 1. **Chat Erstellen**
 
-   - Eventuell ein Tutorial hierzu ansehen
-   - Es soll ein real Time chat werden
-   - Wenn der User ausgeloggt ist soll der User eine Mail bekommen
+   - Erstmal kein realtime Chat
+   - Wenn der user die Seite Wechselt soll ein update abgefragt werden ob eine neue Nachricht da ist oder nicht.
+   - User soll auch eine Mail bekommen, das er eine Nachricht von XYZ hat.
+   - Button erstellen auf der DeteilsSeite
+   - Button erstellen auf der Profil seite
+
+     - Wir brauchen den User1, User2 und die InsertID
 
 2. **MongoDB Online Cluster erstellen**
 
