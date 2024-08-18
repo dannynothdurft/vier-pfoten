@@ -9,13 +9,13 @@
 import "@/styles/userModal.scss";
 import Config from "@/config.json";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
 import { userLogin, userRegister } from "@/utils/auth";
 
-const Auth = () => {
+const AuthContent = () => {
   const actionParams = useSearchParams();
   const router = useRouter();
   const action = actionParams?.get("action");
@@ -185,6 +185,14 @@ const Auth = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const Auth = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AuthContent />
+    </Suspense>
   );
 };
 
