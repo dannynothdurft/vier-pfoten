@@ -2,11 +2,7 @@
 
 ## Hauptaufgaben
 
-1. **Hosting Vercal einrichten**
-
-   - Project mit Vercal verbinden
-   - .env Variablen hinterlegen
-   - URL auf Instagramm kommunizieren
+1. **Stage einrichten**
 
 2. **Responsive Designen**
 
@@ -22,6 +18,35 @@
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
+
+5. **FAQ Seite erstellen**
+
+   - Fragen und Antworten in eiem Arcordion bereitstellen
+
+6. **Startseite anpassen**
+
+   - Das Designe der Startseite überarbeiten, es sieht noch nicht wirklich ansprechend aus!
+
+7. **Anzeige Schalten**
+
+   - Eventuell auf einer Extraseite und die Anzeige Schalten ausweiten.
+     - Mehr Rassen
+     - Mehr Bilder Hochladen
+     - Mehr Konfiguration z. B. Wurfankündigung / Deckrüde ect.
+
+8. **Tile Überarbeiten**
+
+   - Das Designe der Tile überarbeiten und eventuell verschiedene Anzeigen für Startseite, Inserate und Profil
+
+9. **Profile Überarbeiten**
+
+   - Das Design anpassen
+
+10. **Rechttexte anpassen**
+
+11. **Über Uns anpassen**
+
+12. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
