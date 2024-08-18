@@ -1,3 +1,10 @@
+/* 
+    File: utils/svg/Logo.tsx
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
 "use client";
 
 function Logo({ width = "50px", height = "50px" }) {
