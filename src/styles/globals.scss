@@ -9,225 +9,6 @@
 @import "./variables.scss";
 @import "./fonts.scss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  font-family: "Poppins";
-  color: $color-dark;
-}
-
-body {
-  position: relative;
-}
-
-h1 {
-  font-size: 3em;
-  font-family: "Poppins";
-  font-style: italic;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-
-  &.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-button {
-  border: none;
-  background-color: unset;
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-hr {
-  color: $color-gray;
-  margin: 15px 0;
-}
-
-ul {
-  margin: 10px 0;
-  li {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.single-line {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  display: block;
-}
-
-// Footer
-footer {
-  display: flex;
-  justify-content: space-around;
-  min-height: 50px;
-  padding: 25px;
-  background-color: $color-dark;
-
-  h4,
-  a {
-    color: $color-bright;
-  }
-
-  .footer-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    div {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-}
-
-// Homepage
-.vp-home-header {
-  height: 500px;
-  background-image: url("/images/vier-pfoten-header.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-}
-
-.vp-special-info {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 150px;
-
-  .info-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2em;
-
-    span {
-      font-size: 0.4em;
-    }
-  }
-}
-
-.vp-advertisement-tiles {
-  max-width: 1100px;
-  width: 100%;
-  margin: 80px auto 30px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 80px 20px;
-}
-
-.vp-section {
-  min-height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  background-color: $color-bg-gray;
-  flex: 1;
-
-  > div {
-    max-width: 350px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-
-    h3 {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-  }
-}
-
-// Tile
-.vp-tile {
-  @include box-shadow;
-
-  width: 100%;
-  border-radius: 8px;
-  position: relative;
-  padding: 115px 10px 30px;
-
-  h3 {
-    color: $color-secondary;
-    font-size: 1.1em;
-  }
-
-  .vp-tile-image-wrapper {
-    background-color: $color-bg-gray;
-    width: 95%;
-    position: absolute;
-    border-radius: 8px;
-    left: 50%;
-    top: -50px;
-    transform: translate(-50%);
-
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .tile-location-info {
-    color: $color-gray-dark;
-    font-size: 0.9em;
-  }
-
-  .tile-info {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
-  }
-
-  .tile-classifieds-info {
-    position: absolute;
-    font-size: 0.85em;
-    bottom: 0;
-    border-top: 1px solid black;
-    width: 100%;
-    left: 0;
-    padding: 0 10px;
-    background-color: $color-bg-gray;
-    border-radius: 0 0 8px 8px;
-    display: flex;
-    justify-content: space-between;
-
-    p {
-      color: $color-secondary;
-    }
-  }
-}
-
 // Info Pages
 .info-page-ct {
   max-width: 1200px;
@@ -305,10 +86,72 @@ footer {
   }
 }
 
-
 //Mobile first
 
 // Elements
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-family: "Poppins";
+  color: $color-dark;
+}
+
+body {
+  position: relative;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: "Poppins";
+  font-style: italic;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+button {
+  border: none;
+  background-color: unset;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+hr {
+  color: $color-gray;
+  margin: 15px 0;
+}
+
+ul {
+  margin: 10px 0;
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .btn {
   background-color: $color-primary;
   border-radius: 4px;
@@ -317,6 +160,7 @@ footer {
   width: 100%;
   font-weight: 600;
   font-size: 1.2em;
+  max-width: 300px;
 
   &.secondary {
     background-color: unset;
@@ -333,12 +177,6 @@ footer {
     background-color: $color-secondary;
     color: $color-bright;
     @include box-shadow;
-  }
-
-  &.header {
-    padding: 18px 36px;
-    font-size: 1.5rem;
-    width: 300px;
   }
 
   @media #{$tablet} {
@@ -359,6 +197,14 @@ footer {
   span {
     font-size: 1.5em;
   }
+}
+
+.single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
 }
 
 // HamburgerButton
@@ -518,4 +364,233 @@ footer {
       flex-direction: row;
     }
 }
+}
+
+// Homepage
+.vp-home-header {
+  height: 400px;
+  padding: 10px;
+  background-image: url("/images/vier-pfoten-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.vp-special-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  height: 200px;
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;
+
+    span {
+      font-size: 0.4em;
+    }
+  }
+
+  @media #{$tablet} {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.vp-section {
+  min-height: 350px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: $color-bg-gray;
+  flex: 1;
+
+  > div {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  img {
+    height: 150px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0,0,0, 0.5));
+  }
+
+  @media #{$tablet} {
+    flex-direction: row;
+  }
+
+  @media #{$desktop} {
+    img{
+      height: 280px;
+    }
+  }
+}
+
+.vp-advertisement-tiles {
+  max-width: 1200px;
+  padding: 10px;
+  width: 100%;
+  margin: 60px auto 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 60px 20px;
+
+  @media #{$mobileMax} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$tablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media #{$desktop} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Tile
+.vp-tile {
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  padding: 105px 10px 30px;
+  @include box-shadow;
+
+  h3 {
+    color: $color-secondary;
+    font-size: 1.2em;
+  }
+
+  .vp-tile-image-wrapper {
+    background-color: $color-bg-gray;
+    width: 95%;
+    position: absolute;
+    border-radius: 8px;
+    left: 50%;
+    top: -50px;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  .tile-location-info {
+    color: $color-gray-dark;
+    font-size: 0.9em;
+  }
+
+  .tile-content {
+    display: -webkit-box;         
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 5;       
+    overflow: hidden;            
+    text-overflow: ellipsis;    
+    max-width: 100%;
+    position: relative;
+    max-height: 7.5em;
+
+    &::after {
+      content: "";                    
+      position: absolute;              
+      bottom: 0;                      
+      left: 0;                        
+      width: 100%;                    
+      height: 50px;                    
+      background: linear-gradient(0deg, rgba(255,255,255, 100) 0%, rgba(0,0,0,0) 100%);
+      pointer-events: none;
+    }
+  }
+
+  .tile-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+
+  .tile-classifieds-info {
+    position: absolute;
+    font-size: 0.85em;
+    bottom: 0;
+    border-top: 1px solid black;
+    width: 100%;
+    left: 0;
+    padding: 0 10px;
+    background-color: $color-bg-gray;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: $color-secondary;
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $color-dark;
+  padding: 0 10px;
+
+  .footer-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-height: 50px;
+      padding: 25px;
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      h4,
+        a {
+          color: $color-bright;
+        }
+
+        .footer-section {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          div {
+            display: flex;
+            flex-direction: column;
+          }
+        }  
+  }
+
+  
+
+  @media #{$tablet} {
+    .footer-wrapper {
+      flex-direction: row;
+    }
+  }
 }
