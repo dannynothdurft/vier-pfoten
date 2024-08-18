@@ -9,85 +9,6 @@
 @import "./variables.scss";
 @import "./fonts.scss";
 
-// Info Pages
-.info-page-ct {
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: calc(100vh - 253px);
-  padding: 30px 20px;
-
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  h2 {
-    margin: 15px 0 10px;
-  }
-
-  h3 {
-    margin: 15px 0 10px;
-  }
-
-  ul {
-    margin: 15px;
-  }
-
-  .Contact-Formular {
-    background-color: $color-bg-gray;
-    width: 577px;
-    border-radius: 8px;
-    letter-spacing: -0.04em;
-    padding: 20px 40px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    label {
-      display: block;
-      color: $color-dark;
-      margin-top: 15px;
-      width: 100%;
-
-      .Stern {
-        color: $color-secondary;
-        margin-left: 2px;
-      }
-
-      input {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-bottom: 1px solid $color-primary;
-        color: $color-dark;
-      }
-
-      textarea {
-        display: block;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid $color-primary;
-        color: $color-dark;
-        padding: 10px;
-      }
-    }
-
-    .form-button {
-      border: 0;
-      padding: 20px 32px;
-      border-radius: 8px;
-      margin-top: 30px;
-      cursor: pointer;
-      font-size: 1.2em;
-      width: max-content;
-    }
-  }
-}
-
-//Mobile first
-
 // Elements
 * {
   margin: 0;
@@ -107,6 +28,10 @@ h1 {
   font-family: "Poppins";
   font-style: italic;
   text-align: center;
+
+  @media #{$tablet} {
+   font-size: 3em;
+  }
 }
 
 a {
@@ -591,6 +516,120 @@ footer {
   @media #{$tablet} {
     .footer-wrapper {
       flex-direction: row;
+    }
+  }
+}
+
+// Info Pages
+.info-page-ct {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 230px);
+  padding: 20px 10px;
+
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin: 15px 0 10px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    margin: 15px 0 10px;
+  }
+
+  ul {
+    margin: 15px;
+  }
+
+  .Contact-Formular {
+    background-color: $color-bg-gray;
+    width: 100%;
+    border-radius: 8px;
+    letter-spacing: -0.04em;
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      color: $color-dark;
+      margin-top: 10px;
+      width: 100%;
+      font-size: 0.7em;
+
+      .Stern {
+        color: $color-secondary;
+        margin-left: 2px;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid $color-primary;
+        color: $color-dark;
+      }
+
+      textarea {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $color-primary;
+        color: $color-dark;
+        padding: 10px;
+      }
+    }
+
+    .form-button {
+      border: 0;
+      padding: 10px 32px;
+      border-radius: 8px;
+      margin-top: 30px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+  }
+
+  @media #{$mobileMax} {
+    padding: 30px 20px;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    .Contact-Formular {
+      
+      padding: 20px 40px;
+      margin-top: 20px;
+      
+      label {
+        margin-top: 15px;
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media #{$tablet} {
+    .Contact-Formular {
+      width: 577px;
+      
+      margin-top: 50px;
+      
+     
     }
   }
 }
