@@ -31,7 +31,7 @@ const MerklistePage = () => {
   //   return () => clearTimeout(timer);
   // }, [user, router]);
 
-  return user.watchList && user.watchList > 0 ? (
+  return user && user?.watchList && user?.watchList > 0 ? (
     "JA"
   ) : (
     <div>Deine Merkliste ist leer</div>
