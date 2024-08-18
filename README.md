@@ -5,8 +5,6 @@
 1. **Vercal Stage und Live trenne**
 
    - Stage ist eingerichtet aber branches werden trotzdem bei deiden ausgeführt
-   - Problem finden
-   - Braches werden einfach deployt
 
 1. **Responsive Designen**
 
