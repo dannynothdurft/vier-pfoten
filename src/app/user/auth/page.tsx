@@ -18,7 +18,7 @@ import { userLogin, userRegister } from "@/utils/auth";
 const Auth = () => {
   const actionParams = useSearchParams();
   const router = useRouter();
-  const action = actionParams.get("action");
+  const action = actionParams?.get("action");
 
   const [alerts, setAlert] = useState(false);
   const [alertContent, setAlertContent] = useState("");
