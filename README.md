@@ -4,7 +4,9 @@
 
 1. **Responsive Designen**
 
-   - Alle Seiten Responsive schreiben
+   - User Modal
+   - Anmelde Modal
+   - User Profile
 
 2. **Profil Seite**
 
@@ -21,30 +23,22 @@
 
    - Fragen und Antworten in eiem Arcordion bereitstellen
 
-5. **Startseite anpassen**
-
-   - Das Designe der Startseite überarbeiten, es sieht noch nicht wirklich ansprechend aus!
-
-6. **Anzeige Schalten**
+5. **Anzeige Schalten**
 
    - Eventuell auf einer Extraseite und die Anzeige Schalten ausweiten.
      - Mehr Rassen
      - Mehr Bilder Hochladen
      - Mehr Konfiguration z. B. Wurfankündigung / Deckrüde ect.
 
-7. **Tile Überarbeiten**
-
-   - Das Designe der Tile überarbeiten und eventuell verschiedene Anzeigen für Startseite, Inserate und Profil
-
-8. **Profile Überarbeiten**
+6. **Profile Überarbeiten**
 
    - Das Design anpassen
 
-9. **Rechttexte anpassen**
+7. **Rechttexte anpassen**
 
-10. **Über Uns anpassen**
+8. **Über Uns anpassen**
 
-11. **Filterung bei den Inseraten erstellen**
+9. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
