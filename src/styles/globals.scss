@@ -9,6 +9,7 @@
 @import "./variables.scss";
 @import "./fonts.scss";
 
+// Elements
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +24,14 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   font-family: "Poppins";
   font-style: italic;
+  text-align: center;
+
+  @media #{$tablet} {
+   font-size: 3em;
+  }
 }
 
 a {
@@ -71,21 +77,15 @@ ul {
   font-weight: bold;
 }
 
-.single-line {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  display: block;
-}
-
 .btn {
   background-color: $color-primary;
   border-radius: 4px;
   padding-right: 12px;
   padding-left: 12px;
-  width: 200px;
+  width: 100%;
   font-weight: 600;
+  font-size: 1.2em;
+  max-width: 300px;
 
   &.secondary {
     background-color: unset;
@@ -104,19 +104,71 @@ ul {
     @include box-shadow;
   }
 
-  &.header {
-    padding: 18px 36px;
-    font-size: 1.5rem;
-    width: 300px;
+  @media #{$tablet} {
+    font-size: 1em;
+    width: 225px;
+  }
+
+  @media #{$desktop} {
+    height: 35px;
   }
 }
 
 .logo-link {
   display: flex;
   align-items: center;
+  gap: 5px;
 
   span {
     font-size: 1.5em;
+  }
+}
+
+.single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+}
+
+// HamburgerButton
+.hamburger-menu-btn{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+
+  .hamburger-menu-line {
+    height: 3px;
+    width: 25px;
+    background-color: $color-dark;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block;
+    @include box-shadow;
+
+    &.topline {
+      &.active {
+        transform: translateY(6px) rotate(45deg);
+      }
+    }
+
+    &.middleline {
+      &.active {
+        opacity: 0;
+      }
+    }
+
+    &.bottomline {
+      &.active {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+  }
+
+  @media #{$tablet} {
+    display: none; 
   }
 }
 
@@ -125,14 +177,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   @include box-shadow;
-
-  .vp-nav-cta {
-    display: flex;
-    gap: 15px;
-  }
 }
 
 .vp-search {
@@ -140,19 +186,19 @@ ul {
   line-height: 28px;
   align-items: center;
   position: relative;
-  width: 500px;
+  width: 100%;
 
   .vp-search-icon {
     position: absolute;
     left: 1rem;
-    fill: #9e9ea7;
+    fill: $color-dark;
     width: 1rem;
     height: 1rem;
   }
 
   .vp-search-input-field {
     width: 100%;
-    height: 40px;
+    height: 35px;
     line-height: 28px;
     padding: 0 1rem;
     padding-left: 2.5rem;
@@ -171,12 +217,18 @@ ul {
       outline: none;
       border-color: $color-border-primary;
       background-color: $color-bg-bright;
-      box-shadow: 0 0 0 4px $color-border-secondary;
+      box-shadow: 0 0 2px $color-border-secondary;
     }
+  }
+
+  @media #{$tablet} {
+    max-width: 250px;
   }
 }
 
 .vp-user-button {
+  width: 50px;
+  height: 50px;
   background-color: $color-primary;
   border-radius: 50%;
 
@@ -184,40 +236,70 @@ ul {
     background-color: $color-secondary;
     @include box-shadow;
   }
+
+  @media #{$desktop} {
+    height: 35px;
+    width: 35px;
+  }
 }
 
-// Footer
-footer {
+.mobile-menu {
+  position: absolute;
+  top: 55px;
+  left: 5px;
+  right: 5px;
+
+  background-color: $color-bright;
+  padding: 5px;
+
   display: flex;
-  justify-content: space-around;
-  min-height: 50px;
-  padding: 25px;
-  background-color: $color-dark;
+  flex-direction: column;
+  gap: 10px;
 
-  h4,
-  a {
-    color: $color-bright;
-  }
+  @include box-shadow;
 
-  .footer-section {
+  .vp-nav-cta {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
-
-    div {
-      display: flex;
-      flex-direction: column;
-    }
   }
+}
+
+.dektop-menu {
+  display: none;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  .vp-nav-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  @media #{$tablet} {
+      display: flex;
+  }
+
+  @media #{$desktop} {
+    .vp-nav-cta {
+      flex-direction: row;
+    }
+}
 }
 
 // Homepage
 .vp-home-header {
-  height: 500px;
+  height: 400px;
+  padding: 10px;
   background-image: url("/images/vier-pfoten-header.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -226,10 +308,10 @@ footer {
 }
 
 .vp-special-info {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  height: 150px;
+  height: 200px;
 
   .info-item {
     display: flex;
@@ -241,24 +323,22 @@ footer {
       font-size: 0.4em;
     }
   }
-}
 
-.vp-advertisement-tiles {
-  max-width: 1100px;
-  width: 100%;
-  margin: 80px auto 30px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 80px 20px;
+  @media #{$tablet} {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .vp-section {
-  min-height: 500px;
+  min-height: 350px;
+  padding: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
   background-color: $color-bg-gray;
   flex: 1;
 
@@ -266,7 +346,7 @@ footer {
     max-width: 350px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
 
     h3 {
       display: flex;
@@ -274,20 +354,58 @@ footer {
       align-items: center;
     }
   }
+
+  img {
+    height: 150px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0,0,0, 0.5));
+  }
+
+  @media #{$tablet} {
+    flex-direction: row;
+  }
+
+  @media #{$desktop} {
+    img{
+      height: 280px;
+    }
+  }
+}
+
+.vp-advertisement-tiles {
+  max-width: 1200px;
+  padding: 10px;
+  width: 100%;
+  margin: 60px auto 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 60px 20px;
+
+  @media #{$mobileMax} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$tablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media #{$desktop} {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Tile
 .vp-tile {
-  @include box-shadow;
-
   width: 100%;
   border-radius: 8px;
   position: relative;
-  padding: 115px 10px 30px;
+  padding: 105px 10px 30px;
+  @include box-shadow;
 
   h3 {
     color: $color-secondary;
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
   .vp-tile-image-wrapper {
@@ -298,16 +416,42 @@ footer {
     left: 50%;
     top: -50px;
     transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img {
       width: 100%;
       object-fit: cover;
+      border-radius: 8px;
     }
   }
 
   .tile-location-info {
     color: $color-gray-dark;
     font-size: 0.9em;
+  }
+
+  .tile-content {
+    display: -webkit-box;         
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 5;       
+    overflow: hidden;            
+    text-overflow: ellipsis;    
+    max-width: 100%;
+    position: relative;
+    max-height: 7.5em;
+
+    &::after {
+      content: "";                    
+      position: absolute;              
+      bottom: 0;                      
+      left: 0;                        
+      width: 100%;                    
+      height: 50px;                    
+      background: linear-gradient(0deg, rgba(255,255,255, 100) 0%, rgba(0,0,0,0) 100%);
+      pointer-events: none;
+    }
   }
 
   .tile-info {
@@ -335,23 +479,67 @@ footer {
   }
 }
 
+// Footer
+footer {
+  background-color: $color-dark;
+  padding: 0 10px;
+
+  .footer-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-height: 50px;
+      padding: 25px;
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      h4,
+        a {
+          color: $color-bright;
+        }
+
+        .footer-section {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          div {
+            display: flex;
+            flex-direction: column;
+          }
+        }  
+  }
+
+  
+
+  @media #{$tablet} {
+    .footer-wrapper {
+      flex-direction: row;
+    }
+  }
+}
+
 // Info Pages
 .info-page-ct {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: calc(100vh - 253px);
-  padding: 30px 20px;
+  min-height: calc(100vh - 230px);
+  padding: 20px 10px;
 
   h1 {
+    font-size: 1.5em;
     text-align: center;
     margin-bottom: 20px;
   }
 
   h2 {
+    font-size: 1.3em;
     margin: 15px 0 10px;
   }
 
   h3 {
+    font-size: 1.2em;
     margin: 15px 0 10px;
   }
 
@@ -361,20 +549,26 @@ footer {
 
   .Contact-Formular {
     background-color: $color-bg-gray;
-    width: 577px;
+    width: 100%;
     border-radius: 8px;
     letter-spacing: -0.04em;
-    padding: 20px 40px;
+    padding: 10px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
     label {
       display: block;
       color: $color-dark;
-      margin-top: 15px;
+      margin-top: 10px;
       width: 100%;
+      font-size: 0.7em;
 
       .Stern {
         color: $color-secondary;
@@ -402,12 +596,40 @@ footer {
 
     .form-button {
       border: 0;
-      padding: 20px 32px;
+      padding: 10px 32px;
       border-radius: 8px;
       margin-top: 30px;
       cursor: pointer;
       font-size: 1.2em;
-      width: max-content;
+    }
+  }
+
+  @media #{$mobileMax} {
+    padding: 30px 20px;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    .Contact-Formular {
+      
+      padding: 20px 40px;
+      margin-top: 20px;
+      
+      label {
+        margin-top: 15px;
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media #{$tablet} {
+    .Contact-Formular {
+      width: 577px;
+      
+      margin-top: 50px;
+      
+     
     }
   }
 }

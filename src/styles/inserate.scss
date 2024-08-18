@@ -12,6 +12,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+
+  background-image: url("/images/vier-pfoten-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .vp-inserate-wrapper {
@@ -19,8 +25,10 @@
   display: flex;
   margin: 25px auto;
   gap: 25px;
+  padding: 0 10px;
 
   .vp-filtered-ct {
+    display: none;
     width: 300px;
     height: max-content;
     padding: 10px;
@@ -28,24 +36,50 @@
     background-color: $color-bg-gray;
   }
 
-  .vp-search {
+  .vp-search-ct {
     display: flex;
     flex-direction: column;
     width: 100%;
 
     .vp-search-results {
-      margin: 80px auto 30px;
+      margin: 60px auto 10px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(1, 1fr);
       gap: 80px 20px;
       width: 100%;
+    }
+  }
+
+  @media #{$mobileMax} {
+    .vp-search-ct {
+      .vp-search-results {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @media #{$tablet} {
+    .vp-search-ct {
+      .vp-search-results {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  @media #{$desktop} {
+    .vp-filtered-ct {
+      display: flex;
+    }
+
+    .vp-search-ct {
+      .vp-search-results {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 }
 
 //Pagination
-
 .pagination-container {
   display: flex;
   justify-content: center;
@@ -70,3 +104,5 @@
     }
   }
 }
+
+
