@@ -2,26 +2,22 @@
 
 ## Hauptaufgaben
 
-1. **MongoDB Online Cluster erstellen**
-
-   - Hier ein Account erstellen und Daten in die .env abscpeichern
-
-2. **Hosting Vercal einrichten**
+1. **Hosting Vercal einrichten**
 
    - Project mit Vercal verbinden
    - .env Variablen hinterlegen
    - URL auf Instagramm kommunizieren
 
-3. **Responsive Designen**
+2. **Responsive Designen**
 
    - Alle Seiten Responsive schreiben
 
-4. **Profil Seite**
+3. **Profil Seite**
 
    - Funktion um Profilbild und Headerbild zu ändern
    - Funktion um seine Informationen zu ändern
 
-5. **Merkliste erstellen**
+4. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
