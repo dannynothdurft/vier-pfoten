@@ -19,6 +19,8 @@ import { toogleClassfield } from "@/lib/redux/reducer/classfield";
 
 import UserModal from "./UserModal";
 
+import Logo from "@/utils/svg/Logo";
+
 interface NavigationProps {}
 
 const Navigation: FC<NavigationProps> = () => {
@@ -37,7 +39,7 @@ const Navigation: FC<NavigationProps> = () => {
   return (
     <div className="vp-navigation">
       <Link href={"/"} title="Zur Startseite" className="logo-link">
-        <Image src={Config.logo} alt="Logo Dog" width={50} height={50} />
+        <Logo />
         <span>{Config.company}</span>
       </Link>
       <div className="vp-search">
