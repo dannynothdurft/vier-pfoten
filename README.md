@@ -2,49 +2,53 @@
 
 ## Hauptaufgaben
 
+1. **Vercal Stage und Live trenne**
+
+   - Stage ist eingerichtet aber branches werden trotzdem bei deiden ausgeführt
+
 1. **Responsive Designen**
 
    - Alle Seiten Responsive schreiben
 
-2. **Profil Seite**
+1. **Profil Seite**
 
    - Funktion um Profilbild und Headerbild zu ändern
    - Funktion um seine Informationen zu ändern
 
-3. **Merkliste erstellen**
+1. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 
-4. **FAQ Seite erstellen**
+1. **FAQ Seite erstellen**
 
    - Fragen und Antworten in eiem Arcordion bereitstellen
 
-5. **Startseite anpassen**
+1. **Startseite anpassen**
 
    - Das Designe der Startseite überarbeiten, es sieht noch nicht wirklich ansprechend aus!
 
-6. **Anzeige Schalten**
+1. **Anzeige Schalten**
 
    - Eventuell auf einer Extraseite und die Anzeige Schalten ausweiten.
      - Mehr Rassen
      - Mehr Bilder Hochladen
      - Mehr Konfiguration z. B. Wurfankündigung / Deckrüde ect.
 
-7. **Tile Überarbeiten**
+1. **Tile Überarbeiten**
 
    - Das Designe der Tile überarbeiten und eventuell verschiedene Anzeigen für Startseite, Inserate und Profil
 
-8. **Profile Überarbeiten**
+1. **Profile Überarbeiten**
 
    - Das Design anpassen
 
-9. **Rechttexte anpassen**
+1. **Rechttexte anpassen**
 
-10. **Über Uns anpassen**
+1. **Über Uns anpassen**
 
-11. **Filterung bei den Inseraten erstellen**
+1. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
