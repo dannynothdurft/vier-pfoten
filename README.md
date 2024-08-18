@@ -2,51 +2,49 @@
 
 ## Hauptaufgaben
 
-1. **Stage einrichten**
-
-2. **Responsive Designen**
+1. **Responsive Designen**
 
    - Alle Seiten Responsive schreiben
 
-3. **Profil Seite**
+2. **Profil Seite**
 
    - Funktion um Profilbild und Headerbild zu ändern
    - Funktion um seine Informationen zu ändern
 
-4. **Merkliste erstellen**
+3. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 
-5. **FAQ Seite erstellen**
+4. **FAQ Seite erstellen**
 
    - Fragen und Antworten in eiem Arcordion bereitstellen
 
-6. **Startseite anpassen**
+5. **Startseite anpassen**
 
    - Das Designe der Startseite überarbeiten, es sieht noch nicht wirklich ansprechend aus!
 
-7. **Anzeige Schalten**
+6. **Anzeige Schalten**
 
    - Eventuell auf einer Extraseite und die Anzeige Schalten ausweiten.
      - Mehr Rassen
      - Mehr Bilder Hochladen
      - Mehr Konfiguration z. B. Wurfankündigung / Deckrüde ect.
 
-8. **Tile Überarbeiten**
+7. **Tile Überarbeiten**
 
    - Das Designe der Tile überarbeiten und eventuell verschiedene Anzeigen für Startseite, Inserate und Profil
 
-9. **Profile Überarbeiten**
+8. **Profile Überarbeiten**
 
    - Das Design anpassen
 
-10. **Rechttexte anpassen**
+9. **Rechttexte anpassen**
 
-11. **Über Uns anpassen**
+10. **Über Uns anpassen**
 
-12. **Filterung bei den Inseraten erstellen**
+11. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
