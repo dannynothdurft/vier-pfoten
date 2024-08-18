@@ -2,7 +2,7 @@
 
 ## Hauptaufgaben
 
-1. **Vercal Stage und Live trenne**
+1. **Netlify Stage und Live trenne**
 
    - Stage ist eingerichtet aber branches werden trotzdem bei deiden ausgeführt
 
