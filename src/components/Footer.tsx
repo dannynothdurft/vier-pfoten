@@ -20,54 +20,56 @@ interface FooterProps {}
 const Footer: FC<FooterProps> = () => {
   return (
     <footer>
-      <div className="footer-section">
-        <h4>Marktplatz</h4>
-        <div>
-          {Lang.footer.marketplace.map((item, index) => {
-            return (
-              <Link href={item.link} key={index}>
-                {item.title}
-              </Link>
-            );
-          })}
+      <div className="footer-wrapper">
+        <div className="footer-section">
+          <h4>Marktplatz</h4>
+          <div>
+            {Lang.footer.marketplace.map((item, index) => {
+              return (
+                <Link href={item.link} key={index}>
+                  {item.title}
+                </Link>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <div className="footer-section">
-        <h4>Service</h4>
-        <div>
-          {Lang.footer.service.map((item, index) => {
-            return (
-              <Link href={item.link} key={index}>
-                {item.title}
-              </Link>
-            );
-          })}
+        <div className="footer-section">
+          <h4>Service</h4>
+          <div>
+            {Lang.footer.service.map((item, index) => {
+              return (
+                <Link href={item.link} key={index}>
+                  {item.title}
+                </Link>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <div className="footer-section">
-        <h4>Unternehmen</h4>
-        <div>
-          {Lang.footer.company.map((item, index) => {
-            return (
-              <Link href={item.link} key={index}>
-                {item.title}
-              </Link>
-            );
-          })}
+        <div className="footer-section">
+          <h4>Unternehmen</h4>
+          <div>
+            {Lang.footer.company.map((item, index) => {
+              return (
+                <Link href={item.link} key={index}>
+                  {item.title}
+                </Link>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <div className="footer-section">
-        <h4>Social-Media</h4>
-        <div>
-          {Lang.footer.socialmedia.map((item, index) => {
-            return (
-              <Link href={item.link} key={index} target="_blank">
-                {item.title === "Instagram" ? (
-                  <FaInstagram fill="#ffffff" size={25} />
-                ) : null}
-              </Link>
-            );
-          })}
+        <div className="footer-section">
+          <h4>Social-Media</h4>
+          <div>
+            {Lang.footer.socialmedia.map((item, index) => {
+              return (
+                <Link href={item.link} key={index} target="_blank">
+                  {item.title === "Instagram" ? (
+                    <FaInstagram fill="#ffffff" size={25} />
+                  ) : null}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </footer>

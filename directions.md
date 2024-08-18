@@ -2,6 +2,10 @@
 
 Da jetzt das Projekt eine URL hat müssen wir jetzt paar Punkte beachten.
 
+## Style Regeln
+
+    Mobile first
+
 ## Neue Aufgabe
 
 Für neue Aufgabe legen wir eine neue brach aus main an.

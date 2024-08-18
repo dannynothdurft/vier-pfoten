@@ -6,7 +6,7 @@
 */
 
 import "@/styles/userModal.scss";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 
 import { useRouter } from "next/navigation";
@@ -15,42 +15,12 @@ import { userLogout } from "@/utils/auth";
 
 interface UserModalProps {
   toggleUserModal: Function;
+  modalRef: any;
 }
 
-const UserModal: FC<UserModalProps> = ({ toggleUserModal }) => {
+const UserModal: FC<UserModalProps> = ({ toggleUserModal, modalRef }) => {
   const router = useRouter();
   const { user } = useSelector((state: any) => state.user);
-
-  const modalRef = useRef<HTMLDivElement>(null);
-
-  // useEffect zum Hinzufügen eines Event-Listeners bei jedem Rendern des Modals
-  useEffect(() => {
-    // Funktion zum Überprüfen, ob ein Klick außerhalb des Modals passiert
-    const handleClickOutside = (event: MouseEvent) => {
-      const clickedNode = event.target as HTMLElement;
-
-      // Zugriff auf das data-ref Attribut des angeklickten Elements
-      const dataRefValue = clickedNode.getAttribute("data-ref");
-      if (dataRefValue === "modalRef") {
-        return;
-      }
-
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        toggleUserModal();
-      }
-    };
-
-    // Event-Listener hinzufügen
-    document.addEventListener("mousedown", handleClickOutside);
-
-    // Cleanup des Event-Listeners bei Unmount
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [toggleUserModal]);
 
   const logout = () => {
     userLogout();

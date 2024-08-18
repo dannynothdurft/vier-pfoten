@@ -56,7 +56,7 @@ export default function Inserate() {
         <div className="vp-filtered-ct">
           Filterung muss hier eingebaut werden
         </div>
-        <div className="vp-search">
+        <div className="vp-search-ct">
           <Pagination
             pages={pages}
             activePage={activePage}

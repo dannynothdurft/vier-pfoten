@@ -2,53 +2,43 @@
 
 ## Hauptaufgaben
 
-1. **Netlify Stage und Live trenne**
-
-   - Stage ist eingerichtet aber branches werden trotzdem bei deiden ausgeführt
-
 1. **Responsive Designen**
 
-   - Alle Seiten Responsive schreiben
+   - User Modal
+   - Anmelde Modal
+   - User Profile
 
-1. **Profil Seite**
+2. **Profil Seite**
 
    - Funktion um Profilbild und Headerbild zu ändern
    - Funktion um seine Informationen zu ändern
 
-1. **Merkliste erstellen**
+3. **Merkliste erstellen**
 
    - Page oder Seite muss geschrieben werden
    - Funktion muss geschrieben werden / Global
    - API muss eingerichtet werden
 
-1. **FAQ Seite erstellen**
+4. **FAQ Seite erstellen**
 
    - Fragen und Antworten in eiem Arcordion bereitstellen
 
-1. **Startseite anpassen**
-
-   - Das Designe der Startseite überarbeiten, es sieht noch nicht wirklich ansprechend aus!
-
-1. **Anzeige Schalten**
+5. **Anzeige Schalten**
 
    - Eventuell auf einer Extraseite und die Anzeige Schalten ausweiten.
      - Mehr Rassen
      - Mehr Bilder Hochladen
      - Mehr Konfiguration z. B. Wurfankündigung / Deckrüde ect.
 
-1. **Tile Überarbeiten**
-
-   - Das Designe der Tile überarbeiten und eventuell verschiedene Anzeigen für Startseite, Inserate und Profil
-
-1. **Profile Überarbeiten**
+6. **Profile Überarbeiten**
 
    - Das Design anpassen
 
-1. **Rechttexte anpassen**
+7. **Rechttexte anpassen**
 
-1. **Über Uns anpassen**
+8. **Über Uns anpassen**
 
-1. **Filterung bei den Inseraten erstellen**
+9. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
