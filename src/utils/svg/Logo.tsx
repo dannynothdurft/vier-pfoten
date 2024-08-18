@@ -6,8 +6,15 @@
 */
 
 "use client";
+import React, { FC } from "react";
 
-function Logo({ width = "50px", height = "50px" }) {
+interface LogoProps {
+  width?: string;
+  height?: string;
+  Dref?: any;
+}
+
+const Logo: FC<LogoProps> = ({ width = "50px", height = "50px", Dref }) => {
   return (
     <svg
       width={width}
@@ -15,6 +22,7 @@ function Logo({ width = "50px", height = "50px" }) {
       viewBox="0 0 2048 2048"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      data-ref={Dref}
     >
       <path
         transform="translate(532,100)"
@@ -23,6 +31,7 @@ function Logo({ width = "50px", height = "50px" }) {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        data-ref={Dref}
       />
       <path
         transform="translate(952,1362)"
@@ -31,6 +40,7 @@ function Logo({ width = "50px", height = "50px" }) {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        data-ref={Dref}
       />
       <path
         transform="translate(1386,1149)"
@@ -39,6 +49,7 @@ function Logo({ width = "50px", height = "50px" }) {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        data-ref={Dref}
       />
       <path
         transform="translate(627,1149)"
@@ -47,9 +58,10 @@ function Logo({ width = "50px", height = "50px" }) {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
+        data-ref={Dref}
       />
     </svg>
   );
-}
+};
 
 export default Logo;

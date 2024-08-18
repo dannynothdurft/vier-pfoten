@@ -26,6 +26,8 @@ interface NavigationProps {}
 
 const Navigation: FC<NavigationProps> = () => {
   const mobileMenu = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
   const dispatch = useDispatch();
   const { classfield } = useSelector((state: any) => state.classfield);
   const [userModal, setUserModal] = useState(false);
@@ -44,13 +46,13 @@ const Navigation: FC<NavigationProps> = () => {
     dispatch(toogleClassfield(classfield));
   };
 
+  // auto close mobile menu und User Modal
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const clickedNode = event.target as HTMLElement;
-
       const dataRefValue = clickedNode.getAttribute("data-ref");
-      console.log(dataRefValue);
-      if (dataRefValue === "mobileMenu") {
+
+      if (dataRefValue === "modalRef" || dataRefValue === "mobileMenu") {
         return;
       }
 
@@ -60,6 +62,13 @@ const Navigation: FC<NavigationProps> = () => {
       ) {
         toggleHMBTM();
       }
+
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        toggleUserModal();
+      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -67,7 +76,7 @@ const Navigation: FC<NavigationProps> = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [toggleHMBTM]);
+  }, [toggleHMBTM, toggleUserModal]);
 
   return (
     <div className="vp-navigation">
@@ -96,7 +105,7 @@ const Navigation: FC<NavigationProps> = () => {
               onClick={toggleUserModal}
               data-ref="modalRef"
             >
-              <Logo width="40" height="40" data-ref="modalRef" />
+              <Logo width="40" height="40" Dref="modalRef" />
             </button>
             <button className="btn" onClick={switchClassfield} data-ref="cfRef">
               <FaPlus data-ref="cfRef" /> {Lang.navigation.btnPlus}
@@ -106,38 +115,44 @@ const Navigation: FC<NavigationProps> = () => {
             </Link>
           </div>
         </div>
-      ) : null}
-      {/* <div className="vp-search">
-        <FaSearch className="vp-search-icon" />
-        <input
-          placeholder={Lang.navigation.searchInput}
-          type="search"
-          className="vp-search-input-field"
-        ></input>
-      </div>
-      <div className="vp-nav-cta">
-        <button
-          className="vp-user-button"
-          onClick={toggleUserModal}
-          data-ref="modalRef"
-        >
-          <Image
-            src={"/logos/icon.svg"}
-            alt="Hunde Icon"
-            title="Hunde Icon"
-            width={35}
-            height={35}
+      ) : (
+        <div className="dektop-menu">
+          <div className="vp-search">
+            <FaSearch className="vp-search-icon" />
+            <input
+              placeholder={Lang.navigation.searchInput}
+              type="search"
+              className="vp-search-input-field"
+            ></input>
+          </div>
+          <div className="vp-nav-cta">
+            <button className="btn" onClick={switchClassfield} data-ref="cfRef">
+              <FaPlus data-ref="cfRef" /> {Lang.navigation.btnPlus}
+            </button>
+            <Link href={"/inserate"} className="btn secondary">
+              {Lang.navigation.btnAll}
+            </Link>
+          </div>
+          <button
+            className="vp-user-button"
+            onClick={toggleUserModal}
             data-ref="modalRef"
-          />
-        </button>
-        <button className="btn" onClick={switchClassfield} data-ref="cfRef">
-          <FaPlus data-ref="cfRef" /> {Lang.navigation.btnPlus}
-        </button>
-        <Link href={"/inserate"} className="btn secondary">
-          {Lang.navigation.btnAll}
-        </Link>
-      </div>
-      {userModal ? <UserModal toggleUserModal={toggleUserModal} /> : null} */}
+          >
+            <Image
+              src={"/logos/icon.svg"}
+              alt="Hunde Icon"
+              title="Hunde Icon"
+              width={35}
+              height={35}
+              data-ref="modalRef"
+            />
+          </button>
+        </div>
+      )}
+
+      {userModal ? (
+        <UserModal toggleUserModal={toggleUserModal} modalRef={modalRef} />
+      ) : null}
     </div>
   );
 };

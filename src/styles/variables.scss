@@ -35,11 +35,12 @@ $color-border-secondary: rgba(50, 105, 22, 0.1);
 }
 
 // Viewports
-$max: "only screen and (min-width: 1297px)";
-$desktop: "only screen and (max-width: 1296px)";
-$tablet: "only screen and (max-width: 990px)";
-$mobileMax: "only screen and (max-width: 672px)";
-$mobile: "only screen and (max-width: 480px)";
+$mobile: "only screen and (max-width: 575px)";
+$mobileMax: "only screen and (min-width: 576px)";
+$tablet: "only screen and (min-width: 768px)";
+$desktop: "only screen and (min-width: 992px)";
+$max: "only screen and (min-width: 1200px)";
+
 
 /*
 Beispiel:
