@@ -44,10 +44,12 @@ const UserModal: FC<UserModalProps> = ({ toggleUserModal, modalRef }) => {
           <Link href={"/user/merkliste"} onClick={() => toggleUserModal()}>
             Merkliste
           </Link>
-          <button onClick={logout}>Logout</button>
+          <button className="btn secondary" onClick={logout}>
+            Logout
+          </button>
         </div>
       ) : (
-        <>
+        <div className="auth-modal">
           <p>Du musst dich erst einloggen</p>
           <div className="cta-ct">
             <Link
@@ -65,7 +67,7 @@ const UserModal: FC<UserModalProps> = ({ toggleUserModal, modalRef }) => {
               Registrieren
             </Link>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

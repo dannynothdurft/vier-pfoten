@@ -5,7 +5,7 @@
 - **Frontend**: Next.js
 - **Backend**: Next.js
 - **Datenbank**: MongoDB
-- **Hosting**: Netlify
+- **Hosting**: Vercal
 - **Bilder Hosting**: Edge Store
 
 - **Abhängigkeiten**:
@@ -25,6 +25,5 @@
 
 - **Frontend**: Next.js
 - **Backend**: Next.js
-- **Hosting**: Vercal (wenn das Deploment problem von vercal behoben ist.) (ist aber trotzdem verbunden mit vercal)
 - **Datenbank**: DynamoDB
 - **Hosting**: AWS
