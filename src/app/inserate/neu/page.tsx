@@ -7,12 +7,12 @@
 */
 
 "use client";
+import dynamic from "next/dynamic";
+import "react-quill/dist/quill.snow.css";
 import "@/styles/classifieldsform.scss";
 import ConfigClassifields from "@/config/classifields.json";
 
-import dynamic from "next/dynamic";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-import "react-quill/dist/quill.snow.css";
 
 import React, { useState } from "react";
 import Image from "next/image";
