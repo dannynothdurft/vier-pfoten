@@ -9,6 +9,9 @@ Diese `README.md` enthält eine Zusammenfassung der wichtigsten Git-Befehle für
 ```bash
     git config --global user.name "Dein Name"
     git config --global user.email "deine.email@example.com"
+
+    // Erhöhe die Buffer-Größe auf 500GB
+    git config --global http.postBuffer 524288000
 ```
 
 ### Konfiguration anzeigen
