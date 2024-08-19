@@ -9,7 +9,7 @@
 import Config from "@/config.json";
 import Lang from "@/lang/de.json";
 
-import React, { FC, useState, useEffect, useRef } from "react";
+import React, { FC, useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -34,15 +34,16 @@ const Navigation: FC<NavigationProps> = () => {
 
   // useState und ArrowFunktion für HamburgerMenu
   const [toggle, setToggle] = useState<boolean>(false);
-  const toggleHMBTM = () => {
-    setToggle(!toggle);
-  };
+  const toggleHMBTM = useCallback(() => {
+    setToggle((prevToogle) => !prevToogle);
+  }, []);
 
-  const toggleUserModal = () => {
-    setUserModal(!userModal);
-  };
+  const toggleUserModal = useCallback(() => {
+    setUserModal((prevToogle) => !prevToogle);
+  }, []);
 
   const switchClassfield = () => {
+    setToggle(false);
     dispatch(toogleClassfield(classfield));
   };
 
@@ -53,6 +54,9 @@ const Navigation: FC<NavigationProps> = () => {
       const dataRefValue = clickedNode.getAttribute("data-ref");
 
       if (dataRefValue === "modalRef" || dataRefValue === "mobileMenu") {
+        if (dataRefValue === "mobileMenu") {
+          setUserModal(false);
+        }
         return;
       }
 
@@ -110,7 +114,11 @@ const Navigation: FC<NavigationProps> = () => {
             <button className="btn" onClick={switchClassfield} data-ref="cfRef">
               <FaPlus data-ref="cfRef" /> {Lang.navigation.btnPlus}
             </button>
-            <Link href={"/inserate"} className="btn secondary">
+            <Link
+              href={"/inserate"}
+              className="btn secondary"
+              onClick={toggleHMBTM}
+            >
               {Lang.navigation.btnAll}
             </Link>
           </div>

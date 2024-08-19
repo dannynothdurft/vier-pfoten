@@ -30,7 +30,7 @@ h1 {
   text-align: center;
 
   @media #{$tablet} {
-   font-size: 3em;
+    font-size: 3em;
   }
 }
 
@@ -133,7 +133,7 @@ ul {
 }
 
 // HamburgerButton
-.hamburger-menu-btn{
+.hamburger-menu-btn {
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -168,7 +168,7 @@ ul {
   }
 
   @media #{$tablet} {
-    display: none; 
+    display: none;
   }
 }
 
@@ -256,6 +256,8 @@ ul {
   flex-direction: column;
   gap: 10px;
 
+  z-index: 100;
+
   @include box-shadow;
 
   .vp-nav-cta {
@@ -281,14 +283,14 @@ ul {
   }
 
   @media #{$tablet} {
-      display: flex;
+    display: flex;
   }
 
   @media #{$desktop} {
     .vp-nav-cta {
       flex-direction: row;
     }
-}
+  }
 }
 
 // Homepage
@@ -299,7 +301,7 @@ ul {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -358,7 +360,7 @@ ul {
   img {
     height: 150px;
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(0,0,0, 0.5));
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
   }
 
   @media #{$tablet} {
@@ -366,7 +368,7 @@ ul {
   }
 
   @media #{$desktop} {
-    img{
+    img {
       height: 280px;
     }
   }
@@ -433,23 +435,27 @@ ul {
   }
 
   .tile-content {
-    display: -webkit-box;         
-    -webkit-box-orient: vertical; 
-    -webkit-line-clamp: 5;       
-    overflow: hidden;            
-    text-overflow: ellipsis;    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: 100%;
     position: relative;
     max-height: 7.5em;
 
     &::after {
-      content: "";                    
-      position: absolute;              
-      bottom: 0;                      
-      left: 0;                        
-      width: 100%;                    
-      height: 50px;                    
-      background: linear-gradient(0deg, rgba(255,255,255, 100) 0%, rgba(0,0,0,0) 100%);
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 100) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
       pointer-events: none;
     }
   }
@@ -485,33 +491,31 @@ footer {
   padding: 0 10px;
 
   .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 50px;
+    padding: 25px;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h4,
+    a {
+      color: $color-bright;
+    }
+
+    .footer-section {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
-      min-height: 50px;
-      padding: 25px;
       gap: 10px;
-      max-width: 1200px;
-      margin: 0 auto;
-      
-      h4,
-        a {
-          color: $color-bright;
-        }
 
-        .footer-section {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-
-          div {
-            display: flex;
-            flex-direction: column;
-          }
-        }  
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
-
-  
 
   @media #{$tablet} {
     .footer-wrapper {
@@ -612,10 +616,9 @@ footer {
     }
 
     .Contact-Formular {
-      
       padding: 20px 40px;
       margin-top: 20px;
-      
+
       label {
         margin-top: 15px;
         font-size: 1em;
@@ -626,10 +629,8 @@ footer {
   @media #{$tablet} {
     .Contact-Formular {
       width: 577px;
-      
+
       margin-top: 50px;
-      
-     
     }
   }
 }
