@@ -340,27 +340,29 @@ const NewInserate = () => {
                   setFileStates([...fileStates, ...addedFiles]);
                   await Promise.all(
                     addedFiles.map(async (addedFileState) => {
-                      try {
-                        const res = await edgestore.publicFiles.upload({
-                          file: addedFileState.file,
-                          onProgressChange: async (progress) => {
-                            updateFileProgress(addedFileState.key, progress);
-                            if (progress === 100) {
-                              // wait 1 second to set it to complete
-                              // so that the user can see the progress bar at 100%
-                              await new Promise((resolve) =>
-                                setTimeout(resolve, 1000)
-                              );
-                              updateFileProgress(
-                                addedFileState.key,
-                                "COMPLETE"
-                              );
-                            }
-                          },
-                        });
-                        setUrls((prevUrls) => [...prevUrls, res.url]);
-                      } catch (err) {
-                        updateFileProgress(addedFileState.key, "ERROR");
+                      if (addedFileState.file instanceof File) {
+                        try {
+                          const res = await edgestore.publicFiles.upload({
+                            file: addedFileState.file,
+                            onProgressChange: async (progress) => {
+                              updateFileProgress(addedFileState.key, progress);
+                              if (progress === 100) {
+                                // wait 1 second to set it to complete
+                                // so that the user can see the progress bar at 100%
+                                await new Promise((resolve) =>
+                                  setTimeout(resolve, 1000)
+                                );
+                                updateFileProgress(
+                                  addedFileState.key,
+                                  "COMPLETE"
+                                );
+                              }
+                            },
+                          });
+                          setUrls((prevUrls) => [...prevUrls, res.url]);
+                        } catch (err) {
+                          updateFileProgress(addedFileState.key, "ERROR");
+                        }
                       }
                     })
                   );
