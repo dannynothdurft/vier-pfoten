@@ -11,7 +11,6 @@ import Lang from "@/lang/de.json";
 
 import React, { FC, useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 import { FaPlus, FaSearch } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
@@ -146,14 +145,7 @@ const Navigation: FC<NavigationProps> = () => {
             onClick={toggleUserModal}
             data-ref="modalRef"
           >
-            <Image
-              src={"/logos/icon.svg"}
-              alt="Hunde Icon"
-              title="Hunde Icon"
-              width={35}
-              height={35}
-              data-ref="modalRef"
-            />
+            <Logo />
           </button>
         </div>
       )}

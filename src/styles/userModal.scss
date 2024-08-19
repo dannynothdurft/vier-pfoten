@@ -24,6 +24,14 @@
   @media #{$mobileMax} {
     left: unset;
   }
+
+  @media #{$tablet} {
+    top: 90px;
+  }
+
+  @media #{$desktop} {
+    top: 50px;
+  }
 }
 
 .vp-auth-ct {
@@ -126,8 +134,12 @@
       background-color: $color-bg-gray;
     }
   }
+
   @media #{$mobileMax} {
     width: 200px;
+    button {
+      width: 100%;
+    }
   }
 }
 
