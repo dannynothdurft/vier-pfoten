@@ -7,16 +7,8 @@
    - Inserate Schalten auf eine Extra Seite
 
      - Seite soll mehrere Schritte haben
-       - Seite 4: Bilder Hochladen
-       - Seite 5: Vorschau
+       - Seite 5: Vorschau und Inserat abschicken
 
-   - Mehr Bilder Hochladen
-
-     - Bilder sollen eine Maximale größe von 5MB haben
-
-   - Hunde und Katzen mehr Rassen
-
-   - Mehr Möglichkeiten bieten das inserat zu personalisieren
    - Wenn user auf ein eigenes Inserate ist und/oder auf seinem Profil ist muss das inserat auch gelöscht werden können.
    - Wenn ein Inserate gelöscht wird abfragen ob es vermittelt wurden ist über diese Weseite.
 
