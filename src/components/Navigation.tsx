@@ -110,9 +110,9 @@ const Navigation: FC<NavigationProps> = () => {
             >
               <Logo width="40" height="40" Dref="modalRef" />
             </button>
-            <button className="btn" onClick={switchClassfield} data-ref="cfRef">
-              <FaPlus data-ref="cfRef" /> {Lang.navigation.btnPlus}
-            </button>
+            <Link href={"/inserate/neu"} className="btn" onClick={toggleHMBTM}>
+              <FaPlus /> {Lang.navigation.btnPlus}
+            </Link>
             <Link
               href={"/inserate"}
               className="btn secondary"
@@ -133,9 +133,9 @@ const Navigation: FC<NavigationProps> = () => {
             ></input>
           </div>
           <div className="vp-nav-cta">
-            <button className="btn" onClick={switchClassfield} data-ref="cfRef">
-              <FaPlus data-ref="cfRef" /> {Lang.navigation.btnPlus}
-            </button>
+            <Link href={"/inserate/neu"} className="btn">
+              <FaPlus /> {Lang.navigation.btnPlus}
+            </Link>
             <Link href={"/inserate"} className="btn secondary">
               {Lang.navigation.btnAll}
             </Link>

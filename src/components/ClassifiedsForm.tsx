@@ -7,7 +7,7 @@
 
 "use client";
 import "@/styles/classfieldsform.scss";
-import CFconfig from "@/config/classfield.json";
+import CFconfig from "@/config/classifield.json";
 import React, { FC, useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
@@ -156,15 +156,15 @@ const ClassfieldsForm: FC = () => {
       <div className="animaltype-ct">
         {CFconfig.animalType.map((type) => {
           return (
-            <label key={type}>
+            <label key={type.animal}>
               <input
                 type="radio"
-                value={type}
+                value={type.animal}
                 name="animalType"
-                checked={formState.animalType === type}
+                checked={formState.animalType === type.animal}
                 onChange={handleChange}
               />
-              {type}
+              {type.animal}
             </label>
           );
         })}
