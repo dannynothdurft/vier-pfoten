@@ -167,7 +167,7 @@
         "Draht-Haariger Pointer Griffon",
         "Xoloitzcuintli",
         "Yorkshire Terrier"
-      ],
+        ],
     "catBreeds": [
         "Abessinier",
         "American Bobtail",
@@ -223,5 +223,111 @@
         "Türkische Van",
         "Ukrainischer Levkoy",
         "Yorkshire"
+        ],
+    "specialFeatures": [
+        {
+        "id": "2001",
+        "special": "Wurfankündigung",
+        "inputs" : [
+            { "id": "2001a",
+              "title": "Geschätztes Wurfdatum"},
+            { "id": "2001b",
+              "title": "Details zur Verpaarung (z.B. Elterntiere, Zuchtlinie)"}
+        ]
+        },
+        {
+        "id": "2002",
+        "special": "Deckrüde",
+        "inputs" : [
+            { "id": "2002a",
+              "title": "Verfügbarkeitszeiten für Deckungen"},
+            { "id": "2002b",
+              "title": "Erfolge und Zuchtergebnisse des Deckrüden"}
+        ]
+        },
+     {
+      "id": "2003",
+        "special": "Gesundheitszustand",
+        "inputs" : [
+          { "id": "2003a",
+            "title": "Impfstatus"},
+          { "id": "2003b",
+            "title": "Regelmäßige Gesundheitschecks"},
+          { "id": "2003c",
+            "title": "Besonderheiten oder chronische Krankheiten"}
+       ]
+     },
+     {
+      "id": "2004",
+        "special": "Zuchtlinien",
+        "inputs" : [
+        {"id": "2004a","title": "Stammbäume und Herkunft"},
+        {"id": "2004b","title": "Erbmerkmale und genetische Tests"},
+        {"id": "2004c","title": "Erfolge und Besonderheiten der Linie"}
+       ]
+     },
+     {
+      "id": "2005",
+        "special": "Training und Ausbildung",
+        "inputs" : [
+        {"id": "2005a","title": "Besondere Trainingsleistungen (z.B. Gehorsamkeit, Agility)"},
+        {"id": "2005b","title": "Verhaltensspezifische Eigenschaften"},
+        {"id": "2005c","title": "Erfolge in Wettbewerben oder Shows"}
+       ]
+     },
+     {
+      "id": "2006",
+        "special": "Charaktereigenschaften",
+        "inputs" : [
+        {"id": "2006a","title": "Typische Verhaltensweisen (z.B. freundlich, unabhängig)"},
+        {"id": "2006b","title": "Soziale Interaktionen (z.B. gut mit Kindern, verträglich mit anderen Tieren)"},
+        {"id": "2006c","title": "Besondere Talente oder Neigungen (z.B. Jagdtrieb, Hüteverhalten)"}
+       ]
+     },
+     {
+      "id": "2007",
+        "special": "Körperliche Merkmale",
+        "inputs" : [
+        {"id": "2007a","title": "Auffällige Merkmale (z.B. besondere Fellfarben, Augenfarben)"},
+        {"id": "2007b","title": "Maße und Gewicht"},
+        {"id": "2007c","title": "Anomalien oder besondere physische Eigenschaften"}
+       ]
+     },
+     {
+      "id": "2008",
+        "special": "Wohnerfahrungen",
+        "inputs" : [
+        {"id": "2008a","title": "Erfahrungen mit verschiedenen Umgebungen (z.B. Stadt, Land)"},
+        {"id": "2008b","title": "Anpassungsfähigkeit an verschiedene Lebensbedingungen"},
+        {"id": "2008c","title": "Erfahrungen mit verschiedenen Tierarten oder Menschen"}
+       ]
+     },
+     {
+      "id": "2009",
+        "special": "Besonderer Status",
+        "inputs" : [
+        {"id": "2009a","title": "Championtitel oder Preise"},
+        {"id": "2009b","title": "Teilnahme an speziellen Programmen oder Projekten"},
+        {"id": "2009c","title": "Berühmtheit oder Bekanntheit in der Community"}
+       ]
+     },
+     {
+      "id": "2010",
+        "special": "Ernährung und Pflege",
+        "inputs" : [
+        {"id": "2010a","title": "Besondere diätetische Anforderungen"},
+        {"id": "2010b","title": "Pflegebedürfnisse (z.B. Fellpflege, besondere Pflegeprodukte)"},
+        {"id": "2010c","title": "Empfohlene Fütterungsempfehlungen"}
+       ]
+     },
+     {
+      "id": "2011",
+        "special": "Verhaltenshistorie",
+        "inputs" : [
+        {"id": "2011a","title": "Frühere Verhaltensauffälligkeiten oder Erfolge"},
+        {"id": "2011b","title": "Besondere Erlebnisse oder Erfahrungen"},
+        {"id": "2011c","title": "Trainingserfolge und Lernfortschritte"}
+       ]
+     }
     ]
 }

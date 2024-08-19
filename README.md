@@ -6,11 +6,9 @@
 
    - Inserate Schalten auf eine Extra Seite
 
-     - Seite Erstellen
      - Seite soll mehrere Schritte haben
-       - Seite 1: Bilder Hochladen
-       - Seite 2: Rasse auswählen und paar einstellungen
-       - Seite 3: Beschreibung und Preis / Beschreibung soll Rich-Text-Editor bereitgestellt werden.
+       - Seite 4: Bilder Hochladen
+       - Seite 5: Vorschau
 
    - Mehr Bilder Hochladen
 

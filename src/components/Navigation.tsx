@@ -13,8 +13,6 @@ import React, { FC, useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 
 import { FaPlus, FaSearch } from "react-icons/fa";
-import { useSelector, useDispatch } from "react-redux";
-import { toogleClassfield } from "@/lib/redux/reducer/classfield";
 
 import UserModal from "./UserModal";
 
@@ -27,8 +25,6 @@ const Navigation: FC<NavigationProps> = () => {
   const mobileMenu = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const dispatch = useDispatch();
-  const { classfield } = useSelector((state: any) => state.classfield);
   const [userModal, setUserModal] = useState(false);
 
   // useState und ArrowFunktion für HamburgerMenu
@@ -40,11 +36,6 @@ const Navigation: FC<NavigationProps> = () => {
   const toggleUserModal = useCallback(() => {
     setUserModal((prevToogle) => !prevToogle);
   }, []);
-
-  const switchClassfield = () => {
-    setToggle(false);
-    dispatch(toogleClassfield(classfield));
-  };
 
   // auto close mobile menu und User Modal
   useEffect(() => {
@@ -145,7 +136,7 @@ const Navigation: FC<NavigationProps> = () => {
             onClick={toggleUserModal}
             data-ref="modalRef"
           >
-            <Logo />
+            <Logo Dref="modalRef" />
           </button>
         </div>
       )}
