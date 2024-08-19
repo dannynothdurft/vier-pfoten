@@ -7,6 +7,8 @@
 
 "use client";
 import React, { FC, ReactNode, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
@@ -39,6 +41,8 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
         <main>{children}</main>
         <Footer />
       </EdgeStoreProvider>
+      <Analytics />
+      <SpeedInsights />
     </body>
   );
 };
