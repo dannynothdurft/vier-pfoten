@@ -14,6 +14,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
 import { userLogin, userRegister } from "@/utils/auth";
+import Logo from "@/utils/svg/Logo";
 
 const AuthContent = () => {
   const actionParams = useSearchParams();
@@ -77,13 +78,7 @@ const AuthContent = () => {
         {action === "login" && (
           <form onSubmit={handleLoginSubmit}>
             {alerts ? <div className="alert-danger">{alertContent}</div> : null}
-            <Image
-              src={Config.logo}
-              width={90}
-              height={90}
-              alt="Vier Pfoten Logo"
-              title="Vier Pfoten Logo"
-            />
+            <Logo />
 
             <h2>Anmelden</h2>
 

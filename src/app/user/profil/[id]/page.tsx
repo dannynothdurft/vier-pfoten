@@ -129,7 +129,6 @@ const ProfilePage = () => {
               )}
             </section>
           </div>
-          <div className="content-classifieds-ct">Weis noch nicht</div>
         </div>
       </div>
     </div>
