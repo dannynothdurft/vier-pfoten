@@ -8,11 +8,10 @@
 "use client";
 import Lang from "@/lang/de.json";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
-import { FaStar } from "react-icons/fa";
-import { useSelector, useDispatch } from "react-redux";
-import { toogleClassfield } from "@/lib/redux/reducer/classfield";
+import { FaStar, FaPlus } from "react-icons/fa";
 
 import SpecialInfo from "@/components/SpecialInfo";
 import Tile from "@/components/Tile";
@@ -20,13 +19,7 @@ import Tile from "@/components/Tile";
 import { getClassifieds } from "@/utils/classifieds";
 
 export default function Home() {
-  const dispatch = useDispatch();
-  const { classfield } = useSelector((state: any) => state.classfield);
   const [lastClassifieds, setLastClassifieds] = useState<any>(undefined);
-
-  const switchClassfield = () => {
-    dispatch(toogleClassfield(classfield));
-  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,9 +35,10 @@ export default function Home() {
       <section className="vp-home-header">
         <h1>{Lang.homepage.titel}</h1>
         <p>{Lang.homepage.content}</p>
-        <button className="btn header" onClick={switchClassfield}>
-          Anzeige Schalten
-        </button>
+
+        <Link href={"/inserate/neu"} className="btn">
+          <FaPlus /> {Lang.navigation.btnPlus}
+        </Link>
       </section>
 
       <section className="vp-special-info">

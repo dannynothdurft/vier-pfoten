@@ -2,11 +2,23 @@
 
 ## Hauptaufgaben
 
-1. **Responsive Designen**
+1. **Inserate**
 
-   - User Modal
-   - Anmelde Modal
-   - User Profile
+   - Inserate Schalten auf eine Extra Seite
+
+     - Seite soll mehrere Schritte haben
+       - Seite 4: Bilder Hochladen
+       - Seite 5: Vorschau
+
+   - Mehr Bilder Hochladen
+
+     - Bilder sollen eine Maximale größe von 5MB haben
+
+   - Hunde und Katzen mehr Rassen
+
+   - Mehr Möglichkeiten bieten das inserat zu personalisieren
+   - Wenn user auf ein eigenes Inserate ist und/oder auf seinem Profil ist muss das inserat auch gelöscht werden können.
+   - Wenn ein Inserate gelöscht wird abfragen ob es vermittelt wurden ist über diese Weseite.
 
 2. **Profil Seite**
 
@@ -23,22 +35,15 @@
 
    - Fragen und Antworten in eiem Arcordion bereitstellen
 
-5. **Anzeige Schalten**
-
-   - Eventuell auf einer Extraseite und die Anzeige Schalten ausweiten.
-     - Mehr Rassen
-     - Mehr Bilder Hochladen
-     - Mehr Konfiguration z. B. Wurfankündigung / Deckrüde ect.
-
-6. **Profile Überarbeiten**
+5. **Profile Überarbeiten**
 
    - Das Design anpassen
 
-7. **Rechttexte anpassen**
+6. **Rechttexte anpassen**
 
-8. **Über Uns anpassen**
+7. **Über Uns anpassen**
 
-9. **Filterung bei den Inseraten erstellen**
+8. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
