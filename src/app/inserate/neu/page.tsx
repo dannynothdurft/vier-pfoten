@@ -5,6 +5,7 @@
     Description: Diese Datei enthält das Formular zum Erstellen einer neuen Anzeige.
                  Sie verwaltet die Eingabefelder, Validierung und den Übermittlungsprozess.
 */
+
 "use client";
 import ConfigClassifields from "@/config/classifield.json";
 
