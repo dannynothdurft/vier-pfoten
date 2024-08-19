@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 import "@/styles/classifieldsform.scss";
 import ConfigClassifields from "@/config/classifields.json";
+import { useEdgeStore } from "@/lib/edgestore";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -18,6 +19,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import { useSelector } from "react-redux";
+
+import {
+  MultiImageDropzone,
+  type FileState,
+} from "@/components/MultiImageDropzone";
 
 interface FormState {
   animalType: string;
@@ -52,6 +58,10 @@ const NewInserate = () => {
     Hund: ConfigClassifields.dogBreeds,
     Katze: ConfigClassifields.catBreeds,
   };
+
+  const [fileStates, setFileStates] = useState<FileState[]>([]);
+  const [urls, setUrls] = useState<string[]>([]);
+  const { edgestore } = useEdgeStore();
 
   const [checkedFeatures, setCheckedFeatures] = useState<CheckedFeatures>({});
   const [formState, setFormState] = useState<FormState>({
@@ -136,6 +146,21 @@ const NewInserate = () => {
   const nextStep = (value: number) => {
     setStep(value);
   };
+
+  function updateFileProgress(key: string, progress: FileState["progress"]) {
+    setFileStates((fileStates) => {
+      const newFileStates = structuredClone(fileStates);
+      const fileState = newFileStates.find(
+        (fileState) => fileState.key === key
+      );
+      if (fileState) {
+        fileState.progress = progress;
+      }
+      return newFileStates;
+    });
+  }
+
+  console.log("Page", urls);
 
   if (step === 1) {
     return (
@@ -302,7 +327,46 @@ const NewInserate = () => {
         <div className="classifieds-form">
           <div className="question-ct">
             <h3>Lade nun Deine Bilder hoch</h3>
-            <div className="animal-type-wrapper">Mehrere Bilder</div>
+            <div className="animal-type-wrapper">
+              <MultiImageDropzone
+                value={fileStates}
+                dropzoneOptions={{
+                  maxFiles: 6,
+                }}
+                onChange={(files) => {
+                  setFileStates(files);
+                }}
+                onFilesAdded={async (addedFiles) => {
+                  setFileStates([...fileStates, ...addedFiles]);
+                  await Promise.all(
+                    addedFiles.map(async (addedFileState) => {
+                      try {
+                        const res = await edgestore.publicFiles.upload({
+                          file: addedFileState.file,
+                          onProgressChange: async (progress) => {
+                            updateFileProgress(addedFileState.key, progress);
+                            if (progress === 100) {
+                              // wait 1 second to set it to complete
+                              // so that the user can see the progress bar at 100%
+                              await new Promise((resolve) =>
+                                setTimeout(resolve, 1000)
+                              );
+                              updateFileProgress(
+                                addedFileState.key,
+                                "COMPLETE"
+                              );
+                            }
+                          },
+                        });
+                        setUrls((prevUrls) => [...prevUrls, res.url]);
+                      } catch (err) {
+                        updateFileProgress(addedFileState.key, "ERROR");
+                      }
+                    })
+                  );
+                }}
+              />
+            </div>
           </div>
           <button className="btn" onClick={() => nextStep(step + 1)}>
             Nächste Seite
