@@ -451,6 +451,9 @@ const NewInserate = () => {
 
   return (
     <div className="single-classifieds-ct">
+      <button className="btn secondary center" onClick={insetClassifields}>
+        Jetzt Anzeige Aufgeben
+      </button>
       <div className="user-info">
         <h3>{formState.username}</h3>
         <button className="btn">Nachricht Senden</button>
