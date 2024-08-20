@@ -8,6 +8,23 @@
 import axios from "axios";
 import currentUrl from "@/utils/currentUrl";
 
+export const insertClassifieds = async (data: any) => {
+  try {
+    const response = await axios.post(
+      `${currentUrl()}/api/classifieds/inserts`,
+      data
+    );
+    console.log(response.data);
+    if (response.data.success) {
+      return response.data;
+    } else {
+      return response.data.data;
+    }
+  } catch (error: any) {
+    return error.response.data.message;
+  }
+};
+
 export const getClassifieds = async (data: any) => {
   try {
     const response = await axios.post(

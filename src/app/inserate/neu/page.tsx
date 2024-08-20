@@ -10,8 +10,10 @@
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 import "@/styles/classifieldsform.scss";
+import "@/styles/singleClassifieds.scss";
 import ConfigClassifields from "@/config/classifields.json";
 import { useEdgeStore } from "@/lib/edgestore";
+import { useRouter } from "next/navigation";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -20,10 +22,17 @@ import Image from "next/image";
 
 import { useSelector } from "react-redux";
 
+import { insertClassifieds } from "@/utils/classifieds";
+
 import {
   MultiImageDropzone,
   type FileState,
 } from "@/components/MultiImageDropzone";
+
+interface SpecialItem {
+  id: string;
+  value: string;
+}
 
 interface FormState {
   animalType: string;
@@ -35,6 +44,7 @@ interface FormState {
   username?: string;
   date: string;
   imageFile: string[];
+  special?: SpecialItem[];
 }
 
 interface AnimalTypes {
@@ -50,7 +60,12 @@ interface DynFormState {
 }
 
 const NewInserate = () => {
+  const router = useRouter();
   const { user } = useSelector((state: any) => state.user);
+
+  if (!user) {
+    router.push("/user/auth?action=login");
+  }
 
   const [step, setStep] = useState(1);
 
@@ -78,7 +93,7 @@ const NewInserate = () => {
 
   const initialState: DynFormState = ConfigClassifields.specialFeatures.reduce(
     (state, inputs) => {
-      state[inputs.id] = ""; // Setze den Anfangswert für jedes Eingabefeld auf einen leeren String
+      state[inputs.id] = "";
       return state;
     },
     {} as DynFormState
@@ -144,6 +159,9 @@ const NewInserate = () => {
   };
 
   const nextStep = (value: number) => {
+    if (value === 5) {
+      mergeState(formState, dynFormState, urls);
+    }
     setStep(value);
   };
 
@@ -163,17 +181,39 @@ const NewInserate = () => {
   const mergeState = (state: any, dState: any, img: any) => {
     state.imageFile = img;
 
-    state.special = {};
+    state.special = [];
     for (let key in dState) {
       if (dState[key]) {
-        state.special[key] = dState[key];
+        state.special.push({ id: [key], value: dState[key] });
       }
     }
+
+    return formState;
   };
 
-  mergeState(formState, dynFormState, urls);
+  const findTitleById = (id: string) => {
+    for (const feature of ConfigClassifields.specialFeatures) {
+      const input = feature.inputs.find((i) => i.id === id[0]);
+      if (input) {
+        return input.output;
+      }
+    }
+    return "Unbekannt";
+  };
 
-  console.log(formState);
+  const insetClassifields = async () => {
+    try {
+      const response = await insertClassifieds(formState);
+
+      if (response.success) {
+        router.push("/");
+      } else {
+        return response;
+      }
+    } catch (error: any) {
+      return error.response;
+    }
+  };
 
   if (step === 1) {
     return (
@@ -310,6 +350,15 @@ const NewInserate = () => {
                   onChange={handleChange}
                 />
               </label>
+              <label>
+                Standort:
+                <input
+                  type="text"
+                  name="location"
+                  value={formState.location}
+                  onChange={handleChange}
+                />
+              </label>
               <ReactQuill
                 value={formState.description}
                 onChange={handleChange}
@@ -401,15 +450,57 @@ const NewInserate = () => {
   }
 
   return (
-    <div>
-      <h1>{formState.title}</h1>
-      <h3>{formState.breed}</h3>
-      <Image
-        src={formState.imageFile[0]}
-        alt={formState.title}
-        width={200}
-        height={200}
-      />
+    <div className="single-classifieds-ct">
+      <div className="user-info">
+        <h3>{formState.username}</h3>
+        <button className="btn">Nachricht Senden</button>
+      </div>
+      <div>
+        <Image
+          src={
+            formState.imageFile[0]
+              ? formState.imageFile[0]
+              : "/images/tile-placeholder.png"
+          }
+          title="Bild"
+          alt="Bild"
+          width={700}
+          height={500}
+        />
+        <h1>{formState.title}</h1>
+        <div className="insert-header-info">
+          <p className="price">{formState.price} €</p>
+          <p>{formState.location}</p>
+        </div>
+        <hr />
+        <div className="inserat-info">
+          <ul>
+            <li>
+              <strong>Rasse:</strong> {formState.breed}
+            </li>
+            {formState.special?.map((item: SpecialItem) => {
+              return (
+                <li key={item.id}>
+                  <strong>{findTitleById(item.id)}:</strong> {item.value}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <hr />
+        <div
+          className="inserat-description"
+          dangerouslySetInnerHTML={{ __html: formState.description }}
+        ></div>
+      </div>
+      <hr />
+      <div className="user-info">
+        <h3>{formState.username}</h3>
+        <button className="btn">Nachricht Senden</button>
+      </div>
+      <button className="btn secondary center" onClick={insetClassifields}>
+        Jetzt Anzeige Aufgeben
+      </button>
     </div>
   );
 };
