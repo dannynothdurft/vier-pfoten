@@ -106,6 +106,10 @@ ul {
     background-color: $color-secondary;
     color: $color-bright;
     @include box-shadow;
+
+    svg {
+      fill: $color-bright;
+    }
   }
 
   @media #{$tablet} {
@@ -461,6 +465,12 @@ ul {
         rgba(0, 0, 0, 0) 100%
       );
       pointer-events: none;
+    }
+
+    ul {
+      li {
+        display: none;
+      }
     }
   }
 
