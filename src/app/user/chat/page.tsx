@@ -52,7 +52,7 @@ const ChatPage = () => {
                   <li key={index} onClick={() => setCurrentMSG(chat)}>
                     <p>{chat.date}</p>
                     <p className="bold">{chat.user1}</p>
-                    <p>{chat.classifiedsTitel}</p>
+                    <p>{chat.classifiedsTitle}</p>
                     <p className="single-line">{chat.msg}</p>
                   </li>
                 );

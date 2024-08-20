@@ -30,7 +30,7 @@ interface FormState {
   breed: string;
   price: string;
   description: string;
-  titel: string;
+  title: string;
   location: string;
   username?: string;
   date: string;
@@ -69,7 +69,7 @@ const NewInserate = () => {
     breed: "",
     price: "",
     description: "",
-    titel: "",
+    title: "",
     location: "",
     username: user?.username,
     date: new Date().toISOString(),
@@ -160,7 +160,20 @@ const NewInserate = () => {
     });
   }
 
-  console.log("Page", urls);
+  const mergeState = (state: any, dState: any, img: any) => {
+    state.imageFile = img;
+
+    state.special = {};
+    for (let key in dState) {
+      if (dState[key]) {
+        state.special[key] = dState[key];
+      }
+    }
+  };
+
+  mergeState(formState, dynFormState, urls);
+
+  console.log(formState);
 
   if (step === 1) {
     return (
@@ -280,6 +293,15 @@ const NewInserate = () => {
             <h3>Setze deine Beschreibung</h3>
             <div className="description-wrapper">
               <label>
+                Titel:
+                <input
+                  type="text"
+                  name="title"
+                  value={formState.title}
+                  onChange={handleChange}
+                />
+              </label>
+              <label>
                 Preis:
                 <input
                   type="text"
@@ -378,7 +400,18 @@ const NewInserate = () => {
     );
   }
 
-  return "Vorschau";
+  return (
+    <div>
+      <h1>{formState.title}</h1>
+      <h3>{formState.breed}</h3>
+      <Image
+        src={formState.imageFile[0]}
+        alt={formState.title}
+        width={200}
+        height={200}
+      />
+    </div>
+  );
 };
 
 export default NewInserate;

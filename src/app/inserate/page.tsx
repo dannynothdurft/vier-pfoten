@@ -50,7 +50,7 @@ export default function Inserate() {
   return (
     <>
       <section className="vp-inserate-header">
-        <h1>{Lang.homepage.titel}</h1>
+        <h1>{Lang.homepage.title}</h1>
       </section>
       <div className="vp-inserate-wrapper">
         <div className="vp-filtered-ct">

@@ -18,7 +18,7 @@ interface Classifieds {
   location: string;
   description: string;
   username: string;
-  titel: string;
+  title: string;
   breed: string;
   user: string;
   date: string;
@@ -81,7 +81,7 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
 
       <span className="tile-location-info">{classifieds?.location}</span>
 
-      <h3>{classifieds?.titel}</h3>
+      <h3>{classifieds?.title}</h3>
       <div className="tile-info">
         <span>{classifieds?.price} €</span>
         <span>22111 Hamburg</span>
