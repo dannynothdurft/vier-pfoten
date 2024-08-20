@@ -4,12 +4,9 @@
 
 1. **Inserate**
 
-   - Inserate Schalten auf eine Extra Seite
-
-     - Seite soll mehrere Schritte haben
-       - Seite 5: Vorschau und Inserat abschicken
-
-   - Wenn user auf ein eigenes Inserate ist und/oder auf seinem Profil ist muss das inserat auch gelöscht werden können.
+   - Chat Funktion in ein Modal hinzufügen
+     - Modal in einer Componente speichern
+   - Wenn ein Nutzer auf sein eigenes Inserate ist soll er diese Bearbeiten oder Löschen können.
    - Wenn ein Inserate gelöscht wird abfragen ob es vermittelt wurden ist über diese Weseite.
 
 2. **Profil Seite**
@@ -27,21 +24,18 @@
 
    - Fragen und Antworten in eiem Arcordion bereitstellen
 
-5. **Profile Überarbeiten**
+5. **Rechttexte anpassen**
 
-   - Das Design anpassen
+6. **Über Uns anpassen**
 
-6. **Rechttexte anpassen**
-
-7. **Über Uns anpassen**
-
-8. **Filterung bei den Inseraten erstellen**
+7. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
 1. **Config Datei erweitern**
 2. **Sprachdatei ausbauen und überall einfügen**
 3. **Mailhog einrichten**
+4. **Alle Datein Überprüfen und schauen ob etwas ausgelagert werden kann**
 
 ## Marketing Aufgaben
 
