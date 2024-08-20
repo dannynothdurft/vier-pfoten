@@ -13,25 +13,16 @@ import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 
 import { useSelector } from "react-redux";
-import toast from "react-hot-toast";
 
 import { getCurrentClassifieds } from "@/utils/classifieds";
-import { startMessage } from "@/utils/chat";
-
-interface FormState {
-  msg: string;
-}
+import ChatModal from "@/components/ChatModal";
 
 const SingleClassifieds = () => {
   const params = useParams();
   const router = useRouter();
-  const [currentClassifieds, setCurrentClassifieds] = useState<any>(undefined);
   const { user } = useSelector((state: any) => state.user);
+  const [currentClassifieds, setCurrentClassifieds] = useState<any>(undefined);
   const [openMsg, setOpenMsg] = useState(false);
-
-  const [formState, setFormState] = useState<FormState>({
-    msg: "",
-  });
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -53,6 +44,16 @@ const SingleClassifieds = () => {
     return () => clearTimeout(timeOut);
   }, [params, router]);
 
+  const findTitleById = (id: string) => {
+    for (const feature of ConfigClassifields.specialFeatures) {
+      const input = feature.inputs.find((i) => i.id === id[0]);
+      if (input) {
+        return input.output;
+      }
+    }
+    return "Unbekannt";
+  };
+
   const sendMessage = () => {
     if (user) {
       if (user.username !== currentClassifieds.username) {
@@ -65,100 +66,63 @@ const SingleClassifieds = () => {
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    const { name, value } = e.target;
-
-    setFormState((prevState: any) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    const data = {
-      classifiedsID: currentClassifieds._id,
-      classifiedsTitle: currentClassifieds.title,
-      user1: user.username,
-      user2: currentClassifieds.username,
-      msg: formState.msg,
-      date: new Date().toLocaleString(),
-    };
-    const sendMSG = async () => {
-      const response = await startMessage(data);
-      if (response.success) {
-        setOpenMsg(false);
-        toast.success(response.message);
-      }
-    };
-
-    sendMSG();
-  };
-
-  const findTitleById = (id: string) => {
-    for (const feature of ConfigClassifields.specialFeatures) {
-      const input = feature.inputs.find((i) => i.id === id[0]);
-      if (input) {
-        return input.output;
-      }
-    }
-    return "Unbekannt";
-  };
-
   return currentClassifieds ? (
-    <div className="single-classifieds-ct">
-      <div className="user-info">
-        <h3>{currentClassifieds.username}</h3>
-        <button className="btn">Nachricht Senden</button>
-      </div>
-      <div>
-        <Image
-          src={
-            currentClassifieds.imageFile[0]
-              ? currentClassifieds.imageFile[0]
-              : "/images/tile-placeholder.png"
-          }
-          title="Bild"
-          alt="Bild"
-          width={700}
-          height={500}
-        />
-        <h1>{currentClassifieds.title}</h1>
-        <div className="insert-header-info">
-          <p className="price">{currentClassifieds.price} €</p>
-          <p>{currentClassifieds.location}</p>
+    <>
+      {openMsg && (
+        <ChatModal classifieds={currentClassifieds} setState={setOpenMsg} />
+      )}
+      <div className="single-classifieds-ct">
+        <div className="user-info">
+          <h3>{currentClassifieds.username}</h3>
+          <button className="btn" onClick={sendMessage}>
+            Nachricht Senden
+          </button>
+        </div>
+        <div>
+          <Image
+            src={
+              currentClassifieds.imageFile[0]
+                ? currentClassifieds.imageFile[0]
+                : "/images/tile-placeholder.png"
+            }
+            title="Bild"
+            alt="Bild"
+            width={700}
+            height={500}
+          />
+          <h1>{currentClassifieds.title}</h1>
+          <div className="insert-header-info">
+            <p className="price">{currentClassifieds.price} €</p>
+            <p>{currentClassifieds.location}</p>
+          </div>
+          <hr />
+          <div className="inserat-info">
+            <ul>
+              <li>
+                <strong>Rasse:</strong> {currentClassifieds.breed}
+              </li>
+              {currentClassifieds.special?.map((item: any) => {
+                return (
+                  <li key={item.id}>
+                    <strong>{findTitleById(item.id)}:</strong> {item.value}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <hr />
+          <div
+            className="inserat-description"
+            dangerouslySetInnerHTML={{ __html: currentClassifieds.description }}
+          ></div>
         </div>
         <hr />
-        <div className="inserat-info">
-          <ul>
-            <li>
-              <strong>Rasse:</strong> {currentClassifieds.breed}
-            </li>
-            {currentClassifieds.special?.map((item: any) => {
-              return (
-                <li key={item.id}>
-                  <strong>{findTitleById(item.id)}:</strong> {item.value}
-                </li>
-              );
-            })}
-          </ul>
+        <div className="user-info">
+          <h3>{currentClassifieds.username}</h3>
+          <button className="btn">Nachricht Senden</button>
         </div>
-        <hr />
-        <div
-          className="inserat-description"
-          dangerouslySetInnerHTML={{ __html: currentClassifieds.description }}
-        ></div>
       </div>
-      <hr />
-      <div className="user-info">
-        <h3>{currentClassifieds.username}</h3>
-        <button className="btn">Nachricht Senden</button>
-      </div>
-    </div>
+    </>
   ) : (
     "Nein"
   );

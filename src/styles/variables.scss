@@ -16,6 +16,7 @@ $color-gray: rgba(221, 219, 213, 100);
 // Colors backgrounds
 $color-bg-bright: rgba(255, 255, 255, 100);
 $color-bg-gray: rgba(244, 242, 239, 100);
+$color-bg-overlay: rgba(0, 0, 0, 0.1);
 
 // Color borders
 $color-border-primary: rgba(180, 233, 65, 0.4);
@@ -40,7 +41,6 @@ $mobileMax: "only screen and (min-width: 576px)";
 $tablet: "only screen and (min-width: 768px)";
 $desktop: "only screen and (min-width: 992px)";
 $max: "only screen and (min-width: 1200px)";
-
 
 /*
 Beispiel:

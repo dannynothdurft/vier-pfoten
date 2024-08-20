@@ -462,6 +462,12 @@ ul {
       );
       pointer-events: none;
     }
+
+    ul {
+      li {
+        display: none;
+      }
+    }
   }
 
   .tile-info {

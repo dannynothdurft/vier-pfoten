@@ -63,6 +63,8 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
     timeDisplay = daysAgo;
   }
 
+  console.log(classifieds?.description);
+
   return (
     <Link href={`/inserate/${classifieds._id}`} className="vp-tile">
       <div className="vp-tile-image-wrapper">
@@ -86,7 +88,10 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
         <span>{classifieds?.price} €</span>
         <span>22111 Hamburg</span>
       </div>
-      <p className="tile-content">{classifieds?.description}</p>
+      <div
+        className="tile-content"
+        dangerouslySetInnerHTML={{ __html: classifieds?.description }}
+      ></div>
       <div className="tile-classifieds-info">
         <p>{classifieds?.username}</p>
         <p>{timeDisplay}</p>
