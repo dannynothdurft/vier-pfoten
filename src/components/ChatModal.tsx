@@ -8,7 +8,7 @@
 
 "use client";
 import "@/styles/chatmodal.scss";
-import chatModalConfig from "@/config/chatmodal.json";
+import Lang from "@/lang/de/chatmodal.json";
 
 // importe von React und Next
 import React, { FC, ChangeEvent, useState, useEffect, useRef } from "react";
@@ -152,7 +152,7 @@ const ChatModal: FC<ChatModalProps> = ({ classifieds, setState }) => {
     <div className="chat-modal-overlay">
       <div className="chat-modal-ct" ref={chatModal}>
         <div className="chat-modal-header">
-          <h2>{chatModalConfig.modalTitle}</h2>
+          <h2>{Lang.modalTitle}</h2>
           <button onClick={handleButtonClick}>
             <Close />
           </button>
@@ -178,20 +178,20 @@ const ChatModal: FC<ChatModalProps> = ({ classifieds, setState }) => {
         </div>
         <div className="chat-modal-body">
           <label>
-            {chatModalConfig.msgLabel}
+            {Lang.msgLabel}
             <textarea value={msg} name="msg" onChange={handleChange} />
           </label>
           <button className="btn" onClick={handleSubmit}>
             <SpeechBubble />
-            {chatModalConfig.msgSubmit}
+            {Lang.msgSubmit}
           </button>
         </div>
         <div className="chat-modal-footer">
           <p className="legal-text">
-            {replacePlaceholders(chatModalConfig.legalTextFirst)}
+            {replacePlaceholders(Lang.legalTextFirst)}
           </p>
           <p className="legal-text">
-            {replacePlaceholders(chatModalConfig.legalTextSecond)}
+            {replacePlaceholders(Lang.legalTextSecond)}
           </p>
         </div>
       </div>
