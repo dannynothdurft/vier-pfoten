@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <section className="vp-home-header">
-        <h1>{Lang.homepage.titel}</h1>
+        <h1>{Lang.homepage.title}</h1>
         <p>{Lang.homepage.content}</p>
 
         <Link href={"/inserate/neu"} className="btn">

@@ -81,7 +81,7 @@ const SingleClassifieds = () => {
     e.preventDefault();
     const data = {
       classifiedsID: currentClassifieds._id,
-      classifiedsTitel: currentClassifieds.titel,
+      classifiedsTitle: currentClassifieds.title,
       user1: user.username,
       user2: currentClassifieds.username,
       msg: formState.msg,
@@ -112,7 +112,7 @@ const SingleClassifieds = () => {
           width={700}
           height={500}
         />
-        <h1>{currentClassifieds.titel}</h1>
+        <h1>{currentClassifieds.title}</h1>
         <hr />
         <div>
           <h2>Beschreibung</h2>

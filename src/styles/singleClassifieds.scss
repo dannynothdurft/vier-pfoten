@@ -12,11 +12,48 @@
   margin: 30px auto;
   padding: 0px 20px;
 
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  .user-info {
+    h3 {
+      color: $color-secondary;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
   img {
     width: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  .insert-header-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .price {
+      color: $color-secondary;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+
+  .inserat-description {
+    ul {
+      margin-left: 20px;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $color-secondary;
+    }
+  }
+
+  .inserat-info {
   }
 }

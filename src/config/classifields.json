@@ -1,333 +1,441 @@
 {
-    "animalType": [
+  "animalType": [
+    {
+      "id": "1000",
+      "animal": "Hund",
+      "img": "/images/insert-dog.jpg",
+      "alt": "Ich möchte einen Hund zur Adoption freigeben."
+    },
+    {
+      "id": "2000",
+      "animal": "Katze",
+      "img": "/images/insert-cat.jpg",
+      "alt": "Ich möchte einee Katze zur Adoption freigeben."
+    }
+  ],
+  "dogBreeds": [
+    "Afghanischer Windhund",
+    "Airedale Terrier",
+    "Akita",
+    "American Bulldog",
+    "American Pit Bull Terrier",
+    "American Staffordshire Terrier",
+    "Australischer Cattledog",
+    "Australischer Schäferhund",
+    "Australischer Terrier",
+    "Basset Hound",
+    "Beagle",
+    "Bearded Collie",
+    "Bedlington Terrier",
+    "Bichon Frise",
+    "Border Collie",
+    "Border Terrier",
+    "Boston Terrier",
+    "Boxer",
+    "Boykin Spaniel",
+    "Briard",
+    "Brüsseler Griffon",
+    "Bull Terrier",
+    "Bulldog",
+    "Bullmastiff",
+    "Cairn Terrier",
+    "Canaan Hund",
+    "Cavalier King Charles Spaniel",
+    "Chesapeake Bay Retriever",
+    "Chihuahua",
+    "Chinese Crested",
+    "Chinese Shar-Pei",
+    "Chow Chow",
+    "Clumber Spaniel",
+    "Cocker Spaniel",
+    "Collie",
+    "Coonhound",
+    "Corgi",
+    "Dachshund",
+    "Dalmatiner",
+    "Dandie Dinmont Terrier",
+    "Dobermann",
+    "Dogue de Bordeaux",
+    "Holländischer Schäferhund",
+    "Englische Bulldogge",
+    "Englischer Cocker Spaniel",
+    "Englischer Foxhound",
+    "Englischer Setter",
+    "Englischer Springer Spaniel",
+    "Entlebucher Sennenhund",
+    "Field Spaniel",
+    "Finnischer Spitz",
+    "Flat-Coated Retriever",
+    "Französische Bulldogge",
+    "Deutscher Pinscher",
+    "Deutscher Schäferhund",
+    "Deutscher Kurzhaariger Vorstehhund",
+    "Deutscher Drahthaariger Vorstehhund",
+    "Riesenschnauzer",
+    "Glen of Imaal Terrier",
+    "Goldador",
+    "Golden Retriever",
+    "Goldendoodle",
+    "Gordon Setter",
+    "Großer Schweizer Sennenhund",
+    "Greyhound",
+    "Harrier",
+    "Havaneser",
+    "Irischer Setter",
+    "Irischer Terrier",
+    "Irischer Wasserspaniel",
+    "Irischer Wolfshund",
+    "Italienischer Windhund",
+    "Jack Russell Terrier",
+    "Japanischer Chin",
+    "Japanischer Spitz",
+    "Keeshond",
+    "Kerry Blue Terrier",
+    "King Charles Spaniel",
+    "Klee Kai",
+    "Labrador Retriever",
+    "Lagotto Romagnolo",
+    "Lakeland Terrier",
+    "Lhasa Apso",
+    "Labradoodle",
+    "Leonberger",
+    "Löwchen",
+    "Malteser",
+    "Manchester Terrier",
+    "Mastiff",
+    "Miniatur Bullterrier",
+    "Miniaturpinscher",
+    "Miniaturschnauzer",
+    "Neufundländer",
+    "Norfolk Terrier",
+    "Norwegischer Buhund",
+    "Norwegischer Elchhund",
+    "Norwich Terrier",
+    "Nova Scotia Duck Tolling Retriever",
+    "Old English Sheepdog",
+    "Otterhound",
+    "Papillon",
+    "Parson Russell Terrier",
+    "Pekinese",
+    "Pembroke Welsh Corgi",
+    "Petit Basset Griffon Vendeen",
+    "Pharaonenhund",
+    "Pointer",
+    "Polnischer Niederungs-Schäferhund",
+    "Pomeranian",
+    "Pudel",
+    "Portugiesischer Wasserhund",
+    "Mops",
+    "Puli",
+    "Pumi",
+    "Pyrenäen-Schäferhund",
+    "Rat Terrier",
+    "Redbone Coonhound",
+    "Rhodesian Ridgeback",
+    "Rottweiler",
+    "Saint Bernard",
+    "Saluki",
+    "Samojede",
+    "Schipperke",
+    "Schnauzer",
+    "Schottischer Hirschhund",
+    "Schottischer Terrier",
+    "Sealyham Terrier",
+    "Schäferhund",
+    "Shiba Inu",
+    "Shih Tzu",
+    "Sibirischer Husky",
+    "Silky Terrier",
+    "Skye Terrier",
+    "Sloughi",
+    "Small Munsterlander Pointer",
+    "Soft Coated Wheaten Terrier",
+    "Spanischer Wasserhund",
+    "St. Bernard",
+    "Staffordshire Bull Terrier",
+    "Sussex Spaniel",
+    "Schwedischer Vallhund",
+    "Tibetanischer Mastiff",
+    "Tibetanischer Spaniel",
+    "Tibetanischer Terrier",
+    "Toy Fox Terrier",
+    "Vizsla",
+    "Weimaraner",
+    "Welsh Corgi",
+    "West Highland White Terrier",
+    "Whippet",
+    "Wire Fox Terrier",
+    "Draht-Haariger Pointer Griffon",
+    "Xoloitzcuintli",
+    "Yorkshire Terrier"
+  ],
+  "catBreeds": [
+    "Abessinier",
+    "American Bobtail",
+    "American Curl",
+    "American Shorthair",
+    "American Wirehair",
+    "Balinesen",
+    "Bengal",
+    "Birmanen",
+    "Bombay",
+    "Britisch Kurzhaar",
+    "Britisch Langhaar",
+    "Burmesen",
+    "Burmese",
+    "California Spangled",
+    "Chausie",
+    "Chettinad",
+    "Chinesische Li Hua",
+    "Cornish Rex",
+    "Cymric",
+    "Devon Rex",
+    "Ägyptische Mau",
+    "Europäische Kurzhaar",
+    "Exotische Kurzhaar",
+    "Himalaya",
+    "Japanische Bobtail",
+    "Javanese",
+    "Khao Manee",
+    "Korat",
+    "LaPerm",
+    "Maine Coon",
+    "Manx",
+    "Munchkin",
+    "Nebelung",
+    "Norwegische Waldkatze",
+    "Ocicat",
+    "Orientalische Kurzhaar",
+    "Perser",
+    "Peterbald",
+    "Pixiebob",
+    "Ragdoll",
+    "Russisch Blau",
+    "Savannah",
+    "Schottische Faltohr",
+    "Serrade Petit",
+    "Siamkatze",
+    "Sibirische Katze",
+    "Singapura",
+    "Snowshoe",
+    "Somali",
+    "Sphynx",
+    "Türkische Angora",
+    "Türkische Van",
+    "Ukrainischer Levkoy",
+    "Yorkshire"
+  ],
+  "specialFeatures": [
+    {
+      "id": "2001",
+      "special": "Wurfankündigung",
+      "inputs": [
+        { "id": "2001a", "title": "Geschätztes Wurfdatum", "output": "Wurfdatum" },
         {
-            "id": "1000",
-            "animal": "Hund",
-            "img": "/images/insert-dog.jpg",
-            "alt": "Ich möchte einen Hund zur Adoption freigeben."
+          "id": "2001b",
+          "title": "Details zur Verpaarung (z.B. Elterntiere, Zuchtlinie)",
+          "output": "Verpaarung"
+        }
+      ]
+    },
+    {
+      "id": "2002",
+      "special": "Deckrüde",
+      "inputs": [
+        {
+          "id": "2002a",
+          "title": "Verfügbarkeitszeiten für Deckungen",
+          "output": "Verfügbarkeit"
         },
         {
-            "id": "2000",
-            "animal": "Katze",
-            "img": "/images/insert-cat.jpg",
-            "alt": "Ich möchte einee Katze zur Adoption freigeben."
-        }],
-    "dogBreeds": [
-        "Afghanischer Windhund",
-        "Airedale Terrier",
-        "Akita",
-        "American Bulldog",
-        "American Pit Bull Terrier",
-        "American Staffordshire Terrier",
-        "Australischer Cattledog",
-        "Australischer Schäferhund",
-        "Australischer Terrier",
-        "Basset Hound",
-        "Beagle",
-        "Bearded Collie",
-        "Bedlington Terrier",
-        "Bichon Frise",
-        "Border Collie",
-        "Border Terrier",
-        "Boston Terrier",
-        "Boxer",
-        "Boykin Spaniel",
-        "Briard",
-        "Brüsseler Griffon",
-        "Bull Terrier",
-        "Bulldog",
-        "Bullmastiff",
-        "Cairn Terrier",
-        "Canaan Hund",
-        "Cavalier King Charles Spaniel",
-        "Chesapeake Bay Retriever",
-        "Chihuahua",
-        "Chinese Crested",
-        "Chinese Shar-Pei",
-        "Chow Chow",
-        "Clumber Spaniel",
-        "Cocker Spaniel",
-        "Collie",
-        "Coonhound",
-        "Corgi",
-        "Dachshund",
-        "Dalmatiner",
-        "Dandie Dinmont Terrier",
-        "Dobermann",
-        "Dogue de Bordeaux",
-        "Holländischer Schäferhund",
-        "Englische Bulldogge",
-        "Englischer Cocker Spaniel",
-        "Englischer Foxhound",
-        "Englischer Setter",
-        "Englischer Springer Spaniel",
-        "Entlebucher Sennenhund",
-        "Field Spaniel",
-        "Finnischer Spitz",
-        "Flat-Coated Retriever",
-        "Französische Bulldogge",
-        "Deutscher Pinscher",
-        "Deutscher Schäferhund",
-        "Deutscher Kurzhaariger Vorstehhund",
-        "Deutscher Drahthaariger Vorstehhund",
-        "Riesenschnauzer",
-        "Glen of Imaal Terrier",
-        "Goldador",
-        "Golden Retriever",
-        "Goldendoodle",
-        "Gordon Setter",
-        "Großer Schweizer Sennenhund",
-        "Greyhound",
-        "Harrier",
-        "Havaneser",
-        "Irischer Setter",
-        "Irischer Terrier",
-        "Irischer Wasserspaniel",
-        "Irischer Wolfshund",
-        "Italienischer Windhund",
-        "Jack Russell Terrier",
-        "Japanischer Chin",
-        "Japanischer Spitz",
-        "Keeshond",
-        "Kerry Blue Terrier",
-        "King Charles Spaniel",
-        "Klee Kai",
-        "Labrador Retriever",
-        "Lagotto Romagnolo",
-        "Lakeland Terrier",
-        "Lhasa Apso",
-        "Labradoodle",
-        "Leonberger",
-        "Löwchen",
-        "Malteser",
-        "Manchester Terrier",
-        "Mastiff",
-        "Miniatur Bullterrier",
-        "Miniaturpinscher",
-        "Miniaturschnauzer",
-        "Neufundländer",
-        "Norfolk Terrier",
-        "Norwegischer Buhund",
-        "Norwegischer Elchhund",
-        "Norwich Terrier",
-        "Nova Scotia Duck Tolling Retriever",
-        "Old English Sheepdog",
-        "Otterhound",
-        "Papillon",
-        "Parson Russell Terrier",
-        "Pekinese",
-        "Pembroke Welsh Corgi",
-        "Petit Basset Griffon Vendeen",
-        "Pharaonenhund",
-        "Pointer",
-        "Polnischer Niederungs-Schäferhund",
-        "Pomeranian",
-        "Pudel",
-        "Portugiesischer Wasserhund",
-        "Mops",
-        "Puli",
-        "Pumi",
-        "Pyrenäen-Schäferhund",
-        "Rat Terrier",
-        "Redbone Coonhound",
-        "Rhodesian Ridgeback",
-        "Rottweiler",
-        "Saint Bernard",
-        "Saluki",
-        "Samojede",
-        "Schipperke",
-        "Schnauzer",
-        "Schottischer Hirschhund",
-        "Schottischer Terrier",
-        "Sealyham Terrier",
-        "Schäferhund",
-        "Shiba Inu",
-        "Shih Tzu",
-        "Sibirischer Husky",
-        "Silky Terrier",
-        "Skye Terrier",
-        "Sloughi",
-        "Small Munsterlander Pointer",
-        "Soft Coated Wheaten Terrier",
-        "Spanischer Wasserhund",
-        "St. Bernard",
-        "Staffordshire Bull Terrier",
-        "Sussex Spaniel",
-        "Schwedischer Vallhund",
-        "Tibetanischer Mastiff",
-        "Tibetanischer Spaniel",
-        "Tibetanischer Terrier",
-        "Toy Fox Terrier",
-        "Vizsla",
-        "Weimaraner",
-        "Welsh Corgi",
-        "West Highland White Terrier",
-        "Whippet",
-        "Wire Fox Terrier",
-        "Draht-Haariger Pointer Griffon",
-        "Xoloitzcuintli",
-        "Yorkshire Terrier"
-        ],
-    "catBreeds": [
-        "Abessinier",
-        "American Bobtail",
-        "American Curl",
-        "American Shorthair",
-        "American Wirehair",
-        "Balinesen",
-        "Bengal",
-        "Birmanen",
-        "Bombay",
-        "Britisch Kurzhaar",
-        "Britisch Langhaar",
-        "Burmesen",
-        "Burmese",
-        "California Spangled",
-        "Chausie",
-        "Chettinad",
-        "Chinesische Li Hua",
-        "Cornish Rex",
-        "Cymric",
-        "Devon Rex",
-        "Ägyptische Mau",
-        "Europäische Kurzhaar",
-        "Exotische Kurzhaar",
-        "Himalaya",
-        "Japanische Bobtail",
-        "Javanese",
-        "Khao Manee",
-        "Korat",
-        "LaPerm",
-        "Maine Coon",
-        "Manx",
-        "Munchkin",
-        "Nebelung",
-        "Norwegische Waldkatze",
-        "Ocicat",
-        "Orientalische Kurzhaar",
-        "Perser",
-        "Peterbald",
-        "Pixiebob",
-        "Ragdoll",
-        "Russisch Blau",
-        "Savannah",
-        "Schottische Faltohr",
-        "Serrade Petit",
-        "Siamkatze",
-        "Sibirische Katze",
-        "Singapura",
-        "Snowshoe",
-        "Somali",
-        "Sphynx",
-        "Türkische Angora",
-        "Türkische Van",
-        "Ukrainischer Levkoy",
-        "Yorkshire"
-        ],
-    "specialFeatures": [
-        {
-        "id": "2001",
-        "special": "Wurfankündigung",
-        "inputs" : [
-            { "id": "2001a",
-              "title": "Geschätztes Wurfdatum"},
-            { "id": "2001b",
-              "title": "Details zur Verpaarung (z.B. Elterntiere, Zuchtlinie)"}
-        ]
-        },
-        {
-        "id": "2002",
-        "special": "Deckrüde",
-        "inputs" : [
-            { "id": "2002a",
-              "title": "Verfügbarkeitszeiten für Deckungen"},
-            { "id": "2002b",
-              "title": "Erfolge und Zuchtergebnisse des Deckrüden"}
-        ]
-        },
-     {
+          "id": "2002b",
+          "title": "Erfolge und Zuchtergebnisse des Deckrüden",
+          "output": "Erfolge"
+        }
+      ]
+    },
+    {
       "id": "2003",
-        "special": "Gesundheitszustand",
-        "inputs" : [
-          { "id": "2003a",
-            "title": "Impfstatus"},
-          { "id": "2003b",
-            "title": "Regelmäßige Gesundheitschecks"},
-          { "id": "2003c",
-            "title": "Besonderheiten oder chronische Krankheiten"}
-       ]
-     },
-     {
+      "special": "Gesundheitszustand",
+      "inputs": [
+        { "id": "2003a", "title": "Impfstatus", "output": "Impfstatus" },
+        {
+          "id": "2003b",
+          "title": "Regelmäßige Gesundheitschecks",
+          "output": "Checks"
+        },
+        {
+          "id": "2003c",
+          "title": "Besonderheiten oder chronische Krankheiten",
+          "output": "Krankheiten"
+        }
+      ]
+    },
+    {
       "id": "2004",
-        "special": "Zuchtlinien",
-        "inputs" : [
-        {"id": "2004a","title": "Stammbäume und Herkunft"},
-        {"id": "2004b","title": "Erbmerkmale und genetische Tests"},
-        {"id": "2004c","title": "Erfolge und Besonderheiten der Linie"}
-       ]
-     },
-     {
+      "special": "Zuchtlinien",
+      "inputs": [
+        { "id": "2004a", "title": "Stammbäume und Herkunft", "output": "Stammbaum" },
+        { "id": "2004b", "title": "Erbmerkmale und genetische Tests", "output": "Erbmerkmale" },
+        {
+          "id": "2004c",
+          "title": "Erfolge und Besonderheiten der Linie",
+          "output": "Linie"
+        }
+      ]
+    },
+    {
       "id": "2005",
-        "special": "Training und Ausbildung",
-        "inputs" : [
-        {"id": "2005a","title": "Besondere Trainingsleistungen (z.B. Gehorsamkeit, Agility)"},
-        {"id": "2005b","title": "Verhaltensspezifische Eigenschaften"},
-        {"id": "2005c","title": "Erfolge in Wettbewerben oder Shows"}
-       ]
-     },
-     {
+      "special": "Training und Ausbildung",
+      "inputs": [
+        {
+          "id": "2005a",
+          "title": "Besondere Trainingsleistungen (z.B. Gehorsamkeit, Agility)",
+          "output": "Training"
+        },
+        {
+          "id": "2005b",
+          "title": "Verhaltensspezifische Eigenschaften",
+          "output": "Verhalten"
+        },
+        {
+          "id": "2005c",
+          "title": "Erfolge in Wettbewerben oder Shows",
+          "output": "Wettbewerbe"
+        }
+      ]
+    },
+    {
       "id": "2006",
-        "special": "Charaktereigenschaften",
-        "inputs" : [
-        {"id": "2006a","title": "Typische Verhaltensweisen (z.B. freundlich, unabhängig)"},
-        {"id": "2006b","title": "Soziale Interaktionen (z.B. gut mit Kindern, verträglich mit anderen Tieren)"},
-        {"id": "2006c","title": "Besondere Talente oder Neigungen (z.B. Jagdtrieb, Hüteverhalten)"}
-       ]
-     },
-     {
+      "special": "Charaktereigenschaften",
+      "inputs": [
+        {
+          "id": "2006a",
+          "title": "Typische Verhaltensweisen (z.B. freundlich, unabhängig)",
+          "output": "Verhalten"
+        },
+        {
+          "id": "2006b",
+          "title": "Soziale Interaktionen (z.B. gut mit Kindern, verträglich mit anderen Tieren)",
+          "output": "Interaktionen"
+        },
+        {
+          "id": "2006c",
+          "title": "Besondere Talente oder Neigungen (z.B. Jagdtrieb, Hüteverhalten)",
+          "output": "Talente"
+        }
+      ]
+    },
+    {
       "id": "2007",
-        "special": "Körperliche Merkmale",
-        "inputs" : [
-        {"id": "2007a","title": "Auffällige Merkmale (z.B. besondere Fellfarben, Augenfarben)"},
-        {"id": "2007b","title": "Maße und Gewicht"},
-        {"id": "2007c","title": "Anomalien oder besondere physische Eigenschaften"}
-       ]
-     },
-     {
+      "special": "Körperliche Merkmale",
+      "inputs": [
+        {
+          "id": "2007a",
+          "title": "Auffällige Merkmale (z.B. besondere Fellfarben, Augenfarben)",
+          "output": "Merkmale"
+        },
+        { "id": "2007b", "title": "Maße und Gewicht", "output": "Maße" },
+        {
+          "id": "2007c",
+          "title": "Anomalien oder besondere physische Eigenschaften",
+          "output": "Anomalien"
+        }
+      ]
+    },
+    {
       "id": "2008",
-        "special": "Wohnerfahrungen",
-        "inputs" : [
-        {"id": "2008a","title": "Erfahrungen mit verschiedenen Umgebungen (z.B. Stadt, Land)"},
-        {"id": "2008b","title": "Anpassungsfähigkeit an verschiedene Lebensbedingungen"},
-        {"id": "2008c","title": "Erfahrungen mit verschiedenen Tierarten oder Menschen"}
-       ]
-     },
-     {
+      "special": "Wohnerfahrungen",
+      "inputs": [
+        {
+          "id": "2008a",
+          "title": "Erfahrungen mit verschiedenen Umgebungen (z.B. Stadt, Land)",
+          "output": "Umgebungen"
+        },
+        {
+          "id": "2008b",
+          "title": "Anpassungsfähigkeit an verschiedene Lebensbedingungen",
+          "output": "Anpassung"
+        },
+        {
+          "id": "2008c",
+          "title": "Erfahrungen mit verschiedenen Tierarten oder Menschen",
+          "output": "Erfahrungen"
+        }
+      ]
+    },
+    {
       "id": "2009",
-        "special": "Besonderer Status",
-        "inputs" : [
-        {"id": "2009a","title": "Championtitel oder Preise"},
-        {"id": "2009b","title": "Teilnahme an speziellen Programmen oder Projekten"},
-        {"id": "2009c","title": "Berühmtheit oder Bekanntheit in der Community"}
-       ]
-     },
-     {
+      "special": "Besonderer Status",
+      "inputs": [
+        { "id": "2009a", "title": "Championtitle oder Preise", "output": "Titel" },
+        {
+          "id": "2009b",
+          "title": "Teilnahme an speziellen Programmen oder Projekten",
+          "output": "Programme"
+        },
+        {
+          "id": "2009c",
+          "title": "Berühmtheit oder Bekanntheit in der Community",
+          "output": "Berühmtheit"
+        }
+      ]
+    },
+    {
       "id": "2010",
-        "special": "Ernährung und Pflege",
-        "inputs" : [
-        {"id": "2010a","title": "Besondere diätetische Anforderungen"},
-        {"id": "2010b","title": "Pflegebedürfnisse (z.B. Fellpflege, besondere Pflegeprodukte)"},
-        {"id": "2010c","title": "Empfohlene Fütterungsempfehlungen"}
-       ]
-     },
-     {
+      "special": "Ernährung und Pflege",
+      "inputs": [
+        {
+          "id": "2010a",
+          "title": "Besondere diätetische Anforderungen",
+          "output": "Diät"
+        },
+        {
+          "id": "2010b",
+          "title": "Pflegebedürfnisse (z.B. Fellpflege, besondere Pflegeprodukte)",
+          "output": "Pflege"
+        },
+        {
+          "id": "2010c",
+          "title": "Empfohlene Fütterungsempfehlungen",
+          "output": "Fütterung"
+        }
+      ]
+    },
+    {
       "id": "2011",
-        "special": "Verhaltenshistorie",
-        "inputs" : [
-        {"id": "2011a","title": "Frühere Verhaltensauffälligkeiten oder Erfolge"},
-        {"id": "2011b","title": "Besondere Erlebnisse oder Erfahrungen"},
-        {"id": "2011c","title": "Trainingserfolge und Lernfortschritte"}
-       ]
-     }
-    ]
+      "special": "Verhaltenshistorie",
+      "inputs": [
+        {
+          "id": "2011a",
+          "title": "Frühere Verhaltensauffälligkeiten oder Erfolge",
+          "output": "Verhalten"
+        },
+        {
+          "id": "2011b",
+          "title": "Besondere Erlebnisse oder Erfahrungen",
+          "output": "Erlebnisse"
+        },
+        {
+          "id": "2011c",
+          "title": "Trainingserfolge und Lernfortschritte",
+          "output": "Training"
+        }
+      ]
+    },
+    {
+      "id": "2012",
+      "special": "Alter",
+      "inputs": [
+        { "id": "2012a", "title": "Bitte gib das Alter Deines Tieres an.", "output": "Alter" }
+      ]
+    },
+    {
+      "id": "2013",
+      "special": "Geschlecht",
+      "inputs": [
+        { "id": "2013a", "title": "Bitte gib das Geschlecht Deines Tieres an.", "output": "Geschlecht" }
+      ]
+    }
+  ]
 }
