@@ -8,11 +8,10 @@
 
 "use client";
 import "@/styles/chatmodal.scss";
-//import "@/config";
+import chatModalConfig from "@/config/chatmodal.json";
 
 // importe von React und Next
-import React, { FC, ChangeEvent, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React, { FC, ChangeEvent, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,6 +21,7 @@ import { useSelector } from "react-redux";
 
 // importe Funktionen & Utils
 import { startMessage } from "@/utils/chat";
+import SpeechBubble from "@/utils/svg/SpeechBubble";
 import Close from "@/utils/svg/Close";
 
 // importe Components
@@ -41,7 +41,8 @@ interface Classifieds {
 }
 
 const ChatModal: FC<ChatModalProps> = ({ classifieds, setState }) => {
-  const router = useRouter();
+  const chatModal = useRef<HTMLDivElement>(null);
+
   const { user } = useSelector((state: any) => state.user);
   const [msg, setMsg] = useState<string>("");
 
@@ -59,8 +60,6 @@ const ChatModal: FC<ChatModalProps> = ({ classifieds, setState }) => {
       date: new Date().toLocaleString(),
       readStatus: false,
     };
-
-    console.log(data);
 
     const sendMSG = async () => {
       const response = await startMessage(data);
@@ -91,16 +90,69 @@ const ChatModal: FC<ChatModalProps> = ({ classifieds, setState }) => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        chatModal.current &&
+        !chatModal.current.contains(event.target as Node)
+      ) {
+        setState(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setState]);
+
   function handleButtonClick() {
     setState(false);
     enableScroll();
   }
 
+  /**
+   * Ersetzt Platzhalter im Text durch React-Link-Komponenten.
+   * @param text - Der Eingabetext mit Platzhaltern.
+   * @returns Ein Array von Textteilen und React- / Next.js-Komponenten.
+   */
+  const replacePlaceholders = (text: string) => {
+    const regex = /\{link\}(.*?)\{href\/(.*?)\}(.*?)\{\/link\}/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(text.slice(lastIndex, match.index));
+      }
+
+      const [_, linkTextBefore, linkUrl, linkTextAfter] = match;
+      console.log("linkTextBefore: ", linkTextBefore);
+      console.log("linkTextAfter: ", linkTextAfter);
+      parts.push(
+        <Link key={parts.length} href={`/${linkUrl}`}>
+          {linkTextBefore}
+          {linkTextAfter}
+        </Link>
+      );
+
+      lastIndex = regex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(text.slice(lastIndex));
+    }
+
+    return parts;
+  };
+
   return (
     <div className="chat-modal-overlay">
-      <div className="chat-modal-ct">
+      <div className="chat-modal-ct" ref={chatModal}>
         <div className="chat-modal-header">
-          <h2>Nachricht senden</h2>
+          <h2>{chatModalConfig.modalTitle}</h2>
           <button onClick={handleButtonClick}>
             <Close />
           </button>
@@ -126,23 +178,20 @@ const ChatModal: FC<ChatModalProps> = ({ classifieds, setState }) => {
         </div>
         <div className="chat-modal-body">
           <label>
-            Nachricht
+            {chatModalConfig.msgLabel}
             <textarea value={msg} name="msg" onChange={handleChange} />
           </label>
           <button className="btn" onClick={handleSubmit}>
-            Nachricht senden
+            <SpeechBubble />
+            {chatModalConfig.msgSubmit}
           </button>
         </div>
         <div className="chat-modal-footer">
           <p className="legal-text">
-            Deine Daten werden dem Anbieter übermittelt.{" "}
-            <Link href={"/datenschutz"}>Weitere Infos</Link>
+            {replacePlaceholders(chatModalConfig.legalTextFirst)}
           </p>
           <p className="legal-text">
-            Wir überprüfen Nachrichten auf Verstöße gegen unsere
-            Nutzungsbedingungen.{" "}
-            <Link href={"/datenschutz"}>Weitere Infos</Link> findest du in
-            unserer <Link href={"/datenschutz"}>Datenschutzerklärung</Link>.
+            {replacePlaceholders(chatModalConfig.legalTextSecond)}
           </p>
         </div>
       </div>

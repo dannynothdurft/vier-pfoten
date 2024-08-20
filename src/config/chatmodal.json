@@ -1,0 +1,7 @@
+{
+    "modalTitle": "Nachricht senden",
+    "msgLabel": "Nachricht",
+    "msgSubmit": "Nachricht senden",
+    "legalTextFirst": "Deine Daten werden dem Anbieter übermittelt. {link}{href/datenschutz}Weitere Infos{/link}",
+    "legalTextSecond": " Wir überprüfen Nachrichten auf Verstöße gegen unsere Nutzungsbedingungen. {link}{href/datenschutz}Weitere Infos{/link} findest du in unserer {link}{href/datenschutz}Datenschutzerklärung{/link}."
+}

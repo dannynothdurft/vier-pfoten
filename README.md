@@ -4,7 +4,7 @@
 
 1. **Inserate**
 
-   - Chat Modal - Button ein svg hinzufügen auf der linen seite!
+   - Chat Modal - Außerhalb von dem modal klicken soll er schließen!!
    - Wenn ein Nutzer auf sein eigenes Inserate ist soll er diese Bearbeiten oder Löschen können.
    - Wenn ein Inserate gelöscht wird abfragen ob es vermittelt wurden ist über diese Weseite.
 

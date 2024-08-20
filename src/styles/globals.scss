@@ -106,6 +106,10 @@ ul {
     background-color: $color-secondary;
     color: $color-bright;
     @include box-shadow;
+
+    svg {
+      fill: $color-bright;
+    }
   }
 
   @media #{$tablet} {
