@@ -7,6 +7,7 @@
 
 "use client";
 import "@/styles/singleClassifieds.scss";
+import ConfigClassifields from "@/config/classifields.json";
 import React, { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -98,13 +99,27 @@ const SingleClassifieds = () => {
     sendMSG();
   };
 
+  const findTitleById = (id: string) => {
+    for (const feature of ConfigClassifields.specialFeatures) {
+      const input = feature.inputs.find((i) => i.id === id[0]);
+      if (input) {
+        return input.output;
+      }
+    }
+    return "Unbekannt";
+  };
+
   return currentClassifieds ? (
     <div className="single-classifieds-ct">
+      <div className="user-info">
+        <h3>{currentClassifieds.username}</h3>
+        <button className="btn">Nachricht Senden</button>
+      </div>
       <div>
         <Image
           src={
-            currentClassifieds.imageFile
-              ? currentClassifieds.imageFile
+            currentClassifieds.imageFile[0]
+              ? currentClassifieds.imageFile[0]
               : "/images/tile-placeholder.png"
           }
           title="Bild"
@@ -113,36 +128,35 @@ const SingleClassifieds = () => {
           height={500}
         />
         <h1>{currentClassifieds.title}</h1>
-        <hr />
-        <div>
-          <h2>Beschreibung</h2>
-          <p>{currentClassifieds.description}</p>
+        <div className="insert-header-info">
+          <p className="price">{currentClassifieds.price} €</p>
+          <p>{currentClassifieds.location}</p>
         </div>
+        <hr />
+        <div className="inserat-info">
+          <ul>
+            <li>
+              <strong>Rasse:</strong> {currentClassifieds.breed}
+            </li>
+            {currentClassifieds.special?.map((item: any) => {
+              return (
+                <li key={item.id}>
+                  <strong>{findTitleById(item.id)}:</strong> {item.value}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <hr />
+        <div
+          className="inserat-description"
+          dangerouslySetInnerHTML={{ __html: currentClassifieds.description }}
+        ></div>
       </div>
-      <div>
+      <hr />
+      <div className="user-info">
         <h3>{currentClassifieds.username}</h3>
-        <p>{currentClassifieds.price} €</p>
-        <p>{currentClassifieds.location}</p>
-        <button className="btn" onClick={sendMessage}>
-          Nachricht Senden
-        </button>
-        {openMsg ? (
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>Titel:</label>
-              <input
-                type="text"
-                value={formState.msg}
-                name="msg"
-                onChange={handleChange}
-                placeholder="Nachricht eingeben"
-              />
-            </div>
-            <button className="btn" type="submit">
-              senden
-            </button>
-          </form>
-        ) : null}
+        <button className="btn">Nachricht Senden</button>
       </div>
     </div>
   ) : (

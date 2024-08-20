@@ -68,8 +68,8 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
       <div className="vp-tile-image-wrapper">
         <Image
           src={
-            classifieds.imageFile
-              ? classifieds.imageFile
+            classifieds.imageFile.length > 0
+              ? classifieds.imageFile[0]
               : "/images/tile-placeholder.png"
           }
           height={150}
