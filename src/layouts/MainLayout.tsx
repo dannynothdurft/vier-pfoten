@@ -25,9 +25,8 @@ interface MainLayoutProps {
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   useEffect(() => {
     getUserInfo();
+    setSessionStorage({ key: "test", value: "test" });
   }, []);
-
-  setSessionStorage({ key: "test", value: "test" });
 
   return (
     <body>
