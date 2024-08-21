@@ -10,16 +10,27 @@
 .single-classifieds-ct {
   max-width: 1200px;
   margin: 30px auto;
-  padding: 0px 20px;
+  padding: 0px 10px;
 
   .user-info {
-    h3 {
+    a {
       color: $color-secondary;
+
+      @media #{$tablet} {
+        font-size: 1.2em;
+      }
     }
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5px;
     margin-bottom: 20px;
+
+    button {
+      font-size: 1em;
+      padding: 2px;
+    }
   }
 
   img {

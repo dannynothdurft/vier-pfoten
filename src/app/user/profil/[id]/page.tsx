@@ -13,6 +13,7 @@ import { useParams, useRouter } from "next/navigation";
 
 import toast from "react-hot-toast";
 import { FaLocationDot, FaGlobe } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 
 import getUserProfile from "@/utils/getUserProfile";
 import { getUserClassifieds } from "@/utils/classifieds";
@@ -33,6 +34,7 @@ const ProfilePage = () => {
   const params = useParams();
   const router = useRouter();
 
+  const { user } = useSelector((state: any) => state.user);
   const [profile, setProfile] = useState<UserProfile | undefined>(undefined);
   const [uClassifieds, setUClassifieds] = useState<any>(undefined);
 
@@ -122,7 +124,13 @@ const ProfilePage = () => {
             <section className="vp-advertisement-tiles">
               {uClassifieds ? (
                 uClassifieds.map((item: any, index: any) => {
-                  return <Tile key={index} classifieds={item} />;
+                  return (
+                    <Tile
+                      key={index}
+                      classifieds={item}
+                      user={user ? true : false}
+                    />
+                  );
                 })
               ) : (
                 <p>Es sind keine Anzeigen veröffentlicht</p>

@@ -26,9 +26,10 @@ interface Classifieds {
 }
 interface TileProps {
   classifieds: Classifieds;
+  user?: boolean;
 }
 
-const Tile: FC<TileProps> = ({ classifieds }) => {
+const Tile: FC<TileProps> = ({ classifieds, user }) => {
   let timeDisplay;
 
   // Berechne die Differenz zwischen dem Anzeigen-Datum und dem aktuellen Datum
@@ -63,8 +64,13 @@ const Tile: FC<TileProps> = ({ classifieds }) => {
     timeDisplay = daysAgo;
   }
 
+  const deleteClassifieds = () => {
+    alert("Löschen");
+  };
+
   return (
     <Link href={`/inserate/${classifieds._id}`} className="vp-tile">
+      {user && <button onClick={deleteClassifieds}>Löschen</button>}
       <div className="vp-tile-image-wrapper">
         <Image
           src={

@@ -8,7 +8,8 @@
 "use client";
 import "@/styles/singleClassifieds.scss";
 import ConfigClassifields from "@/config/classifields.json";
-import React, { useEffect, useState, FormEvent } from "react";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 
@@ -73,7 +74,9 @@ const SingleClassifieds = () => {
       )}
       <div className="single-classifieds-ct">
         <div className="user-info">
-          <h3>{currentClassifieds.username}</h3>
+          <Link href={`/user/profil/${currentClassifieds.username}`}>
+            {currentClassifieds.username}
+          </Link>
           <button className="btn" onClick={sendMessage}>
             Nachricht Senden
           </button>
