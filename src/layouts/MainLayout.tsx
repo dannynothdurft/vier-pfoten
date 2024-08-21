@@ -16,8 +16,8 @@ import { EdgeStoreProvider } from "@/lib/edgestore";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getUserInfo } from "@/utils/auth";
-
 import setSessionStorage from "@/utils/sessionStorage";
+
 interface MainLayoutProps {
   children: ReactNode;
 }
@@ -28,6 +28,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   }, []);
 
   setSessionStorage({ key: "test", value: "test" });
+
   return (
     <body>
       <EdgeStoreProvider>

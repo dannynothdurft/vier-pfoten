@@ -9,6 +9,7 @@
                     oder als JSON-String, je nach Typ des Wertes.  
 */
 
+"use client";
 interface SessionProps {
   key: string;
   value: any;
