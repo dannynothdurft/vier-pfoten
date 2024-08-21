@@ -467,8 +467,8 @@ const NewInserate = () => {
           }
           title="Bild"
           alt="Bild"
-          width={700}
-          height={500}
+          width="700"
+          height="500"
         />
         <h1>{formState.title}</h1>
         <div className="insert-header-info">
