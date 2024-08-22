@@ -1,0 +1,95 @@
+/*
+    File: styles/ui.scss
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
+@import "./variables.scss";
+
+// Buttons
+.btn {
+  background-color: unset;
+  border: unset;
+  font-size: 1em;
+  padding: 8px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.link-button {
+  color: $color-primary;
+}
+
+.ui-label-button {
+  border: 2px solid $color-primary;
+  background-color: $color-primary;
+  color: $color-bright;
+  min-width: 120px;
+
+  &:hover {
+    background-color: $color-primary-dark-1;
+    @include box-shadow;
+  }
+
+  &:active {
+    background-color: $color-primary-dark-2;
+    @include box-shadow-inset;
+  }
+
+  &.secondary {
+    background-color: unset;
+    color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary-light-3;
+      @include box-shadow;
+    }
+
+    &:active {
+      background-color: $color-primary-light-1;
+      @include box-shadow-inset;
+    }
+  }
+}
+
+.icon-label-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  svg {
+    fill: $color-bright;
+  }
+
+  span {
+    color: $color-bright;
+  }
+}
+
+.icon-button {
+  background-color: $color-primary;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    color: $color-bright;
+    path {
+      color: inherit;
+    }
+  }
+
+  &:hover {
+    background-color: $color-primary-dark-1;
+    @include box-shadow;
+  }
+
+  &:active {
+    background-color: $color-primary-dark-2;
+    @include box-shadow-inset;
+  }
+}

@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 
 import { getCurrentClassifieds } from "@/utils/classifieds";
 import ChatModal from "@/components/ChatModal";
+import { LabelButton, LinkButton } from "@/ui/Buttons";
 
 const SingleClassifieds = () => {
   const params = useParams();
@@ -74,12 +75,11 @@ const SingleClassifieds = () => {
       )}
       <div className="single-classifieds-ct">
         <div className="user-info">
-          <Link href={`/user/profil/${currentClassifieds.username}`}>
-            {currentClassifieds.username}
-          </Link>
-          <button className="btn" onClick={sendMessage}>
-            Nachricht Senden
-          </button>
+          <LinkButton
+            href={`/user/profil/${currentClassifieds.username}`}
+            text={currentClassifieds.username}
+          />
+          <LabelButton text="Nachricht Senden" onClick={sendMessage} />
         </div>
         <div>
           <Image
@@ -121,8 +121,11 @@ const SingleClassifieds = () => {
         </div>
         <hr />
         <div className="user-info">
-          <h3>{currentClassifieds.username}</h3>
-          <button className="btn">Nachricht Senden</button>
+          <LinkButton
+            href={`/user/profil/${currentClassifieds.username}`}
+            text={currentClassifieds.username}
+          />
+          <LabelButton text="Nachricht Senden" onClick={sendMessage} />
         </div>
       </div>
     </>

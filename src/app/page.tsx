@@ -17,6 +17,7 @@ import SpecialInfo from "@/components/SpecialInfo";
 import Tile from "@/components/Tile";
 
 import { getClassifieds } from "@/utils/classifieds";
+import { IconLabelLinkButton } from "@/ui/Buttons";
 
 export default function Home() {
   const [lastClassifieds, setLastClassifieds] = useState<any>(undefined);
@@ -36,9 +37,11 @@ export default function Home() {
         <h1>{Lang.homepage.title}</h1>
         <p>{Lang.homepage.content}</p>
 
-        <Link href={"/inserate/neu"} className="btn">
-          <FaPlus /> {Lang.navigation.btnPlus}
-        </Link>
+        <IconLabelLinkButton
+          href="/inserate/neu"
+          icon={<FaPlus />}
+          text={Lang.navigation.btnPlus}
+        />
       </section>
 
       <section className="vp-special-info">

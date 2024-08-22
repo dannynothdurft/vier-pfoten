@@ -13,24 +13,11 @@
   padding: 0px 10px;
 
   .user-info {
-    a {
-      color: $color-secondary;
-
-      @media #{$tablet} {
-        font-size: 1.2em;
-      }
-    }
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
     margin-bottom: 20px;
-
-    button {
-      font-size: 1em;
-      padding: 2px;
-    }
   }
 
   img {

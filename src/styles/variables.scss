@@ -5,11 +5,22 @@
     Description:
 */
 
+// Colors
+$color-bright: rgba(250, 251, 244, 1);
+
+$color-primary-light-3: rgba(153, 155, 217, 1);
+$color-primary-light-2: rgba(102, 115, 179, 1);
+$color-primary-light-1: rgba(51, 76, 140, 1);
+$color-primary: rgba(0, 35, 102, 1);
+$color-primary-dark-1: rgba(0, 25, 73, 1);
+$color-primary-dark-2: rgba(0, 18, 51, 1);
+$color-primary-dark-3: rgba(0, 12, 35, 1);
+
 // Colors Fonts
 $color-dark: #0d0c22;
-$color-primary: rgba(180, 233, 65, 100);
+//$color-primary: rgba(180, 233, 65, 100);
 $color-secondary: rgba(50, 105, 22, 100);
-$color-bright: rgba(255, 255, 255, 100);
+// $color-bright: rgba(255, 255, 255, 100);
 $color-gray-dark: rgba(160, 167, 177, 100);
 $color-gray: rgba(221, 219, 213, 100);
 

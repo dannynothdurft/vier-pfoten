@@ -46,18 +46,6 @@ a {
   }
 }
 
-button {
-  border: none;
-  background-color: unset;
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
 hr {
   color: $color-gray;
   margin: 15px 0;
@@ -79,47 +67,6 @@ ul {
 
 .center {
   margin: 0 auto;
-}
-
-.btn {
-  background-color: $color-primary;
-  border-radius: 4px;
-  padding-right: 12px;
-  padding-left: 12px;
-  width: 100%;
-  font-weight: 600;
-  font-size: 1.2em;
-  max-width: 300px;
-
-  &.secondary {
-    background-color: unset;
-    border: 2px solid $color-primary;
-    color: $color-secondary;
-
-    &:hover {
-      border-color: $color-secondary;
-      color: $color-bright;
-    }
-  }
-
-  &:hover {
-    background-color: $color-secondary;
-    color: $color-bright;
-    @include box-shadow;
-
-    svg {
-      fill: $color-bright;
-    }
-  }
-
-  @media #{$tablet} {
-    font-size: 1em;
-    width: 225px;
-  }
-
-  @media #{$desktop} {
-    height: 35px;
-  }
 }
 
 .logo-link {

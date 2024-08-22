@@ -18,6 +18,7 @@ import UserModal from "./UserModal";
 
 import Logo from "@/utils/svg/Logo";
 import { HamburgerButton } from "./HamburgerButton";
+import { IconLabelLinkButton, LabelLinkButton, IconButton } from "@/ui/Buttons";
 
 interface NavigationProps {}
 
@@ -124,20 +125,18 @@ const Navigation: FC<NavigationProps> = () => {
             ></input>
           </div>
           <div className="vp-nav-cta">
-            <Link href={"/inserate/neu"} className="btn">
-              <FaPlus /> {Lang.navigation.btnPlus}
-            </Link>
-            <Link href={"/inserate"} className="btn secondary">
-              {Lang.navigation.btnAll}
-            </Link>
+            <IconLabelLinkButton
+              href={"/inserate/neu"}
+              icon={<FaPlus />}
+              text={Lang.navigation.btnPlus}
+            />
+            <LabelLinkButton href="/inserate" text={Lang.navigation.btnAll} />
           </div>
-          <button
-            className="vp-user-button"
+          <IconButton
             onClick={toggleUserModal}
-            data-ref="modalRef"
-          >
-            <Logo Dref="modalRef" />
-          </button>
+            Dref="modalRef"
+            icon={<Logo Dref="modalRef" />}
+          />
         </div>
       )}
 

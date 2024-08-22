@@ -14,7 +14,7 @@ interface LogoProps {
   Dref?: any;
 }
 
-const Logo: FC<LogoProps> = ({ width = "50px", height = "50px", Dref }) => {
+const Logo: FC<LogoProps> = ({ width = "35px", height = "35px", Dref }) => {
   return (
     <svg
       width={width}
