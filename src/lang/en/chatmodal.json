@@ -1,0 +1,7 @@
+{
+    "modalTitle": "Send message",
+    "msgLabel": "Message",
+    "msgSubmit": "Send message",
+    "legalTextFirst": "Your data will be transmitted to the provider. {link}{href/datenschutz}More info{/link}",
+    "legalTextSecond": "We check messages for violations of our terms of use. You can {link}{href/datenschutz}find more{/link} information in our {link}{href/datenschutz}privacy policy{/link}."
+}

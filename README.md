@@ -2,11 +2,11 @@
 
 ## Hauptaufgaben
 
-1. **Responsive Designen**
+1. **Inserate**
 
-   - User Modal
-   - Anmelde Modal
-   - User Profile
+   - Chat Modal - Außerhalb von dem modal klicken soll er schließen!!
+   - Wenn ein Nutzer auf sein eigenes Inserate ist soll er diese Bearbeiten oder Löschen können.
+   - Wenn ein Inserate gelöscht wird abfragen ob es vermittelt wurden ist über diese Weseite.
 
 2. **Profil Seite**
 
@@ -23,28 +23,18 @@
 
    - Fragen und Antworten in eiem Arcordion bereitstellen
 
-5. **Anzeige Schalten**
+5. **Rechttexte anpassen**
 
-   - Eventuell auf einer Extraseite und die Anzeige Schalten ausweiten.
-     - Mehr Rassen
-     - Mehr Bilder Hochladen
-     - Mehr Konfiguration z. B. Wurfankündigung / Deckrüde ect.
+6. **Über Uns anpassen**
 
-6. **Profile Überarbeiten**
-
-   - Das Design anpassen
-
-7. **Rechttexte anpassen**
-
-8. **Über Uns anpassen**
-
-9. **Filterung bei den Inseraten erstellen**
+7. **Filterung bei den Inseraten erstellen**
 
 ## Nebenaufgaben
 
 1. **Config Datei erweitern**
 2. **Sprachdatei ausbauen und überall einfügen**
 3. **Mailhog einrichten**
+4. **Alle Datein Überprüfen und schauen ob etwas ausgelagert werden kann**
 
 ## Marketing Aufgaben
 

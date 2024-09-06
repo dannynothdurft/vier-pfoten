@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { courseMessage } from "@/utils/chat";
 
 interface Chat {
-  classifiedsTitel: string;
+  classifiedsTitle: string;
   msg: string;
   user1: string;
   course: string[];
@@ -85,7 +85,7 @@ const CurrentChat: FC<CurrentChatProps> = ({ chat }) => {
   };
   return (
     <div className="cc-chat-ct">
-      <h2>{cChat.classifiedsTitel}</h2>
+      <h2>{cChat.classifiedsTitle}</h2>
       <hr />
       <p
         className={

@@ -20,6 +20,7 @@
   - @edgestore/server
   - @edgestore/react
   - zod
+  - react-quill
 
 ## Spätere Plannung
 

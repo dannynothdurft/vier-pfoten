@@ -77,6 +77,10 @@ ul {
   font-weight: bold;
 }
 
+.center {
+  margin: 0 auto;
+}
+
 .btn {
   background-color: $color-primary;
   border-radius: 4px;
@@ -102,6 +106,10 @@ ul {
     background-color: $color-secondary;
     color: $color-bright;
     @include box-shadow;
+
+    svg {
+      fill: $color-bright;
+    }
   }
 
   @media #{$tablet} {
@@ -457,6 +465,12 @@ ul {
         rgba(0, 0, 0, 0) 100%
       );
       pointer-events: none;
+    }
+
+    ul {
+      li {
+        display: none;
+      }
     }
   }
 
